@@ -1,26 +1,26 @@
 # Schema Information
 
-## blogs
+## artworks
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-owner_id    | integer   | not null, foreign key (references users)
+artist_id   | integer   | not null, foreign key (references users)
 title       | string    | not null
+description | string    | not null
+image_url   | string    | not null
 
-## followings
+## galleries
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-blog_id     | integer   | not null, foreign key (references blogs)
-follower_id | integer   | not null, foreign key (references users)
+user_id     | integer   | not null, foreign key (references users)
+artwork_id  | integer   | not null, foreign key (references artworks)
 
-## posts
+## patrons
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-author_id   | integer   | not null, foreign key (references users)
-title       | string    | not null
-body        | string    |
+patron_id   | integer   | not null, foreign key (references users)
 
 ## tags
 column name | data type | details
