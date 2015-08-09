@@ -22,18 +22,18 @@ column name | data type | details
 id          | integer   | not null, primary key
 patron_id   | integer   | not null, foreign key (references users)
 
-## tags
+## categories
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-label       | string    | not null, unique
+name        | string    | not null, unique
 
-## taggings
+## categorizings
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-post_id     | integer   | not null, foreign key (references posts)
-tag_id      | integer   | not null, foreign key (references tags)
+category_id | integer   | not null, foreign key (references categories)
+artist_id   | integer   | not null, foreign key (references users)
 
 ## users
 column name     | data type | details
