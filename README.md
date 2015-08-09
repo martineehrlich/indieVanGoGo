@@ -74,13 +74,9 @@ will fetch from the new `search` routes.
 ### Bonus Features (TBD)
 - [ ] Users can comment on artists profiles
 - [ ] Users can comment on individual artworks
-- [ ] Pagination/infinite scroll
-- [ ] Activity history (e.g. likes, reblogs, taggings)
-- [ ] Post types (image posts, quote posts, etc)
-- [ ] Reblogging
+- [ ] Infinite scroll on actors index page
+- [ ] Add additional categories that involve video (acting/singing)
 - [ ] Multiple sessions/session management
-- [ ] User avatars
-- [ ] Typeahead search bar
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md
