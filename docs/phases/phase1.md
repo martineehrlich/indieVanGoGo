@@ -1,10 +1,10 @@
-# Phase 1: User Authentication, Basic Blogs and Posts
+# Phase 1: User Authentication, Artists, Artworks
 
 ## Rails
 ### Models
 * User
-* Blog
-* Post
+* Artwork
+*
 
 ### Controllers
 * UsersController (create, new)
