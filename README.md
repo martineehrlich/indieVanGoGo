@@ -11,7 +11,7 @@ Flux-capacitr is a clone of Tumblr built on Rails and Backbone. Users can:
 
 - [x] Create accounts
 - [x] Create sessions (log in)
-- [x] Create blogs
+- [x] Create projects
 - [x] Create blog posts
 - [ ] View blogs and posts
 - [ ] Subscribe to blogs
@@ -29,7 +29,7 @@ Flux-capacitr is a clone of Tumblr built on Rails and Backbone. Users can:
 
 ## Implementation Timeline
 
-### Phase 1: User Authentication, Blog Creation (~1 day)
+### Phase 1: User Authentication, Project Creation (~1 day)
 I will implement user authentication in Rails based on the practices learned at
 App Academy. By the end of this phase, users will be able to create blogs using
 a simple text form in a Rails view. The most important part of this phase will
@@ -88,4 +88,3 @@ collections, but they will fetch from the new `search` routes.
 [phase-three]: ./docs/phases/phase3.md
 [phase-four]: ./docs/phases/phase4.md
 [phase-five]: ./docs/phases/phase5.md
-
