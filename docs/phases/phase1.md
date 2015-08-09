@@ -4,19 +4,19 @@
 ### Models
 * User
 * Artwork
-*
+* Artist
 
 ### Controllers
 * UsersController (create, new)
 * SessionsController (create, new, destroy)
-* BlogsController (create, new, show)
-* PostsController (create, new, show)
+* ArtworksController (create, new, show)
+* ArtistsController (create, new, show)
 
 ### Views
 * users/new.html.erb
 * session/new.html.erb
-* blogs/new.html.erb
-* blogs/show.html.erb
+* artist/new.html.erb
+* artwork/new.html.erb
 
 ## Backbone
 ### Models
