@@ -21,13 +21,6 @@ title           | string    | not null
 description     | string    | not null
 image_file_name | string    | not null, for Paperclip Gem
 
-## galleries
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-user_id     | integer   | not null, foreign key (references users)
-artwork_id  | integer   | not null, foreign key (references artworks)
-
 ## patrons
 column name | data type | details
 ------------|-----------|-----------------------
@@ -40,10 +33,3 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 name        | string    | not null, unique
-
-## categorizings
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-category_id | integer   | not null, foreign key (references categories)
-artist_id   | integer   | not null, foreign key (references users)
