@@ -72,6 +72,7 @@ will fetch from the new `search` routes.
 [Details][phase-five]
 
 ### Bonus Features (TBD)
+- [ ] Users can explore artwork as well as artists
 - [ ] Users can comment on artists profiles
 - [ ] Users can comment on individual artworks
 - [ ] Infinite scroll on actors index page

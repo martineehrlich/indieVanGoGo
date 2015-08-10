@@ -2,12 +2,14 @@
 
 ## Rails
 ### Models
+Patron
 
 ### Controllers
-Api::PostsController (feed)
+Api::PatronsController
 
 ### Views
-posts/feed.json.jbuilder
+artists/index.json.jbuilder
+artists/show.json.jbuilder
 
 ## Backbone
 ### Models
@@ -15,6 +17,7 @@ posts/feed.json.jbuilder
 ### Collections
 
 ### Views
-* FeedShow (composite view, contains PostsIndex subview)
+* ArtistIndex (composite view, contains ArtistIndexItem subview)
+* PatronsIndex (composite view, contains PatronShow subview)
 
 ## Gems/Libraries
