@@ -6,8 +6,8 @@
 ## Artist Show
 ![artist-show]
 
-## Landing Page
-![landing_page]
+## Home Page
+![home_page]
 
 ## Artwork New
 ![artwork_new]
@@ -20,7 +20,7 @@
 
 [new-session]: ./wireframes/new_session.png
 [artist-show]: ./wireframes/artist_show.png
-[landing_page]: ./wireframes/landing_page.png
+[home_page]: ./wireframes/home_page.png
 [artwork_new]: ./wireframes/artwork_new.png
 [user_profile]: ./wireframes/user_profile.png
 [patron_index]: ./wireframes/patron_index.png
