@@ -7,7 +7,7 @@
 ![artist-show]
 
 ## Landing Page
-![blog-show]
+![landing_page]
 
 ## Artwork New
 ![artwork_new]
