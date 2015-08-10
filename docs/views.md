@@ -3,24 +3,24 @@
 ## New Session
 ![new-session]
 
-## Feed Show (landing page)
-![feed-show]
+## Artist Show
+![artist-show]
 
-## Blog Show
+## Landing Page
 ![blog-show]
 
-## Post Show
-![post-show]
+## Artwork New
+![artwork_new]
 
-## Post Form
-![post-form]
+## User Profile
+![user_profile]
 
-## Search Results
-![search-results]
+## Patron Index
+![patron_index]
 
 [new-session]: ./wireframes/new_session.png
-[feed-show]: ./wireframes/feed_show.png
-[blog-show]: ./wireframes/blog_show.png
-[post-show]: ./wireframes/post_show.png
-[post-form]: ./wireframes/post_form.png
-[search-results]: ./wireframes/search_results.png
+[artist-show]: ./wireframes/artist_show.png
+[landing_page]: ./wireframes/landing_page.png
+[artwork_new]: ./wireframes/artwork_new.png
+[user_profile]: ./wireframes/user_profile.png
+[patron_index]: ./wireframes/patron_index.png
