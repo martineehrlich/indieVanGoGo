@@ -17,3 +17,12 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  // @import "font-awesome";
+ .navbar-default {
+   background-color: #292E37;
+   border-color: #030033;
+ }
+
+.jumbotron .video{
+  padding-right: 0px;
+  padding-left: 0px;
+}
