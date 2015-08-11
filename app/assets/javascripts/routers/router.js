@@ -6,7 +6,8 @@ CapstoneProject.Routers.Router = Backbone.Router.extend({
 
   routes: {
     "": "opening",
-    "explore": "explore"
+    "explore": "explore",
+    "api/users/:id": "artistShow"
   },
 
   explore: function () {

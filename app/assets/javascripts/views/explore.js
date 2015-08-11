@@ -1,6 +1,6 @@
 CapstoneProject.Views.Explore = Backbone.CompositeView.extend({
   template: JST["index/explore"],
-  className: "explore",
+
 
   initialize: function (options) {
     this.artists = options.collection;

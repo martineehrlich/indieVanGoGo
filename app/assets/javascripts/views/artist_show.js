@@ -1,23 +1,23 @@
 CapstoneProject.Views.ArtistShow = Backbone.CompositeView.extend({
-  template: JST["artists/artists_index"],
-
+  template: JST["artists/artist_show"],
 
   initialize: function (options) {
-    this.collection = options.artists;
-    this.listenTo(this.collection, 'add', this.addArtistItemView);
-    this.collection.each(this.addArtistItemView.bind(this));
+    this.artist = options.artist;
+    this.listenTo(this.artist, "sync", this.render);
+    // this.listenTo(this.collection, 'add', this.addArtistItemView);
+    // this.collection.each(this.addArtistItemView.bind(this));
   },
 
   render: function () {
-    var content = this.template({artists: this.collection});
+    var content = this.template({artist: this.artist});
     this.$el.html(content);
-    this.attachSubviews();
+    // this.attachSubviews();
     return this;
   },
 
-  addArtistItemView: function (artist) {
-    var subview = new CapstoneProject.Views.ArtistIndexItem({ model: artist });
-    this.addSubview('.artists', subview);
-}
+//   addArtistItemView: function (artist) {
+//     var subview = new CapstoneProject.Views.ArtistIndexItem({ model: artist });
+//     this.addSubview('.artists', subview);
+// }
 
 });
