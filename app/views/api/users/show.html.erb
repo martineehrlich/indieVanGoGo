@@ -1,0 +1,7 @@
+<%= @user.name %>
+<ul>
+  <% @arts.each do |art| %>
+<li> <%= art.title %> </li>
+<li> <%= art.image_file_name %> </li>
+<% end %>
+</ul>
