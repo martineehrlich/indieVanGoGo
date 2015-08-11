@@ -2,6 +2,6 @@
 <ul>
   <% @arts.each do |art| %>
 <li> <%= art.title %> </li>
-<li> <%= art.image_file_name %> </li>
+<img src="<%= art.image_file_name %>" alt="" />
 <% end %>
 </ul>

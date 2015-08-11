@@ -1,0 +1,21 @@
+<form action="<%= api_arts_url %>" method="post">
+    <%= auth_token_input %>
+    <input type="hidden" name="art[artist_id]" value="1">
+    <label>
+      Title
+      <input type="text" name="art[title]" value="">
+    </label>
+
+    <label>
+      Description
+      <input type="text" name="art[description]" value="">
+    </label>
+    <label>
+      Artwork
+      <input type="text" name="art[image_file_name]" value="">
+    </label>
+
+    <input type="submit" value="Sign In">
+  </form>
+
+</form>

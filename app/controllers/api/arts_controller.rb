@@ -9,7 +9,7 @@ class Api::ArtsController < ApplicationController
     if @art.save
       render :show
     else
-      flash[:errors] = @art.errors.full_messages
+      flash.now[:errors] = @art.errors.full_messages
       render :new
     end
   end
