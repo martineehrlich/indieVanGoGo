@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   validates :email, :password_digest, :session_token, presence: true
+  validates :email, :session_token, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
   has_many :arts,
   class_name: :Art,
@@ -27,6 +28,10 @@ class User < ActiveRecord::Base
     self.session_token = SecureRandom.urlsafe_base64(16)
     self.save!
     self.session_token
+  end
+
+  def artist?
+    return true if user.arts.length > 0
   end
 
   private

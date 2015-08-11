@@ -1,4 +1,4 @@
-CapstoneProject.Collections.User = Backbone.Collection.extend({
-  url: "api/users",
-  model: Backbone.Models.User
+CapstoneProject.Collections.Arts = Backbone.Collection.extend({
+  url: "api/arts",
+  model: CapstoneProject.Models.Art
 });

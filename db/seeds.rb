@@ -5,3 +5,17 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+user1 = User.create(email: "user@example.com", name: "John", password: "password")
+user2 = User.create(email: "antoher@example.com", name: "Bob", password: "password")
+user3 = User.create(email: "water@example.com", name: "Pablo", password: "password")
+user4 = User.create(email: "yeyey@example.com", name: "Rudy", password: "password")
+user5 = User.create(email: "antohyeyeyer@example.com", name: "Ansel", password: "password")
+user6 = User.create(email: "wawawawater@example.com", name: "Alejandro", password: "password")
+Art.create(artist_id: 1, title: "tree", description: "great", image_file_name: "http://www.johncostanza.com/images/painting_tree.2.jpg")
+Art.create(artist_id: 2, title: "tree", description: "great", image_file_name: "http://www.johncostanza.com/images/painting_tree.2.jpg")
+Art.create(artist_id: 3, title: "tree", description: "great", image_file_name: "http://www.johncostanza.com/images/painting_tree.2.jpg")
+Art.create(artist_id: 4, title: "tree", description: "great", image_file_name: "http://www.johncostanza.com/images/painting_tree.2.jpg")
+Art.create(artist_id: 5, title: "tree", description: "great", image_file_name: "http://www.johncostanza.com/images/painting_tree.2.jpg")
+Art.create(artist_id: 6, title: "tree", description: "great", image_file_name: "http://www.johncostanza.com/images/painting_tree.2.jpg")
