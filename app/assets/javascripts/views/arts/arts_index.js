@@ -18,5 +18,4 @@ CapstoneProject.Views.ArtsIndex = Backbone.CompositeView.extend({
     this.addSubview('.arts', subview);
   }
 
-
 });

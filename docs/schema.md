@@ -35,3 +35,4 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 name        | string    | not null, unique
+image       | string    | not null
