@@ -1,4 +1,8 @@
 class Api::ArtsController < ApplicationController
+  def index
+    @arts = Art.all
+  end
+
   def new
     @art = Art.new
     render :new
@@ -16,6 +20,7 @@ class Api::ArtsController < ApplicationController
 
   def show
     @art = Art.find(params[:id])
+    @artist = @art.artist
     render :show
   end
 

@@ -4,8 +4,10 @@ window.CapstoneProject = {
   Views: {},
   Routers: {},
   initialize: function() {
-    var $rootEl = $("#root");
-    new CapstoneProject.Routers.Router({$rootEl: $rootEl});
+    var $rootEl = $("#main");
+    var router = new CapstoneProject.Routers.Router({$rootEl: $rootEl});
+    var nav = new CapstoneProject.Views.NavShow({router: router});
+    $("#navbar").html(nav.render().$el);
     Backbone.history.start();
   }
 };

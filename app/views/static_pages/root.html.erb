@@ -1,3 +1,15 @@
+<div id="navbar"></div>
+<div id="main"></div>
 
-<div id="root">
-</div>
+
+<script>
+  $(function () {
+    CapstoneProject.CURRENT_USER = {
+      id: "<%= current_user.id %>",
+      name: "<%= current_user.name %>",
+      email: "<%= current_user.email %>",
+      description: "<%= current_user.description %>"
+    };
+
+  });
+</script>
