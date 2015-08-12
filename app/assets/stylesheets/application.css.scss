@@ -26,3 +26,24 @@
   padding-right: 0px;
   padding-left: 0px;
 }
+
+.art .thumb {
+  height: 200px;
+  width: 300px;
+}
+
+a.thumbnail {
+  width: 100% !important;
+  overflow: hidden;
+}
+
+img-responsive {
+  width: 100% !important;
+  overflow: hidden;
+}
+
+
+div.thumbnail {
+  width: 100%;
+  overflow: hidden;
+}
