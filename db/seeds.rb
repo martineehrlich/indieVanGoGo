@@ -19,3 +19,5 @@ Art.create(artist_id: 3, title: "tree", description: "great", image_file_name: "
 Art.create(artist_id: 4, title: "tree", description: "great", image_file_name: "http://www.johncostanza.com/images/painting_tree.2.jpg")
 Art.create(artist_id: 5, title: "tree", description: "great", image_file_name: "http://www.johncostanza.com/images/painting_tree.2.jpg")
 Art.create(artist_id: 6, title: "tree", description: "great", image_file_name: "http://www.johncostanza.com/images/painting_tree.2.jpg")
+Art.create(artist_id: 1, title: "tree", description: "great", image_file_name: "https://41.media.tumblr.com/cd6535a0f5c952864f91c4a50209f57b/tumblr_inline_nq4cy3UNyz1skc9nk_540.jpg")
+Art.create(artist_id: 1, title: "tree", description: "great", image_file_name: "http://greatestpainting.com/images/paintings/monalisa.jpg")
