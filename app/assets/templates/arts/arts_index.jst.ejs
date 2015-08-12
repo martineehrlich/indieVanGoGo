@@ -1,0 +1,8 @@
+<div class="arts">
+  <% if (arts) { %>
+  <% arts.each(function (art) { %>
+    <%= art.escape("title") %>
+    <img src="<%=art.escape("image_file_name")%>" alt="" />
+  <% }) %>
+  <% } %>
+</div>
