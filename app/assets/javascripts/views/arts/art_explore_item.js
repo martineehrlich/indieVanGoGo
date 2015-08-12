@@ -4,6 +4,7 @@ CapstoneProject.Views.ArtExploreItem = Backbone.View.extend({
   className: "col-sm-4 col-lg-4 col-md-4",
 
   initialize: function () {
+    // this.artist = options.artist;
     this.listenTo(this.model, "sync", this.render);
   },
 
