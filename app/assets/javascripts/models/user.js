@@ -10,25 +10,9 @@ CapstoneProject.Models.User = Backbone.Model.extend({
   },
 
   arts: function ( ) {
-
+    if (!this._arts) {
+      this._arts = new CapstoneProject.Collections.Artworks([], { artist: this });
+    }
+    return this._artss;
   }
 });
-
-
-comments: function () {
-  if (!this._comments) {
-    this._comments = new BlogApp.Collections.Comments([], { post: this });
-  }
-  return this._comments;
-}
-Step 2:
-
-//post.js
-
-parse: function (response) {
-  if (response.comments) {
-    this.comments().set(response.comments);
-    delete response.comments;
-  }
-  return response;
-}
