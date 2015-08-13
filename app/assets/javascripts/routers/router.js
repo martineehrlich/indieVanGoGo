@@ -15,7 +15,7 @@ CapstoneProject.Routers.Router = Backbone.Router.extend({
   explore: function () {
     this.users.fetch();
     this.arts.fetch();
-    var exploreView = new CapstoneProject.Views.Explore({users: this.users, arts: this.arts});
+    var exploreView = new CapstoneProject.Views.Explore({artists: this.users, arts: this.arts});
     this._swapView(exploreView);
   },
 
@@ -27,7 +27,7 @@ CapstoneProject.Routers.Router = Backbone.Router.extend({
 
   artCreate: function () {
     var model = new CapstoneProject.Models.Art();
-    var view = new CapstoneProject.Views.ArtForm({model: model});
+    var view = new CapstoneProject.Views.ArtForm({model: model, collection: this.arts});
     this._swapView(view);
   },
 

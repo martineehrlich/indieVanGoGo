@@ -3,9 +3,12 @@ CapstoneProject.Views.Explore = Backbone.CompositeView.extend({
 
 
   initialize: function (options) {
-    this.artists = options.collection;
+    this.artists = options.artists;
+    this.arts = options.arts;
     this.addArtistExploreView();
     this.listenTo(this.artists, "sync", this.render);
+    this.listenTo(this.arts, "sync", this.render);
+
   },
 
   events: {
@@ -22,9 +25,7 @@ CapstoneProject.Views.Explore = Backbone.CompositeView.extend({
 
   addArtExploreView: function () {
     $(".all-artists").empty();
-    var arts = new CapstoneProject.Collections.Arts();
-    arts.fetch();
-    var subview2 = new CapstoneProject.Views.ArtExploreIndex({collection: arts});
+    var subview2 = new CapstoneProject.Views.ArtExploreIndex({collection: this.arts});
     this.addSubview('.all-artists', subview2);
   },
 

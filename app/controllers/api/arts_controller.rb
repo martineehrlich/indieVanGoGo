@@ -6,16 +6,17 @@ class Api::ArtsController < ApplicationController
 
   def new
     @art = Art.new
-    render :new
+    render json: @art
   end
 
   def create
     @art = Art.new(art_params)
+    @art.artist_id = current_user.id
     if @art.save
       render :show
     else
       flash.now[:errors] = @art.errors.full_messages
-      render :new
+      render :show
     end
   end
 

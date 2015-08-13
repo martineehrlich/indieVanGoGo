@@ -31,10 +31,11 @@ CapstoneProject.Views.ArtForm = Backbone.View.extend({
 
   upload: function (event) {
     event.preventDefault();
-    var art = this.model;
     cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, result){
       var data = result[0];
-      art.set({image_file_name: data.url});
-      });
+      this.model.set({image_file_name: data.url});
+    }.bind(this));
+      debugger;
     }
+
 });
