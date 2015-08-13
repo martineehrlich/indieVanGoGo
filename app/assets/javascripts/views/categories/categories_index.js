@@ -1,7 +1,7 @@
-CapstoneProject.Views.ArtistIndex = Backbone.CompositeView.extend({
+CapstoneProject.Views.CategoriesIndex = Backbone.CompositeView.extend({
   template: JST["categories/categories_index"],
   tagName: "div",
-  className: "row",
+
 
 
   initialize: function (options) {
@@ -9,7 +9,7 @@ CapstoneProject.Views.ArtistIndex = Backbone.CompositeView.extend({
     this.listenTo(this.collection, "sync", this.render);
     this.listenTo(this.collection, 'add', this.addCategoryView);
     this.listenTo(this.collection, 'remove', this.removeCategoryView);
-    this.collection.each(this.addArtistItemView.bind(this));
+    this.collection.each(this.addCategoryView.bind(this));
   },
 
   render: function () {
@@ -21,11 +21,11 @@ CapstoneProject.Views.ArtistIndex = Backbone.CompositeView.extend({
 
   addCategoryView: function (category) {
     var subview = new CapstoneProject.Views.CategoryIndexItem({ model: category });
-    this.addSubview('.categories', category);
+    this.addSubview('.categories-index', subview);
   },
 
   removeCategoryView: function (category) {
-    this.removeModelSubview('.categories', category);
+    this.removeModelSubview('.categories-index', category);
   }
 
 

@@ -1,7 +1,5 @@
-CapstoneProject.Views.CategoryIndexItem = Backbone.View.extend({
-  template: JST["artists/category_index_item"],
-  tagName: "div",
-
+CapstoneProject.Views.CategoryIndexItem = Backbone.CompositeView.extend({
+  template: JST["categories/category_index_item"],
 
   initialize: function () {
     this.listenTo(this.model, "sync", this.render);
