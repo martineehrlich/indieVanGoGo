@@ -41,10 +41,6 @@ class User < ActiveRecord::Base
     self.session_token
   end
 
-  def artist?
-    return true if user.arts.length > 0
-  end
-
   private
   def ensure_session_token
     self.session_token ||= SecureRandom.urlsafe_base64(16)

@@ -1,6 +1,10 @@
 class Api::ArtsController < ApplicationController
   def index
-    @arts = Art.all
+    if params[:category_id]
+      @arts = Art.arts_in_category(params[:category_id])
+    else
+      @arts = Art.all
+    end
     render json: @arts
   end
 
