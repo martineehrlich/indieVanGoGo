@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   validates :email, :password_digest, :session_token, presence: true
   validates :email, :session_token, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
+  has_many :categorizings, as: :categorizable
   has_many :arts,
   class_name: :Art,
   foreign_key: :artist_id
