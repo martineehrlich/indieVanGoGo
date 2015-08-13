@@ -1,8 +1,10 @@
-<div class="thumbnail">
-  <img src="<%= art.escape("image_file_name") %>"alt="">
-  <div class="caption">
-    <h4>Title: <%=art.escape("title")%></h4>
-    <h6>Description: <%=art.escape("description")%></h6>
-    <h6><a href="#users/<%=art.escape("artist_id")%>">Go to this Artist's Page</a></h6>
+<div class="col-sm-4 col-lg-4 col-md-4">
+  <div class="thumbnail">
+    <img src="<%= art.escape("image_file_name") %>"alt="">
+    <div class="caption">
+      <h4>Title: <%=art.escape("title")%></h4>
+      <h6>Description: <%=art.escape("description")%></h6>
+      <h6><a href="#users/<%=art.escape("artist_id")%>">Go to this Artist's Page</a></h6>
+    </div>
   </div>
 </div>

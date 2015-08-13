@@ -1,7 +1,6 @@
 CapstoneProject.Views.ArtExploreIndex = Backbone.CompositeView.extend({
   template: JST["arts/art_explore_index"],
-  tagName: "div",
-  className: "row",
+
 
 
   initialize: function (options) {

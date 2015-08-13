@@ -1,8 +1,5 @@
 CapstoneProject.Views.ArtistIndex = Backbone.CompositeView.extend({
   template: JST["artists/artists_index"],
-  tagName: "div",
-  className: "row",
-
 
   initialize: function (options) {
     this.collection = options.artists;
