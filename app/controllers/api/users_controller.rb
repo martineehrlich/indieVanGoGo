@@ -5,7 +5,11 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-    @artists = User.all.select { |user| user.arts.length > 0 }
+    if params[:category_id]
+      @artists = User.artists_in_category(params[:category_id])
+    else
+      @artists = User.artists
+    end
     render json: @artists
   end
 

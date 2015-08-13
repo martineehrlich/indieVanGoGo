@@ -7,9 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-user1 = User.create(email: "user@example.com", name: "John", password: "password")
-user2 = User.create(email: "antoher@example.com", name: "Bob", password: "password")
-user3 = User.create(email: "water@example.com", name: "Pablo", password: "password")
+user1 = User.create(email: "user@example.com", name: "John", password: "password", image_url: "/../assets/vincent_van_gogh.jpg")
+user2 = User.create(email: "antoher@example.com", name: "Bob", password: "password", image_url: "/../assets/vincent_van_gogh.jpg")
+user3 = User.create(email: "water@example.com", name: "Pablo", password: "password", image_url: "/../assets/vincent_van_gogh.jpg")
 user4 = User.create(email: "yeyey@example.com", name: "Rudy", password: "password")
 user5 = User.create(email: "antohyeyeyer@example.com", name: "Ansel", password: "password")
 user6 = User.create(email: "wawawawater@example.com", name: "Alejandro", password: "password")
