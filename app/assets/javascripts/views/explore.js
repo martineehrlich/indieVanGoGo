@@ -8,7 +8,7 @@ CapstoneProject.Views.Explore = Backbone.CompositeView.extend({
     this.categories = options.categories;
     this._currentCategoryid = "1";
     this.addCategoriesView();
-    this.addCategoryShow();
+    this.addCategoryShow(); //fixxxxxx thissssss
     this.addArtistExploreView();
     this.listenTo(this.artists, "sync", this.render);
     this.listenTo(this.arts, "sync", this.render);
@@ -35,10 +35,9 @@ CapstoneProject.Views.Explore = Backbone.CompositeView.extend({
   },
 
   addCategoryShow: function () {
-    debugger;
       if (this.categories.first()) {
-        var category = this.categories.first;
-        var subview = new CapstoneProject.Views.CategoryShow({category: category});
+        var category = this.categories.first();
+        var subview = new CapstoneProject.Views.CategoryShow({model: category});
         this.addSubview(".category-show", subview);
     }
   },
@@ -85,7 +84,7 @@ CapstoneProject.Views.Explore = Backbone.CompositeView.extend({
     this.currentCollection.fetch({
       data: { category_id: this._currentCategoryid }
     });
-    var subview = new CapstoneProject.Views.ArtExploreIndex({collection: this.arts});
+    var subview = new CapstoneProject.Views.ArtExploreIndex({collection: this.currentCollection});
     this.addSubview('.all-artists', subview);
   },
 
@@ -98,7 +97,7 @@ CapstoneProject.Views.Explore = Backbone.CompositeView.extend({
     this.currentCollection.fetch({
       data: { category_id: this._currentCategoryid }
     });
-    var subview = new CapstoneProject.Views.ArtistIndex({ artists: this.artists});
+    var subview = new CapstoneProject.Views.ArtistIndex({ artists: this.currentCollection});
     this.addSubview('.all-artists', subview);
   }
 

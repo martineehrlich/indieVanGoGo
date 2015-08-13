@@ -5,14 +5,14 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-    @users = User.artists
+    # @users = User.artists
 
-    # if params[:category_id]
-    #   @artists = User.artists_in_category(params[:category_id])
-    # else
-    #   @artists = User.artists
-    # end
-    # render json: @artists
+    if params[:category_id]
+      @artists = User.artists_in_category(params[:category_id])
+    else
+      @artists = User.artists
+    end
+    render json: @artists
   end
 
 end

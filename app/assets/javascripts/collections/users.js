@@ -16,5 +16,35 @@ CapstoneProject.Collections.Users = Backbone.Collection.extend({
       });
     }
     return user;
+  },
+
+
+  arts: function () {
+    if (!this._arts) {
+      this._arts = new CapstoneProject.Collections.Arts([], { artist: this });
+    }
+    return this._arts;
+  },
+
+
+  categories: function () {
+    if (!this._categories) {
+      this._categories = new CapstoneProject.Collections.Categories([], { artist: this });
+    }
+    return this._categories;
+  },
+
+
+
+  parse: function (response) {
+    if (response.arts) {
+      this.arts().set(response.arts, { parse: true });
+      delete response.arts;
+    }
+    if (response.categories) {
+      this.categories().set(response.categories, {parse: true});
+      delete response.categories;
+    }
+    return response;
   }
 });
