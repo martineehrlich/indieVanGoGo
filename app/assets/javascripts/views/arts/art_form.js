@@ -26,7 +26,6 @@ CapstoneProject.Views.ArtForm = Backbone.View.extend({
         Backbone.history.navigate("explore", {trigger: true});
       }
     });
-
   },
 
   upload: function (event) {
@@ -35,7 +34,6 @@ CapstoneProject.Views.ArtForm = Backbone.View.extend({
       var data = result[0];
       this.model.set({image_file_name: data.url});
     }.bind(this));
-      debugger;
     }
 
 });
