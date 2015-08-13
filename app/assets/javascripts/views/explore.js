@@ -15,7 +15,8 @@ CapstoneProject.Views.Explore = Backbone.CompositeView.extend({
 
   events: {
     "click .explore-artists": "addArtistExploreView",
-    "click .explore-arts": "addArtExploreView"
+    "click .explore-arts": "addArtExploreView",
+    "click li.list-group-item": "changeActiveCategory"
   },
 
   render: function () {
@@ -28,6 +29,15 @@ CapstoneProject.Views.Explore = Backbone.CompositeView.extend({
   addCategoriesView: function () {
     var subview = new CapstoneProject.Views.CategoriesIndex({ categories: this.categories});
     this.addSubview('.categories', subview);
+  },
+
+  changeActiveCategory: function (event) {
+    $(".category-show").empty();
+    $target = $(event.currentTarget);
+    var id = $target.attr("data-id");
+    var category = this.categories.get(id);
+    var subview = new CapstoneProject.Views.CategoryShow({model: category});
+    this.addSubview(".category-show", subview);
   },
 
   addArtExploreView: function () {

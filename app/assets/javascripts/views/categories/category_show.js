@@ -1,5 +1,5 @@
-CapstoneProject.Views.CategoryIndexItem = Backbone.View.extend({
-  template: JST["categories/category_index_item"],
+CapstoneProject.Views.CategoryShow = Backbone.View.extend({
+  template: JST["categories/category_show"],
 
   initialize: function () {
     this.listenTo(this.model, "sync", this.render);

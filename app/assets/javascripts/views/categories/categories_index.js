@@ -18,6 +18,13 @@ CapstoneProject.Views.CategoriesIndex = Backbone.CompositeView.extend({
     this.attachSubviews();
     return this;
   },
+  // events: {
+  //   "click .category-item": "hello"
+  // },
+
+  hello: function ( ) {
+
+  },
 
   addCategoryView: function (category) {
     var subview = new CapstoneProject.Views.CategoryIndexItem({ model: category });
