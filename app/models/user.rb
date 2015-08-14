@@ -5,14 +5,11 @@ class User < ActiveRecord::Base
   has_many :categories, through: :categorizings, source: :category
   has_many :categorizings, as: :categorizable
   has_many :arts,
-  class_name: :Art,
-  foreign_key: :artist_id
+    class_name: :Art,
+    foreign_key: :artist_id
   attr_reader :password
 
-  #where # arts >= 1
-  # select * from users join arts group by users.id having count(arts.id > 0)
-  # warning this is an N + 1 query need to improve later
-  scope :artists, ->{ select { |user| user.arts.length > 0 } }
+  scope :artists, ->{ User.joins(:arts).group('users.id').having("COUNT('arts') > 0") }
 
   after_initialize :ensure_session_token
 

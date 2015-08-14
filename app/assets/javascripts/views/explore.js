@@ -35,17 +35,22 @@ CapstoneProject.Views.Explore = Backbone.CompositeView.extend({
       if (this.categories.first()) {
         var category = this.categories.first();
         var subview = new CapstoneProject.Views.CategoryShow({model: category});
+        var listItems = $(".list-group-item");
+        listItems.first().addClass("active");
         this.addSubview(".category-show", subview);
+        this.$(".explore-artists").addClass("active");
     }
   },
 
 
   changeActiveCategory: function (event) {
+    this.$(".list-group-item.active").removeClass("active");
     var viewsToRemove = this.subviews(".category-show");
     viewsToRemove.forEach(function(view){
       this.removeSubview(".category-show", view);
     }.bind(this));
     $target = $(event.currentTarget);
+    $target.addClass("active");
     var id = $target.attr("data-id");
     var category = this.categories.get(id);
     this._currentCategoryid = category.id;
@@ -74,6 +79,7 @@ CapstoneProject.Views.Explore = Backbone.CompositeView.extend({
 
   addArtExploreView: function () {
     this.$(".explore-artists").removeClass("active");
+    this.$(".explore-arts").addClass("active");
     var viewsToRemove = this.subviews(".all-artists");
     viewsToRemove.forEach(function(view){
       this.removeSubview(".all-artists", view);
@@ -84,7 +90,7 @@ CapstoneProject.Views.Explore = Backbone.CompositeView.extend({
     });
     var subview = new CapstoneProject.Views.ArtExploreIndex({collection: this.currentCollection});
     this.addSubview('.all-artists', subview);
-    this.$(".explore-arts").addClass("active");
+
   },
 
   addArtistExploreView: function () {
