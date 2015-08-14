@@ -1,8 +1,9 @@
-<div class="col-sm-6 col-md-4">
+<div class="col-sm-3 col-lg-3 col-md-3">
   <div class="thumbnail">
     <img src="<%=artist.escape("image_url")%>" alt="">
     <div class="caption">
-      <h4 class="pull-right"><button data-id="<%=artist.escape("id")%>" class="art-gallery">View <%=artist.escape("name")%>'s Work</button></h4>
+      <h4 class="pull-right"><button data-id="<%=artist.escape("id")%>"
+        class="art-gallery btn-sm btn-primary">View <%=artist.escape("name")%>'s Work</button></h4>
       <h4><a href="#users/<%=artist.id%>"><%= artist.escape("name") %></a></h4>
       <div class="gallery">
       </div>

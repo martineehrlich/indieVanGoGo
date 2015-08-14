@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
   end
 
   def self.artists_in_category(category_id)
-    artists.select { |artist| artist.category_ids.include?(category_id.to_i) }
+    artists.joins(:categorizings).where(categorizings: {category_id: category_id.to_i})
   end
 
   def password=(password)

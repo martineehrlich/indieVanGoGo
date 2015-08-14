@@ -5,7 +5,7 @@ CapstoneProject.Views.GalleryIndex = Backbone.CompositeView.extend({
     this.model.fetch(); // why do i have to fetch here?
     this.collection = this.model.arts();
     this.listenTo(this.collection, 'add', this.addGalleryItemView);
-    // this.listenTo(this.collection, 'remove', this.removeGalleryItemView);
+    this.listenTo(this.collection, 'remove', this.removeGalleryItemView);
     this.collection.each(this.addGalleryItemView.bind(this));
   },
 
@@ -22,8 +22,8 @@ CapstoneProject.Views.GalleryIndex = Backbone.CompositeView.extend({
     this.addSubview('.gallery-index', subview);
   },
 
-  // removeGalleryItemView: function (art) {
-  //   this.removeModelSubview('.gallery-index', art);
-  // }
+  removeGalleryItemView: function (art) {
+    this.removeModelSubview('.gallery-index', art);
+  }
 
 });

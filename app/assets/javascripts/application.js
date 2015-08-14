@@ -16,6 +16,7 @@
 //= require jquery_ujs
 //= require jquery.serializeJSON
 //= require underscore
+//= require backbone.bootstrap-carousel-modal
 //= require backbone
 //= require capstone_project
 //= require_tree ../templates
