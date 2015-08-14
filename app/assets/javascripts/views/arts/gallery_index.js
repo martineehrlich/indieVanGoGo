@@ -2,12 +2,12 @@ CapstoneProject.Views.GalleryIndex = Backbone.CompositeView.extend({
   template: JST["arts/gallery_index"],
 
   initialize: function () {
-    this.model.fetch(); // why do i have to fetch here?
-    this.collection = this.model.arts();
+    // this.model.fetch(); // why do i have to fetch here?
+    // this.collection = this.model.arts();
     // this.listenTo(this.collection, 'add', this.addGalleryItemView);
     // this.listenTo(this.collection, 'remove', this.removeGalleryItemView);
     // this.collection.each(this.addGalleryItemView.bind(this));
-    this.listenTo(this.model, "sync", this.render);
+    // this.listenTo(this.model, "sync", this.render);
     $(document).on('keyup', this.handleKey.bind(this));
 
   },

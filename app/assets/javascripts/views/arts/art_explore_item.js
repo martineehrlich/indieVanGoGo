@@ -11,5 +11,19 @@ CapstoneProject.Views.ArtExploreItem = Backbone.View.extend({
     var content = this.template({art: this.model});
     this.$el.html(content);
     return this;
+  },
+
+  events: {
+    "click .art-item": "addArtModal"
+  },
+
+  addGalleryIndex: function () {
+    var modal = new CapstoneProject.Views.GalleryIndex({model: this.model});
+
+    // var galleryIndexView = new CapstoneProject.Views.GalleryIndex({model: this.model});
+    $('body').append(modal.$el);
+    modal.render();
+    // this.addSubview('.gallery', galleryIndexView);
   }
+
 });

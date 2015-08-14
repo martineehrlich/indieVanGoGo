@@ -10,7 +10,16 @@ CapstoneProject.Routers.Router = Backbone.Router.extend({
     "": "opening",
     "explore": "explore",
     "users/:id": "artistShow",
-    "arts/new": "artCreate"
+    "arts/new": "artCreate",
+    "test": "carousel"
+  },
+
+  carousel: function () {
+    this.arts.fetch();
+    var carousel = new CapstoneProject.Views.GalleryIndex({
+      collection: this.arts
+    });
+    this._swapView(carousel);
   },
 
   explore: function () {

@@ -2,8 +2,68 @@
   <div class="thumbnail">
     <img src="<%=artist.escape("image_url")%>" alt="">
     <div class="caption">
-      <h4 class="pull-right"><button data-id="<%=artist.escape("id")%>"
-        class="art-gallery btn-sm btn-primary">View <%=artist.escape("name")%>'s Work</button></h4>
+      <button type="button" class="btn" data-toggle="modal" data-target="#myModal" data-local="#myCarousel">Demo</button>
+      <style>
+        .modal.modal-fullscreen .modal-content {
+          background: rgba(0, 0, 0, .5);
+        }
+        .modal.modal-fullscreen .modal-header {
+          border: 0;
+          color: #fff;
+        }
+        .modal.modal-fullscreen .modal-footer {
+          border-color: rgba(0, 0, 0, .5);
+        }
+      </style>
+
+
+      <div id="myCarousel" class="carousel slide carousel-fit" data-ride="carousel">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner gallery-index">
+          <div class="item active first-image">
+            <img src="http://www.johncostanza.com/images/painting_tree.2.jpg" alt="First slide">
+            <div class="carousel-caption">
+              <h3>First slide label</h3>
+              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            </div>
+          </div>
+          <div class="item">
+            <img src="http://www.johncostanza.com/images/painting_tree.2.jpg" alt="First slide">
+            <div class="carousel-caption">
+              <h3>Second slide label</h3>
+              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade modal-fullscreen force-fullscreen" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button class="btn btn-danger pull-right" type="button" data-dismiss="modal" aria-hidden="true">
+                <span class="glyphicon glyphicon-remove"></span>
+                <span>Close</span>
+              </button>
+              <h4 class="modal-title">Modal title</h4>
+            </div>
+            <div class="modal-body">
+              <p>One fine body…</p>
+            </div>
+            <div class="modal-footer">
+              <!-- Controls -->
+              <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+              </a>
+              <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+              </a>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
+
       <h4><a href="#users/<%=artist.id%>"><%= artist.escape("name") %></a></h4>
     </div>
   </div>
