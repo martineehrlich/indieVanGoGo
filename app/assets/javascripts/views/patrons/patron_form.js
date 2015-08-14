@@ -33,7 +33,7 @@ CapstoneProject.Views.PatronForm = Backbone.View.extend({
     event.preventDefault();
     var formData = $(event.currentTarget).serializeJSON();
     this.model.save(formData, {
-      success: function (tweet) {
+      success: function (patron) {
         this.collection.add(patron);
         this.remove();
       }.bind(this)

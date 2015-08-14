@@ -16,6 +16,6 @@ class Api::PatronsController < ApplicationController
 
   private
   def patron_params
-    params.require(:patron).permit(:artist_id, :amount, :anonymous)
+    params.require(:patron).permit(:artist_id, :amount, :anonymous, :name)
   end
 end

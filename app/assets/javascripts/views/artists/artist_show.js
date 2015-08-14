@@ -29,7 +29,7 @@ CapstoneProject.Views.ArtistShow = Backbone.CompositeView.extend({
   },
 
   createPatron: function () {
-   var modal = new CapstoneProject.Views.PatronForm({artist: this.model,
+   var modal = new CapstoneProject.Views.PatronForm({artist: this.model, collection: this.model.patrons(),
      model: new CapstoneProject.Models.Patron()
    });
    $('body').append(modal.$el);

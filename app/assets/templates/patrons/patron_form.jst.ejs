@@ -5,7 +5,10 @@
     <button class="close">&times;</button>
 
     <input type="hidden" name="artist_id" value="<%=artist.id%>">
-    <label >Amount
+    <label>Name
+    <input type="text" name="name" value="">
+    </label>
+    <label>Amount
     <input class="amount-field" type="text" name="amount">
     </label>
     <h4>Do you want your donation to <%=artist.escape("name")%> to be anonymous?</h4>
