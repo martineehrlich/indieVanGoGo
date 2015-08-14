@@ -2,10 +2,13 @@ CapstoneProject.Views.ArtistShow = Backbone.CompositeView.extend({
   template: JST["artists/artist_show"],
 
   initialize: function (options) {
-    // this.model = options.artist;
     this.addArtworkIndexView();
     this.listenTo(this.model, "sync", this.render);
   },
+
+  events: {
+  'click .btn-compose': "createPatron"
+},
 
   render: function () {
     var content = this.template({artist: this.model});
@@ -17,6 +20,14 @@ CapstoneProject.Views.ArtistShow = Backbone.CompositeView.extend({
   addArtworkIndexView: function () {
     var subview = new CapstoneProject.Views.ArtsIndex({ model: this.model, collection: this.model.arts()});
     this.addSubview('.artist', subview);
-  }
+  },
+
+  createPatron: function () {
+   var modal = new CapstoneProject.Views.PatronForm({artist: this.model,
+     model: new CapstoneProject.Models.Patron()
+   });
+   $('body').append(modal.$el);
+   modal.render();
+ },
 
 });

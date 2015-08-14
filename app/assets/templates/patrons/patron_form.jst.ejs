@@ -1,0 +1,13 @@
+<div class="m-background"></div>
+
+<div class="m-content">
+  <form>
+    <button class="close">&times;</button>
+    <input type="hidden" name="artist_id" value="<%=artist.id%>">
+    <input class="amount-field" type="text" name="amount">
+    <h6>Do you want your donation to <%=artist.escape("name")%> to be anonymous?</h6>
+    <input type="radio" name="anonymous" value="true" id="anonymous_true">
+    <label for="anonymous_true">Yes</label>
+    <input type="submit" class="btn btn-primary" value="Become Patron!">
+  </form>
+</div>
