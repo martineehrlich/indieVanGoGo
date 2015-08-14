@@ -7,5 +7,6 @@ Rails.application.routes.draw do
     resources :users, only: [:show, :index]
     resources :arts, only: [:show, :new, :create, :index]
     resources :categories, only: [:show, :index]
+    resources :patrons, only: [:new, :create]
   end
 end
