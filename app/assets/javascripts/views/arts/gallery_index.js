@@ -10,7 +10,6 @@ CapstoneProject.Views.GalleryIndex = Backbone.CompositeView.extend({
   },
 
   render: function () {
-
     var content = this.template({arts: this.collection});
     this.$el.html(content);
     this.attachSubviews();

@@ -16,7 +16,19 @@ CapstoneProject.Views.ArtistIndexItem = Backbone.CompositeView.extend({
   },
 
   addGalleryIndex: function () {
-    var galleryIndexView = new CapstoneProject.Views.GalleryIndex({model: this.model});
-    this.addSubview('.gallery', galleryIndexView);
+    var modal = new CapstoneProject.Views.GalleryIndex({model: this.model});
+    // var galleryIndexView = new CapstoneProject.Views.GalleryIndex({model: this.model});
+    $('body').append(modal.$el);
+    modal.render();
+    // this.addSubview('.gallery', galleryIndexView);
   }
+
+
+ // composeTweet: function () {
+ //   modal = new BackboneDemo.Views.TweetForm({
+ //     collection: this.collection,
+ //     model: new BackboneDemo.Models.Tweet()
+ //   });
+ //
+ // },
 });
