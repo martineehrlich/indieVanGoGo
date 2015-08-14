@@ -1,10 +1,10 @@
 CapstoneProject.Views.PatronsIndex = Backbone.CompositeView.extend({
-  template: JST["arts/patrons_index"],
+  template: JST["patrons/patrons_index"],
 
-  initialize: function (options) {
-    this.listenTo(this.collection, 'add', this.addArtItemView);
-    this.listenTo(this.collection, 'remove', this.removeArtItemView);
-    this.collection.each(this.addArtItemView.bind(this));
+  initialize: function () {
+    this.listenTo(this.collection, 'add', this.addPatronItemView);
+    this.listenTo(this.collection, 'remove', this.removePatronItemView);
+    this.collection.each(this.addPatronItemView.bind(this));
   },
 
   render: function () {
@@ -14,13 +14,13 @@ CapstoneProject.Views.PatronsIndex = Backbone.CompositeView.extend({
     return this;
   },
 
-  addArtItemView: function (art) {
-    var subview = new CapstoneProject.Views.ArtIndexItem({ model: art });
-    this.addSubview('.arts', subview);
+  addPatronItemView: function (patron) {
+    var subview = new CapstoneProject.Views.PatronIndexItem({ model: patron, collection: this.collection });
+    this.addSubview('.patrons', subview);
   },
 
   removeArtItemView: function (art) {
-    this.removeModelSubview('.arts', art);
+    this.removeModelSubview('.patrons', art);
   }
 
 });

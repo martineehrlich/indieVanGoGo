@@ -5,3 +5,9 @@ if @user.arts
     json.partial! 'api/arts/art', art: art
   end
 end
+
+if @user.patrons
+  json.patrons(@user.patrons) do |patron|
+    json.partial! 'api/patrons/patron', patron: patron
+  end
+end

@@ -3,6 +3,7 @@ CapstoneProject.Views.ArtistShow = Backbone.CompositeView.extend({
 
   initialize: function (options) {
     this.addArtworkIndexView();
+    this.addPatronIndexView();
     this.listenTo(this.model, "sync", this.render);
   },
 
@@ -19,6 +20,11 @@ CapstoneProject.Views.ArtistShow = Backbone.CompositeView.extend({
 
   addArtworkIndexView: function () {
     var subview = new CapstoneProject.Views.ArtsIndex({ model: this.model, collection: this.model.arts()});
+    this.addSubview('.artist', subview);
+  },
+
+  addPatronIndexView: function () {
+    var subview = new CapstoneProject.Views.PatronsIndex({ model: this.model, collection: this.model.patrons()});
     this.addSubview('.artist', subview);
   },
 
