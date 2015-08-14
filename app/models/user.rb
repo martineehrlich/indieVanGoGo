@@ -7,6 +7,9 @@ class User < ActiveRecord::Base
   has_many :arts,
     class_name: :Art,
     foreign_key: :artist_id
+  has_many :patrons,
+    class_name: :Patron,
+    foreign_key: :artist_id  
   attr_reader :password
 
   scope :artists, ->{ User.joins(:arts).group('users.id').having("COUNT('arts') > 0") }

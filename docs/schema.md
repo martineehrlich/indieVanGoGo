@@ -28,7 +28,7 @@ id          | integer   | not null, primary key
 artist_id   | integer   | not null, foreign key (references users)
 patron_id   | integer   | not null, foreign key (references users)
 amount      | integer   | not null
-subscription| boolean   | true, false
+
 
 ## categories
 column name | data type | details
