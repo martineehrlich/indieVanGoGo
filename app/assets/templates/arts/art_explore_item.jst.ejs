@@ -2,6 +2,7 @@
   <div class="thumbnail">
     <img src="<%= art.escape("image_file_name") %>"alt="">
     <div class="caption">
+      <button type="button" class="art-item">View Full Image</button>
       <h4>Title: <%=art.escape("title")%></h4>
       <h6>Description: <%=art.escape("description")%></h6>
       <h6><a href="#users/<%=art.escape("artist_id")%>">Go to this Artist's Page</a></h6>

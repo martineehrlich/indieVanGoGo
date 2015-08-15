@@ -19,6 +19,7 @@ CapstoneProject.Views.ArtistShow = Backbone.CompositeView.extend({
   },
 
   addArtworkIndexView: function () {
+    //where do i destroy this?????????????????????
     var subview = new CapstoneProject.Views.ArtsIndex({ model: this.model, collection: this.model.arts()});
     this.addSubview('.artist', subview);
   },

@@ -19,8 +19,8 @@ CapstoneProject.Views.GalleryIndex = Backbone.CompositeView.extend({
   },
 
   events: {
-    'click .m-background': 'remove',
-    'click .close': 'removeBtn'
+    'click .modal': 'remove',
+    'click .btn-primary': 'removeBtn'
   },
 
   handleKey: function (event) {

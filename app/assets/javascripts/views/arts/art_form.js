@@ -1,12 +1,15 @@
-CapstoneProject.Views.ArtForm = Backbone.View.extend({
+CapstoneProject.Views.ArtForm = Backbone.CompositeView.extend({
   template: JST["arts/art_form"],
 
-  initialize: function() {
+  initialize: function(options) {
+    this.categories = options.categories;
     this.listenTo(this.model, 'sync', this.render);
+    this.listenTo(this.categories, "sync", this.render);
+
   },
 
   render: function () {
-    var content = this.template();
+    var content = this.template({categories: this.categories});
     this.$el.html(content);
     return this;
   },

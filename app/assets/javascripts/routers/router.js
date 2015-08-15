@@ -7,20 +7,11 @@ CapstoneProject.Routers.Router = Backbone.Router.extend({
   },
 
   routes: {
-    "": "opening",
-    "explore": "explore",
+    "": "explore",
     "users/:id": "artistShow",
-    "arts/new": "artCreate",
-    "test": "carousel"
+    "create": "artCreate",
   },
 
-  carousel: function () {
-    this.arts.fetch();
-    var carousel = new CapstoneProject.Views.GalleryIndex({
-      collection: this.arts
-    });
-    this._swapView(carousel);
-  },
 
   explore: function () {
     this.users.fetch();
@@ -40,8 +31,12 @@ CapstoneProject.Routers.Router = Backbone.Router.extend({
   },
 
   artCreate: function () {
+    this._categories.fetch();
     var model = new CapstoneProject.Models.Art();
-    var view = new CapstoneProject.Views.ArtForm({model: model, collection: this.arts});
+    var view = new CapstoneProject.Views.ArtForm({
+      model: model,
+      collection: this.arts,
+      categories: this._categories});
     this._swapView(view);
   },
 

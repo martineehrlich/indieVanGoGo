@@ -3,7 +3,6 @@ CapstoneProject.Views.ArtExploreItem = Backbone.View.extend({
 
 
   initialize: function () {
-    // this.artist = options.artist;
     this.listenTo(this.model, "sync", this.render);
   },
 
@@ -17,11 +16,12 @@ CapstoneProject.Views.ArtExploreItem = Backbone.View.extend({
     "click .art-item": "addArtModal"
   },
 
-  addGalleryIndex: function () {
-    var modal = new CapstoneProject.Views.GalleryIndex({model: this.model});
+  addArtModal: function () {
+    var modal = new CapstoneProject.Views.ArtShow({model: this.model});
 
     // var galleryIndexView = new CapstoneProject.Views.GalleryIndex({model: this.model});
     $('body').append(modal.$el);
+    $("html,body").css("overflow","hidden");
     modal.render();
     // this.addSubview('.gallery', galleryIndexView);
   }
