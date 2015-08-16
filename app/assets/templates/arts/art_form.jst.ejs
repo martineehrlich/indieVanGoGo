@@ -5,33 +5,43 @@
   <div class="upper">
     <div class="new-project">
       <h2>I want to create a <div class="btn-group">
-    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Category <span class="caret"></span>
+    <button type="button" class="btn btn-default dropdown-toggle override-bootstrap" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     </button>
     <ul class="list-group dropdown-menu">
       <% categories.forEach(function (category) { %>
-        <li class="art-form-category"><%=category.escape("name")%></li>
+        <li class="art-form-category" data-id="<%=category.id%>" category-name="<%=category.escape("name")%>"><%=category.escape("name")%></li>
     <% }) %>
     </ul>
   </div>  piece called </h2>
   <p>
-    <input type="text" class="art-title" name="title" value="" placeholder="Title...">
+    <input type="text" id="input" class="art-title" name="title" value="" placeholder="Title...">
   </p>
     </div>
     </div>
 
-  <div class="lower">
-    <div class="form-group">
-    <label>Add a description
-    <input type="text" class="form-control" name="description" value="">
-    </label>
+  <div class="lower hidden">
+    <div class="description-box">
+      <div class="description-box-wrapper">
+        <div class="description-box-label">
+          Description:
+        </div>
+        <label>
+        <textarea name="description" class="textarea" rows="4" cols="40" placeholder="Add a description of your art work."></textarea>
+        </label>
+      </div>
     </div>
-    <div class="form-group">
-    <label>Image
-    <input type="file"  name="image_file_name" class="upload">Upload artwork</button>
-    </label>
+    <div class="description-box">
+      <div class="description-box-wrapper">
+        <label>
+          <div class="description-box-label">
+            Upload your artwork:
+          </div>
+        <input type="file"  name="image_file_name" class="upload">
+        </label>
+      </div>
+
     </div>
-    <input type="submit" name="name" value="Add this Artwork">
+    <input class="submit-artwork" type="submit" name="name" value="Add Artwork!">
   </div>
 </form>
 </div>

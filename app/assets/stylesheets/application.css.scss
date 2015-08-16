@@ -18,10 +18,34 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  // @import "font-awesome";
- .navbar-default {
-   background-color: #292E37;
-   border-color: #030033;
+
+
+.explore{
+  padding-top: 15px;
+}
+
+ .glyphicon-search {
+     font-size: 20px;
+     margin-top: 12px;
  }
+
+ .navbar-form{
+   display: none;
+   position: absolute;
+   right: 0px;
+   top: 65px;
+ }
+
+ .glyph{
+   padding-top: 5px;
+   text-align: center;
+   display: inline-block;
+ }
+
+ .hidden{
+   display: none;
+ }
+
 
  .carousel.carousel-fit{position:relative}.carousel.carousel-fit.slide{overflow:hidden}.carousel.carousel-fit .carousel-inner>.next,.carousel.carousel-fit .carousel-inner>.prev{bottom:0}.carousel.carousel-fit .carousel-inner>.item{text-align:center}.carousel.carousel-fit .carousel-inner>.item>img{display:inline-block}.carousel.carousel-fit .carousel-inner>.item>.carousel-caption{bottom:0;left:0;right:0}.modal.modal-fullscreen .modal-dialog,.modal.modal-fullscreen .modal-content{bottom:0;left:0;position:absolute;right:0;top:0}.modal.modal-fullscreen .modal-dialog{margin:0;width:100%}.modal.modal-fullscreen .modal-content{border:none;-moz-border-radius:0;border-radius:0;-webkit-box-shadow:inherit;-moz-box-shadow:inherit;-o-box-shadow:inherit;box-shadow:inherit}.modal.modal-fullscreen.force-fullscreen .modal-body{padding:0}.modal.modal-fullscreen.force-fullscreen .modal-header,.modal.modal-fullscreen.force-fullscreen .modal-footer{left:0;position:absolute;right:0}.modal.modal-fullscreen.force-fullscreen .modal-header{top:0}.modal.modal-fullscreen.force-fullscreen .modal-footer{bottom:0}
 
@@ -38,13 +62,13 @@
    padding-left: 0px;
    padding-right: 0px;
  }
+
  .new-project {
+    margin: 0 auto;
     padding: 100px 0px 20px 0px;
     display: block;
-    background-image: url(/assets/fashion.jpeg);
     background-blend-mode: saturation;
     width: 960px;
-    text-align: center;
     color: white;
     letter-spacing: 5px;
     font-weight: 500;
@@ -52,9 +76,63 @@
     font-size: 48px;
   }
 
+.art-form{
+  text-align: center;
+  background-image: url(/assets/fashion.jpeg);
+  width: 100%;
+  margin: 0 auto;
+}
+
+// .dropdown-toggle:hover{
+//   // background-color: none;
+//   background-color: rgba(255, 255, 255, 0.3);
+//   background-blend-mode: saturation;
+// }
+
+.dropdown-toggle{
+  background-color: rgba(255, 255, 255, 0.3);
+  background-blend-mode: saturation;
+  box-shadow: rgba(0,0,0,0.25);
+}
+
+.lower {
+  font-family: verdana;
+  font-size: 20px;
+  color: teal;
+  background-color: white;
+}
+
+
+.description-box{
+  border-radius: 5%;
+  padding: 10px;
+  display: block;
+
+  .description-box-wrapper {
+    display: inline-block;
+  }
+
+  .description-box-label {
+    display: inline-block;
+    float: left;
+    padding: 50px 0px 50px 0px;
+  }
+
+  .textarea {
+    float: left;
+  }
+}
+
+.submit-artwork{
+  border-radius: 5%;
+  background: teal;
+  color: white;
+  border-color: navy;
+}
+
 .art-form-category {
-  color: black;
-  letter-spacing: 0px;
+  color: white;;
+  letter-spacing: 3px;
 }
 
 .art-title{
@@ -78,7 +156,8 @@
 
 .dropdown-toggle {
   border: none;
-  box-shadow: none;
+  box-shadow: rgba(0,0,0,0.25);
+  border-color: #adadad;
   font-size: 25px;
   letter-spacing: 5px;
   font-weight: 300;
@@ -105,7 +184,7 @@ input.art-title {
 
 }
 
-::-webkit-input-placeholder {
+.art-title::-webkit-input-placeholder  {
    color: white;
 }
 
@@ -113,18 +192,40 @@ input:focus{
   outline: none;
 }
 
-:focus{
+button{
   outline: none;
 }
+
+div.btn-group.open:active{
+  background-color: rgba(0,0,0,0.0);
+  color:white;
+}
+
+.open > .btn-default.dropdown-toggle.override-bootstrap {
+  background-color: rgba(0,0,0,0.0);
+  box-shadow: rgba(0,0,0,0.25);
+  color: white;
+}
+
+.dropdown-toggle:hover{
+  box-shadow: rgba(0,0,0,0.25);
+  color: white;
+  background-color: rgba(0,0,0,0.0);
+}
+
+.dropdown-toggle:focus{
+  box-shadow: rgba(0,0,0,0.25);
+  color:white;
+  background-color: rgba(0,0,0,0.0);
+}
+
 
 div{
   padding: 0 0 0 0;
   margin: 0 0 0 0;
 }
 
-.lower {
-  display: none;
-}
+
 .jumbotron .video{
   padding-right: 0px;
   padding-left: 0px;
@@ -165,6 +266,10 @@ div.thumbnail {
   padding-bottom: 15px;
 }
 
+.carousel-modal-button{
+  z-index: 100000000;
+}
+
 
 .post-content {
     top:0;
@@ -174,7 +279,10 @@ div.thumbnail {
 
 .thumbnail{
     position:relative;
+}
 
+.img-thumbnail-category-show{
+  border: 0px;
 }
 
 .list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
@@ -198,9 +306,9 @@ div.thumbnail {
   z-index: 2;
   position: absolute;
   top: 25%;
-  left: 25%;
-  bottom: 25%;
-  right: 25%;
+  left: 33%;
+
+  height: inherit;
   background-color: white;
   padding: 1pc;
   border: 1px solid;
