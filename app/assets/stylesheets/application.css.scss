@@ -19,9 +19,15 @@
  @import "bootstrap";
  // @import "font-awesome";
 
-
+ul.nav.navbar-nav{
+  // margin-left: 30%;
+}
 .explore{
   padding-top: 15px;
+}
+
+.fixed-width{
+  width: inherit;
 }
 
  .glyphicon-search {
@@ -125,6 +131,10 @@
   margin: 0 auto;
 }
 
+.explore.all-artists{
+  width: 795px;
+}
+
 .override-something{
   font-size: 30px;
   font-weight: 300px;
@@ -160,7 +170,13 @@
   border-radius: 5%;
   background: teal;
   color: white;
-  border-color: navy;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.submit-div{
+  margin-left: 60px;
+  margin-top: 40px;
 }
 
 .art-form-category {
@@ -319,6 +335,10 @@ a.thumbnail {
   overflow: hidden;
 }
 
+.artists .project-item:nth-child(3n+3){
+  margin-right: 0px;
+}
+
 .project-item{
   display: inline-block;
   float: left;
@@ -439,3 +459,34 @@ img-responsive {
   border: 1px solid;
   border-radius: 5px;
 }
+
+.artist-description.col-md-9{
+  font-size: 13px;
+  font-weight: normal;
+  padding-top: 60px;
+  padding-bottom: 50px;
+}
+
+
+div.button.toggle-buttons.col-md-12{
+  margin-left: 0px;
+  margin-top: 15px;
+}
+
+.picture-info{
+  text-align: center;
+}
+
+button.toggle-button.explore-gallery-button{
+  width: 233px;
+}
+
+button.toggle-button.explore-patrons-button{
+  width: 233px;
+
+}
+.artist-name-and-image{
+  display: inline-block;
+}
+
+.textarea:focus {outline:0;}

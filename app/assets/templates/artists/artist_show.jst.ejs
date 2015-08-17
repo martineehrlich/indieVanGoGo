@@ -1,17 +1,30 @@
 <div class="container">
 
 <div class="row">
-<button class="btn-compose">Become a Patron</button>
 
+<div class="artist-name-and-image col-md-3">
 <h2><%=artist.escape('name')%></h2>
-<div class="">
-  <h2 class="pull-right"><%=artist.escape('description')%></h2>
-</div>
-<div class="artist">
-
-
-
+<img src="/../assets/stephen_king.jpg" alt="" />
 </div>
 
+<div class="artist-description col-md-9">
+  <p class="pull-right">Stephen Edwin King was born in Portland, Maine in 1947, the second son of Donald and Nellie Ruth Pillsbury King. After his parents separated when Stephen was a toddler, he and his older brother, David, were raised by his mother. Parts of his childhood were spent in Fort Wayne, Indiana, where his father's family was at the time, and in Stratford, Connecticut. When Stephen was eleven, his mother brought her children back to Durham, Maine, for good. Her parents, Guy and Nellie Pillsbury, had become incapacitated with old age, and Ruth King was persuaded by her sisters to take over the physical care of the elderly couple. Other family members provided a small house in Durham and financial support. After Stephen's grandparents passed away, Mrs. King found work in the kitchens of Pineland, a nearby residential facility for the mentally challenged.</p>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="button toggle-buttons col-md-12" role="group" aria-label="...">
+        <button type="button" class="toggle-button btn btn-default explore-gallery-button">Gallery</button>
+        <button type="button" class="toggle-button btn btn-default explore-patrons-button">Patrons</button>
+    </div>
+    <div class="artist">
+
+
+
+    </div>
+</div>
+
+</div>
+
+<button class="btn-compose">Become a Patron</button>
 </div>
 </div>

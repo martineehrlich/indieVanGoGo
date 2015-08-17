@@ -1,5 +1,6 @@
 CapstoneProject.Views.ArtistIndexItem = Backbone.CompositeView.extend({
   template: JST["artists/artist_index_item"],
+  className: "project-item col-md-3",
 
   initialize: function () {
     this.listenTo(this.model, "sync", this.render);

@@ -20,33 +20,34 @@
     </div>
     </div>
     <div class="lower-border">
-  <div class="lower hidden container">
-    <div class="row">
+  <div class="lower hidden">
       <form class="art-form" action="index.html" method="post">
-      <div class="description-box col-md-4">
-        <div class="description-box-wrapper">
-          <div class="description-box-label override-something">
-            Description:
-          </div>
-          <label>
-          <textarea name="description" class="textarea" rows="3" cols="30" placeholder="Add a description of your art work."></textarea>
-          </label>
-        </div>
-      </div>
-      <div class="description-box col-md-4">
-        <div class="description-box-wrapper">
-          <label class="upload-label">
-            <div class="description-box-label">
-              Upload your artwork:
+        <div class="description-file-upload-wrapper col-md-6">
+          <div class="description-box">
+            <div class="description-box-wrapper">
+              <div class="description-box-label override-something">
+                Description:
+              </div>
+              <label>
+              <textarea name="description" class="textarea" rows="3" cols="30" placeholder="Add a description of your art work."></textarea>
+              </label>
             </div>
-          <input type="file"  class="file-upload" name="image_file_name" class="upload">
-          </label>
-        </div>
+          </div>
+          <div class="description-box">
+            <div class="description-box-wrapper">
+              <label class="upload-label">
+                <div class="description-box-label">
+                  Upload your artwork:
+                </div>
+              <input type="file" name="image_file_name" class="file-upload upload">
+              </label>
+            </div>
 
-      </div>
-      <input class="submit-artwork col-md-4" type="submit" name="name" value="Add Artwork!">
-      </div>
+          </div>
+        </div>
+        <div class="col-md-5 submit-div">
+          <input class="submit-artwork" type="submit" name="name" value="Add Artwork!">
+        </div>
       </form>
-    </div>
 </div>
 </div>

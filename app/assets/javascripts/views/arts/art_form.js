@@ -19,14 +19,15 @@ CapstoneProject.Views.ArtForm = Backbone.View.extend({
     "click .upload": "upload",
     "click .art-form-category": "selectCategory",
     "change .art-title": "openForm",
-    "keydown .art-title": "displayBottom"
+    "keydown .art-title": "displayBottom",
+    "keydown .textarea": "focusUpload"
   },
 
   displayBottom: function (event) {
   $(".art-title").keyup(function(event){
     if (event.keyCode === 13){
       event.preventDefault();
-      $(".art-title").focusout();
+      $(".textarea").focus();
       this.openForm();
     }
     return false;
@@ -35,10 +36,20 @@ CapstoneProject.Views.ArtForm = Backbone.View.extend({
 
   onRender: function () {
     var $dropdown = this.$(".dropdown-toggle");
-    var $firstCategory = this.$(".dropdown-menu:first-child");
-    $firstCategory.addClass("active-category");
-    var text = $firstCategory.html();
-    $dropdown.html(text + " <span class='caret'></span>");
+    $dropdown.html("Paint <span class='caret'></span>");
+    $dropdown.attr("data-id", 1);
+    $dropdown.addClass("active-category");
+  },
+
+  focusUpload: function () {
+    $(".textarea").keyup(function(event){
+      if (event.keyCode === 13){
+        event.preventDefault();
+        $(".upload").focus();
+        this.openForm();
+      }
+      return false;
+    }.bind(this));
   },
 
   createArt: function(event){
@@ -53,7 +64,7 @@ CapstoneProject.Views.ArtForm = Backbone.View.extend({
     this.model.save(attrs, {
       success: function () {
         that.collection.add(that.model);
-        Backbone.history.navigate("explore", {trigger: true});
+        Backbone.history.navigate("", {trigger: true});
       }
     });
   },
