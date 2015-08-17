@@ -3,12 +3,13 @@ CapstoneProject.Views.ArtistShow = Backbone.CompositeView.extend({
 
   initialize: function (options) {
     this.addArtworkIndexView();
-    this.addPatronIndexView();
     this.listenTo(this.model, "sync", this.render);
   },
 
   events: {
-  'click .btn-compose': "createPatron"
+    "click .explore-gallery-button": "addArtworkIndexView",
+    "click .explore-patrons-button": "addPatronIndexView",
+    'click .btn-compose': "createPatron"
 },
 
   render: function () {
@@ -19,12 +20,19 @@ CapstoneProject.Views.ArtistShow = Backbone.CompositeView.extend({
   },
 
   addArtworkIndexView: function () {
-    //where do i destroy this?????????????????????
+    var viewsToRemove = this.subviews(".artist");
+    viewsToRemove.forEach(function(view){
+      this.removeSubview(".artist", view);
+    }.bind(this));
     var subview = new CapstoneProject.Views.ArtsIndex({ model: this.model, collection: this.model.arts()});
     this.addSubview('.artist', subview);
   },
 
   addPatronIndexView: function () {
+    var viewsToRemove = this.subviews(".artist");
+    viewsToRemove.forEach(function(view){
+      this.removeSubview(".artist", view);
+    }.bind(this));
     var subview = new CapstoneProject.Views.PatronsIndex({ model: this.model, collection: this.model.patrons()});
     this.addSubview('.artist', subview);
   },
