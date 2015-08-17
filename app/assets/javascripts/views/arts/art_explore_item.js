@@ -21,7 +21,7 @@ CapstoneProject.Views.ArtExploreItem = Backbone.View.extend({
 
     // var galleryIndexView = new CapstoneProject.Views.GalleryIndex({model: this.model});
     $('body').append(modal.$el);
-    $("html,body").css("overflow","hidden");
+
     modal.render();
     // this.addSubview('.gallery', galleryIndexView);
   }

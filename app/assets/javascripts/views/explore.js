@@ -16,7 +16,7 @@ CapstoneProject.Views.Explore = Backbone.CompositeView.extend({
   events: {
     "click .explore-artists": "addArtistExploreView",
     "click .explore-arts": "addArtExploreView",
-    "click li.list-group-item": "changeActiveCategory"
+    "click a.category-item": "changeActiveCategory"
   },
 
   render: function () {
@@ -35,7 +35,7 @@ CapstoneProject.Views.Explore = Backbone.CompositeView.extend({
       if (this.categories.first()) {
         var category = this.categories.first();
         var subview = new CapstoneProject.Views.CategoryShow({model: category});
-        var listItems = $(".list-group-item");
+        var listItems = $(".category-item");
         listItems.first().addClass("active");
         this.addSubview(".category-show", subview);
         this.$(".explore-artists").addClass("active");
@@ -44,7 +44,7 @@ CapstoneProject.Views.Explore = Backbone.CompositeView.extend({
 
 
   changeActiveCategory: function (event) {
-    this.$(".list-group-item.active").removeClass("active");
+    this.$(".category-item.active").removeClass("active");
     var viewsToRemove = this.subviews(".category-show");
     viewsToRemove.forEach(function(view){
       this.removeSubview(".category-show", view);

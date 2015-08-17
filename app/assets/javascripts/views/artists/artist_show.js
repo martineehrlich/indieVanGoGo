@@ -33,7 +33,6 @@ CapstoneProject.Views.ArtistShow = Backbone.CompositeView.extend({
    var modal = new CapstoneProject.Views.PatronForm({artist: this.model, collection: this.model.patrons(),
      model: new CapstoneProject.Models.Patron()
    });
-   $("html,body").css("overflow","hidden");
    $('body').append(modal.$el);
    modal.render();
  },

@@ -1,47 +1,52 @@
 <div class="container-fluid create-outer">
 
 
-<form class="art-form" action="index.html" method="post">
+
   <div class="upper">
-    <div class="new-project">
-      <h2>I want to create a <div class="btn-group">
-    <button type="button" class="btn btn-default dropdown-toggle override-bootstrap" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    </button>
-    <ul class="list-group dropdown-menu">
-      <% categories.forEach(function (category) { %>
-        <li class="art-form-category" data-id="<%=category.id%>" category-name="<%=category.escape("name")%>"><%=category.escape("name")%></li>
-    <% }) %>
-    </ul>
-  </div>  piece called </h2>
-  <p>
-    <input type="text" id="input" class="art-title" name="title" value="" placeholder="Title...">
-  </p>
-    </div>
-    </div>
-
-  <div class="lower hidden">
-    <div class="description-box">
-      <div class="description-box-wrapper">
-        <div class="description-box-label">
-          Description:
-        </div>
-        <label>
-        <textarea name="description" class="textarea" rows="4" cols="40" placeholder="Add a description of your art work."></textarea>
-        </label>
+      <div class="new-project">
+        <h2 class="main-title">I want to create a <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle override-bootstrap" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      </button>
+      <ul class="list-group dropdown-menu">
+        <% categories.forEach(function (category) { %>
+          <li class="art-form-category" data-id="<%=category.id%>" category-name="<%=category.escape("name")%>"><%=category.escape("name")%></li>
+      <% }) %>
+      </ul>
+    </div>  piece called </h2>
+    <p class="title">
+      <input type="text" id="title-input" class="art-title" placeholder="Title...">
+    </p>
       </div>
     </div>
-    <div class="description-box">
-      <div class="description-box-wrapper">
-        <label>
-          <div class="description-box-label">
-            Upload your artwork:
+    </div>
+    <div class="lower-border">
+  <div class="lower hidden container">
+    <div class="row">
+      <form class="art-form" action="index.html" method="post">
+      <div class="description-box col-md-4">
+        <div class="description-box-wrapper">
+          <div class="description-box-label override-something">
+            Description:
           </div>
-        <input type="file"  name="image_file_name" class="upload">
-        </label>
+          <label>
+          <textarea name="description" class="textarea" rows="3" cols="30" placeholder="Add a description of your art work."></textarea>
+          </label>
+        </div>
       </div>
+      <div class="description-box col-md-4">
+        <div class="description-box-wrapper">
+          <label class="upload-label">
+            <div class="description-box-label">
+              Upload your artwork:
+            </div>
+          <input type="file"  class="file-upload" name="image_file_name" class="upload">
+          </label>
+        </div>
 
+      </div>
+      <input class="submit-artwork col-md-4" type="submit" name="name" value="Add Artwork!">
+      </div>
+      </form>
     </div>
-    <input class="submit-artwork" type="submit" name="name" value="Add Artwork!">
-  </div>
-</form>
+</div>
 </div>

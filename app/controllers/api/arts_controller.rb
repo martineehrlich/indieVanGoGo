@@ -17,7 +17,7 @@ class Api::ArtsController < ApplicationController
     @art = Art.new(art_params)
     @art.artist_id = current_user.id
     if @art.save
-      Categorizing.create(category_id: category_id, categorizable_id: @art.id, categorizable_type: "Art")
+      Categorizing.create(category_id: params[:category_id], categorizable_id: @art.id, categorizable_type: "Art")
       render :show
     else
       flash.now[:errors] = @art.errors.full_messages
@@ -33,6 +33,6 @@ class Api::ArtsController < ApplicationController
 
   private
   def art_params
-    params.require(:art).permit(:artist_id, :title, :description, :image_file_name, :category_id)
+    params.require(:art).permit(:artist_id, :title, :description, :image_file_name)
   end
 end

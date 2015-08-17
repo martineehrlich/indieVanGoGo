@@ -5,7 +5,6 @@ CapstoneProject.Views.ArtForm = Backbone.View.extend({
     this.categories = options.categories;
     this.listenTo(this.model, 'sync', this.render);
     this.listenTo(this.categories, "sync", this.render);
-
   },
 
   render: function () {
@@ -20,13 +19,14 @@ CapstoneProject.Views.ArtForm = Backbone.View.extend({
     "click .upload": "upload",
     "click .art-form-category": "selectCategory",
     "change .art-title": "openForm",
-    "keydown #input": "displayBottom"
+    "keydown .art-title": "displayBottom"
   },
 
   displayBottom: function (event) {
   $(".art-title").keyup(function(event){
     if (event.keyCode === 13){
       event.preventDefault();
+      $(".art-title").focusout();
       this.openForm();
     }
     return false;
@@ -45,9 +45,11 @@ CapstoneProject.Views.ArtForm = Backbone.View.extend({
     event.preventDefault();
     var attrs = $(event.target).serializeJSON();
     var that = this;
+    var title = $(".art-title").val();
     var $category = this.$(".active-category");
     var id = $category.attr("data-id");
     this.model.set("category_id", id);
+    this.model.set("title", title);
     this.model.save(attrs, {
       success: function () {
         that.collection.add(that.model);
