@@ -29,6 +29,14 @@
    border: 1px solid black;
  }
 
+ .sign-up-header{
+   color: white;
+   font-size: 36px;
+   padding-left: 40px;
+   padding-top: 30px;
+   text-align: left;
+ }
+
  .sign-in-button.guest{
    color: white;
    background-color: rgba(0, 0, 0, 0.5);
@@ -39,6 +47,17 @@
    left: 50%;
    transform: translate(-50%, -50%);
    background-color: rgba(0, 0, 0, 0.0);
+   width: 300px;
+ }
+
+ .sign-in-list{
+   padding-left: 0px;
+   list-style-type: none;
+ }
+
+ .sign-in.list-group-item{
+   width: 100%;
+   padding: 8px 15px;
  }
 
  .sign-in-form-corner{

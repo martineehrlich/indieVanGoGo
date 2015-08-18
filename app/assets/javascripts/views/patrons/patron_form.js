@@ -32,7 +32,15 @@ CapstoneProject.Views.PatronForm = Backbone.View.extend({
   createPatron: function (event) {
     event.preventDefault();
     var formData = $(event.currentTarget).serializeJSON();
-    this.model.save(formData, {
+    if (formData.anonymous === "true"){
+      this.model.set("name", "Anonymous");
+      this.model.set("amount", formData.amount);
+      this.model.set("anonymous", formData.anonymous);
+      this.model.set("anonymous", formData.anonymous);
+      this.model.set("artist_id", formData.artist_id);
+      formData = {};
+    }
+    this.model.save({}, {
       success: function (patron) {
         this.collection.add(patron);
         this.remove();

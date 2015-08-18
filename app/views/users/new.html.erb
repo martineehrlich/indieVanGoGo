@@ -1,14 +1,23 @@
 
 <div class="sign-in-page">
+
+  <div class="sign-up-header">
+    indieVanGoghGogh
+  </div>
   <div class="sign-in-form">
     <div class="errors">
       <%= render "layouts/errors" %>
     </div>
     <form action="<%= users_url %>" method="post">
     <%= auth_token_input %>
-      <input class="form-control" type="text" name="user[email]" value="" placeholder="Email">
-      <input class="form-control" type="password" name="user[password]" value=""placeholder="Password">
-      <input class="form-control" type="text" name="user[name]" value=""placeholder="Name"><br>
+    <ul class="sign-in-list">
+      <li><input class="sign-in list-group-item" type="text" name="user[email]" value="" placeholder="Email"></li>
+      <li><input class="sign-in list-group-item" type="password" name="user[password]" value=""placeholder="Password"></li>
+      <li><input class="sign-in list-group-item" type="text" name="user[name]" value=""placeholder="Name"></li><br>
+
+    </ul>
+
+
     <input class="sign-in-button btn " type="submit" value="Sign up">
   </form>
   </div>
