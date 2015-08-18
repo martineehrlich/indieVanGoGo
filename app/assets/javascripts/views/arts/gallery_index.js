@@ -4,7 +4,11 @@ CapstoneProject.Views.GalleryIndex = Backbone.CompositeView.extend({
   initialize: function (options) {
     this.arts = options.arts;
     this.listenTo(this.model, "sync", this.addActiveClass);
+  },
 
+  events: {
+    'click .m-background': 'remove',
+    'click button.btn-danger': 'removeBtn'
   },
 
   render: function () {
@@ -18,15 +22,6 @@ CapstoneProject.Views.GalleryIndex = Backbone.CompositeView.extend({
     if (event.keyCode === 27) {
       this.remove();
     }
-  },
-
-  addActiveClass: function () {
-    $(".carousel-inner:first-child").addClass("active");
-  },
-
-  events: {
-    'click .m-background': 'remove',
-    'click button.btn-danger': 'removeBtn'
   },
 
 

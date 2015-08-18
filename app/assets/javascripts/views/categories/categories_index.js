@@ -2,8 +2,6 @@ CapstoneProject.Views.CategoriesIndex = Backbone.CompositeView.extend({
   template: JST["categories/categories_index"],
   tagName: "div",
 
-
-
   initialize: function (options) {
     this.collection = options.categories;
     this.listenTo(this.collection, "sync", this.render);
@@ -18,13 +16,6 @@ CapstoneProject.Views.CategoriesIndex = Backbone.CompositeView.extend({
     this.attachSubviews();
     return this;
   },
-  // events: {
-  //   "click .category-item": "hello"
-  // },
-
-  hello: function ( ) {
-
-  },
 
   addCategoryView: function (category) {
     var subview = new CapstoneProject.Views.CategoryIndexItem({ model: category });
@@ -34,7 +25,6 @@ CapstoneProject.Views.CategoriesIndex = Backbone.CompositeView.extend({
   removeCategoryView: function (category) {
     this.removeModelSubview('.categories-index', category);
   }
-
 
 
 });

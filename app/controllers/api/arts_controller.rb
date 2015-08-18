@@ -2,15 +2,12 @@ class Api::ArtsController < ApplicationController
   def index
     if params[:category_id]
       @arts = Art.arts_in_category(params[:category_id])
+    elsif params[:search_string]
+       @arts = Art.arts_in_search(params[:search_string])
     else
       @arts = Art.all
     end
 
-    if params[:search_string]
-      @artists = User.arts_in_search(params[:search_string])
-    else
-      @artists = User.artists
-    end
     render json: @arts
   end
 
