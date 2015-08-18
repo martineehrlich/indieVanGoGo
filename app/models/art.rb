@@ -9,4 +9,9 @@ class Art < ActiveRecord::Base
   def self.arts_in_category(category_id)
     self.joins(:categorizings).where(categorizings: {category_id: category_id.to_i})
   end
+
+  def self.arts_in_search(search_string)
+    search_string = "%#{search_string}%"
+    self.where("arts.title ilike ? or arts.description ilike ?", search_string, search_string)
+  end
 end

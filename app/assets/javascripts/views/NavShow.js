@@ -25,7 +25,7 @@ CapstoneProject.Views.NavShow = Backbone.View.extend({
   events: {
     "click .glyphicon-search": "openSearch",
     "blur .navbar-form": "closeSearch",
-
+    "keydown .form-control": "makeQuery"
   },
 
   openSearch: function () {
@@ -34,6 +34,26 @@ CapstoneProject.Views.NavShow = Backbone.View.extend({
     var $input = this.$("input.form-control");
     $input.focus();
   },
+
+  makeQuery: function () {
+    $("input.form-control").keyup(function (event) {
+        if (event.keyCode === 13){
+          event.preventDefault();
+        var $input = $("input.form-control");
+          var artists = new CapstoneProject.Collections.Users();
+          var arts = new CapstoneProject.Collections.Arts();
+          var searchArtists = artists.fetch ({
+            data: {search_string: $input.val() }
+          });
+          this.router.
+          Backbone.history.navigate("searchResults", {trigger: true});
+          // var searchArts = arts.fetch({
+          //   data: {search_string: $input.html() }
+          // });
+        }
+        return false;
+      });
+    },
 
   closeSearch: function () {
     var $searchbar = $(".navbar-form");

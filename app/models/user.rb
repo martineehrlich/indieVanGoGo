@@ -26,6 +26,11 @@ class User < ActiveRecord::Base
     artists.joins(:categorizings).where(categorizings: {category_id: category_id.to_i})
   end
 
+  def self.artists_in_search(search_string)
+    search_string = "%#{search_string}%"
+    artists.where("users.name ilike ? or users.description ilike ?", search_string, search_string)
+  end
+
   def password=(password)
     @password = password
     self.password_digest = BCrypt::Password.create(password)

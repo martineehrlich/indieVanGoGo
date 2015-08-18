@@ -5,6 +5,12 @@ class Api::ArtsController < ApplicationController
     else
       @arts = Art.all
     end
+
+    if params[:search_string]
+      @artists = User.arts_in_search(params[:search_string])
+    else
+      @artists = User.artists
+    end
     render json: @arts
   end
 
