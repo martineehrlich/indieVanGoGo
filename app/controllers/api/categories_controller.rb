@@ -1,4 +1,5 @@
 class Api::CategoriesController < ApplicationController
+before_action :require_signed_in!
   def index
     @categories = Category.all
     render json: @categories

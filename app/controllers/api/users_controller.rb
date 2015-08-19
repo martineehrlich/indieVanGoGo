@@ -1,4 +1,5 @@
 class Api::UsersController < ApplicationController
+  before_action :require_signed_in!
   def show
 			@user = User.find(params[:id])
 			render :show

@@ -36,7 +36,7 @@ CapstoneProject.Views.NavShow = Backbone.View.extend({
 
   events: {
     "blur .navbar-form": "closeSearch",
-    "keydown .form-control": "makeQuery"
+    "keyup .form-control": "makeQuery"
   },
 
   openSearch: function () {
@@ -46,34 +46,28 @@ CapstoneProject.Views.NavShow = Backbone.View.extend({
     $input.focus();
   },
 
-  makeQuery: function () {
-    var $input = $("input.form-control");
-      var users = this.users;
-      var arts = this.arts;
-      $("input.form-control").keyup(function (event) {
-        if ( $("input.form-control").val() !== "") {
-        event.preventDefault();
-            users.fetch ({
-              data: {search_string: $input.val() }
-            });
-            arts.fetch({
-              data: {search_string: $input.val() }
-            });
-            this.searchResults = this.users;
-            this.artResults = this.arts;
-          }
-        }.bind(this));
-    },
+  // makeQuery: function (event) {
+  //   var $input = $("input.form-control");
+  //   var users = this.users;
+  //   var arts = this.arts;
+  //   if ( $("input.form-control").val() !== "") {
+  //     event.preventDefault();
+  //     users.fetch ({
+  //       data: {search_string: $input.val() }
+  //     });
+  //     arts.fetch({
+  //       data: {search_string: $input.val() }
+  //     });
+  //     this.searchResults = this.users;
+  //     this.artResults = this.arts;
+  //   } else {
+  //     this.searchResults.reset([]);
+  //   }
+  // },
 
     navigateToRequested: function () {
 
     },
-
-    closeSearch: function () {
-      this.searchResults = [];
-      this.artResults = [];
-      this.renderResults();
-    }
 
 
 

@@ -14,7 +14,3 @@ window.CapstoneProject = {
     Backbone.history.start();
   }
 };
-
-$(document).ready(function(){
-  CapstoneProject.initialize();
-});

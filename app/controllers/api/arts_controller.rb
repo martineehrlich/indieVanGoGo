@@ -1,4 +1,5 @@
 class Api::ArtsController < ApplicationController
+before_action :require_signed_in!
   def index
     if params[:category_id]
       @arts = Art.arts_in_category(params[:category_id])

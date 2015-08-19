@@ -1,4 +1,5 @@
 class Api::PatronsController < ApplicationController
+  before_action :require_signed_in!
   def create
     @patron = Patron.new(patron_params)
     if @patron.save
