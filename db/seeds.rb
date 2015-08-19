@@ -26,18 +26,10 @@ Art.create(artist_id: user5.id, title: "tree", description: "great", image_file_
 Art.create(artist_id: user6.id, title: "tree", description: "great", image_file_name: "image/upload/v1439954562/StarryNight2436_yimked")
 Art.create(artist_id: user5.id, title: "tree", description: "great", image_file_name: "image/upload/v1439954562/StarryNight2436_yimked")
 Art.create(artist_id: user3.id, title: "tree", description: "great", image_file_name: "image/upload/v1439954562/StarryNight2436_yimked")
-Category.create(name: "Paint", image_url: "/../assets/painting-process.jpg")
-Category.create(name: "Photography", image_url: "/../assets/photographer-33.jpg")
-Category.create(name: "Mural", image_url: "/../assets/mural.jpg")
-Category.create(name: "Fashion", image_url: "/../assets/fashion.jpeg")
-Category.create(name: "Ceramics", image_url: "/../assets/fashion.jpeg")
-Category.create(name: "Acting", image_url: "/../assets/fashion.jpeg")
-Category.create(name: "Song", image_url: "/../assets/fashion.jpeg")
-Category.create(name: "Stand-Up", image_url: "/../assets/fashion.jpeg")
-Category.create(name: "Music", image_url: "/../assets/fashion.jpeg")
-Category.create(name: "Film", image_url: "/../assets/fashion.jpeg")
-
-
+Category.create(name: "Paint", image_url: "http://res.cloudinary.com/dbcmkqngj/image/upload/v1440017987/painting-process_vmrrfz.jpg")
+Category.create(name: "Photography", image_url: "http://res.cloudinary.com/dbcmkqngj/image/upload/v1440017987/photographer-33_gxbwjh.jpg")
+Category.create(name: "Mural", image_url: "http://res.cloudinary.com/dbcmkqngj/image/upload/v1440017989/mural_mwcfhe.jpg")
+Category.create(name: "Fashion", image_url: "http://res.cloudinary.com/dbcmkqngj/image/upload/v1440017988/fashion_dkdofq.jpg")
 
 Categorizing.create(category_id: 1, categorizable_type: "User", categorizable_id: 1)
 Categorizing.create(category_id: 1, categorizable_type: "User", categorizable_id: 2)

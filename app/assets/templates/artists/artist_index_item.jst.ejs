@@ -11,7 +11,7 @@
     </p>
   </div>
   <div class="amount-funded">
-    <%= artist.escape("amount_funded") %>
+    $<%= artist.escape("amount_funded") %> USD
   </div>
   <div class="progress">
   <div class="progress-bar" role="progressbar" aria-valuenow="<%=artist.escape("percent_funded")%>"
@@ -19,8 +19,8 @@
     <span class="sr-only">60% Complete</span>
   </div>
 </div>
-<div class="amount-funded">
-  <%= artist.escape("percent_funded") %>
+<div class="percent-funded">
+  %<%= artist.escape("percent_funded") %>
 </div>
   <div>
     <button type="" name="button" class="btn btn-primary gallery-button">View Artist Gallery</button>

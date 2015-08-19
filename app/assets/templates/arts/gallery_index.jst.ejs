@@ -1,6 +1,6 @@
 <div class="m-background"></div>
   <button class="btn btn-danger gallery-close">Close</button></button>
-<div class="m-content">
+<div class="m-content carousel">
   <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 
     <!-- Wrapper for slides -->
@@ -15,7 +15,7 @@
         </div>
     <%   } else {%>
     <div class="item">
-      <img src="<%= art.escape("image_file_name") %>" alt="">
+      <img src="<%= art.escape("full_image") %>" alt="">
       <div class="carousel-caption">
         <%= art.escape("title") %>
       </div>
@@ -34,4 +34,5 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
+
 </div>
