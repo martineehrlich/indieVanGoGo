@@ -8,7 +8,7 @@
     <% arts.forEach(function (art){ %>
       <% if(art === arts.first()){ %>
         <div class="item active">
-          <img src="<%= art.escape("image_file_name") %>" alt="">
+          <img src="<%= art.escape("full_image") %>" alt="">
           <div class="carousel-caption">
             <%= art.escape("title") %>
           </div>

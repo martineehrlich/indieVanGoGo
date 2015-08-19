@@ -18,6 +18,129 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  // @import "font-awesome";
+
+ .test-artist-show{
+   width: 1500px;
+   height: 100%;
+   margin-top: 40px;
+ }
+
+.test-header{
+  width: 70%;
+  margin: 0 auto;
+}
+
+.test-image-and-name{
+  width: 15%;
+  height: 230px;
+  display: inline-block;
+  float: left;
+  margin-right: 15px;
+}
+
+.test-image{
+  width: 150px;
+  height: 175px;
+  text-align: center;
+}
+
+.test-name{
+  width: 150px;
+  height: 25px;
+  text-align: center;
+}
+
+.test-header::after {
+content: "";
+display: block;
+clear: both;
+}
+
+.test-footer-navbar::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.test-description{
+  width: 60%;
+  display: inline-block;
+  height: 250px;
+  float: left;
+}
+
+.test-text{
+  vertical-align: top;
+}
+
+.thumbnail-gallery{
+  width: 220px;
+  height: 180px;
+  padding-left: 0px;
+  margin-bottom: 20px;
+}
+
+.test-footer{
+  width: 70%;
+  margin: 0 auto;
+}
+
+.test-footer-navbar{
+  width: 75%;
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+.test-footer-toggles-left{
+  float:left;
+  position: relative;
+
+  // height: 40px;
+  // width: 300px
+}
+
+.patron-name{
+  position: relative;
+  float: left;
+}
+
+.patron-amount{
+  position: relative;
+  float: right;
+  font-size: 25px;
+  font-weight: bold;
+}
+.list-group-item.patron{
+  font-size: 17px;
+  width: 650px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-radius: none;
+  padding: 50px;
+}
+
+.test-footer-toggles-right{
+  float:right;
+  position: relative;
+  // height: 20px;
+  // width: 100px
+}
+
+.btn.explore-gallery-button{
+  color: white;
+    background-color: teal;
+    border-radius: 0px;
+    border: 1px solid teal;
+    width: 120px;
+}
+
+.test-footer-content{
+  width: 80%;
+  height: 500px;
+}
+
+
  .errors{
    color: white;
    background-color: rgba(0, 0, 0, 0.5);

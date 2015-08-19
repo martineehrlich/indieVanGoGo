@@ -22,7 +22,7 @@ CapstoneProject.Views.ArtistIndexItem = Backbone.CompositeView.extend({
   },
 
   addGalleryIndex: function () {
-    var mdal = new CapstoneProject.Views.GalleryIndex({arts: this.model.arts()});
+    var modal = new CapstoneProject.Views.GalleryIndex({arts: this.model.arts()});
     modal.render();
     modal.$(".gallery-close").css({"margin-top":  window.pageYOffset - $(modal.$el).height() / 2, 'top': '5%' });
     modal.$(".gallery-close").css({ 'margin-left': window.pageXOffset - $(modal.$el).width() / 2, 'right': '5%' });

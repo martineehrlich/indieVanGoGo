@@ -1,8 +1,8 @@
 <div class="patron category-item">
-  <li class="list-group-item" data-id="<%=patron.id%>">Name:
-    <% if (patron.escape("anonymous") === true){ %>
-        Anonymous,
-      <% } else { %>
-      <%=patron.escape("name")%>,
-    <% } %> Amount: $<%=patron.escape("amount")%></li>
+  <li class="list-group-item patron" data-id="<%=patron.id%>">
+      <div class="patron-name">
+        <%=patron.escape("name")%>
+      </div>
+    <div class="patron-amount">$<%=patron.escape("amount")%></div></li>
+
 </div>

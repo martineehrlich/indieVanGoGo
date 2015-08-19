@@ -36,6 +36,14 @@ class User < ActiveRecord::Base
     self.password_digest = BCrypt::Password.create(password)
   end
 
+  def amount_funded
+    amount = 0
+    patrons.each do |patron|
+      amount + patron.amount
+    end
+    return amount
+  end
+
   def valid_password?(password)
     BCrypt::Password.new(self.password_digest).is_password?(password)
   end
@@ -44,6 +52,25 @@ class User < ActiveRecord::Base
     self.session_token = SecureRandom.urlsafe_base64(16)
     self.save!
     self.session_token
+  end
+
+
+  def profile_picture
+    profile_picture = image_url.gsub(
+      'image/upload',
+      'image/upload/c_fill,h_180,w_150'
+    )
+
+    "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/" + profile_picture
+  end
+
+  def thumbnail_image
+    thumbnail_image = image_url.gsub(
+      'image/upload',
+      'image/upload/c_fill,h_180,w_220'
+    )
+
+    "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/" + thumbnail_image
   end
 
   private

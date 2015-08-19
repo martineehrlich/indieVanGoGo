@@ -1,10 +1,10 @@
 
   <div class="thumbnail">
-    <img src="/../assets/starry-2.jpg" alt="">
+    <img src="<%=artist.escape("thumbnail_image")%>" alt="">
   </div>
   <div class="project-content">
     <div class="project-caption">
-      <h4><a href="#users/<%=artist.id%>">Vincent Van Gogh</a></h4>
+      <h4><a href="#users/<%=artist.id%>"><%=artist.escape("name")%></a></h4>
   </div>
   <div class="project-description">
     <p>I'm a painter, love painting natural things with bright colors.</p>

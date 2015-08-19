@@ -84,8 +84,8 @@ CapstoneProject.Views.ArtForm = Backbone.View.extend({
   upload: function (event) {
     event.preventDefault();
     cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, result){
-      var data = result[0];
-      this.model.set({image_file_name: data.url});
+      var data = result[0]; 
+      this.model.set({image_file_name: data.url, thumbnail_image: data.thumbnail_url});
     }.bind(this));
     }
 
