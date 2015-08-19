@@ -6,11 +6,8 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-
     if params[:category_id]
       @artists = User.artists_in_category(params[:category_id])
-    elsif params[:search_string]
-        @artists = User.artists_in_search(params[:search_string])
     else
       @artists = User.artists
     end

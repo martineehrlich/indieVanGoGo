@@ -3,8 +3,6 @@ before_action :require_signed_in!
   def index
     if params[:category_id]
       @arts = Art.arts_in_category(params[:category_id])
-    elsif params[:search_string]
-       @arts = Art.arts_in_search(params[:search_string])
     else
       @arts = Art.all
     end
