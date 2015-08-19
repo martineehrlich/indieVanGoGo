@@ -1,8 +1,8 @@
 CapstoneProject.Routers.Router = Backbone.Router.extend({
   initialize: function (options) {
     this.$rootEl = options.$rootEl;
-    this.users = new CapstoneProject.Collections.Users();
-    this.arts = new CapstoneProject.Collections.Arts();
+    this.users = options.users;
+    this.arts = options.arts;
     this._categories = new CapstoneProject.Collections.Categories();
   },
 

@@ -7,14 +7,20 @@
       <h4><a href="#users/<%=artist.id%>"><%=artist.escape("name")%></a></h4>
   </div>
   <div class="project-description">
-    <p>I'm a painter, love painting natural things with bright colors.</p>
+    <p>I'm a painter, love painting natural things with bright colors. I'm a painter, love painting natural things with bright colors.
+    </p>
   </div>
-
+  <div class="amount-funded">
+    <%= artist.escape("amount_funded") %>
+  </div>
   <div class="progress">
   <div class="progress-bar" role="progressbar" aria-valuenow="<%=artist.escape("percent_funded")%>"
   aria-valuemin="0" aria-valuemax="100" style="width: <%=artist.escape("percent_funded")%>%;">
     <span class="sr-only">60% Complete</span>
   </div>
+</div>
+<div class="amount-funded">
+  <%= artist.escape("percent_funded") %>
 </div>
   <div>
     <button type="" name="button" class="btn btn-primary gallery-button">View Artist Gallery</button>

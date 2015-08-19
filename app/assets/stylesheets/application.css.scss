@@ -19,6 +19,14 @@
  @import "bootstrap";
  // @import "font-awesome";
 
+ .search-results{
+   margin-top: 60px;
+   width: 30%;
+   margin-left: 70%;
+   position: absolute;
+   z-index: 2;
+ }
+
  .progress{
    width: 90%;
    margin: 0 auto;
@@ -357,13 +365,6 @@ div.outer-artist{
  .glyphicon-search {
      font-size: 20px;
      margin-top: 12px;
- }
-
- .navbar-form{
-   display: none;
-   position: absolute;
-   right: 0px;
-   top: 65px;
  }
 
  .glyph{

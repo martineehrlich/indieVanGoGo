@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
 
   def self.artists_in_search(search_string)
     search_string = "%#{search_string}%"
-    artists.where("users.name ilike ? or users.description ilike ?", search_string, search_string)
+    artists.where("users.name ilike ?", search_string)
   end
 
   def password=(password)

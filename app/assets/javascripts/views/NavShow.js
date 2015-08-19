@@ -3,27 +3,38 @@ CapstoneProject.Views.NavShow = Backbone.View.extend({
 
   initialize: function (options) {
     this.router = options.router;
-    // this.listenTo(this.router, "route", this.handleRoute);
-    // this.listenTo(this.collection, "add remove", this.updateCount);
+    this.arts = options.arts;
+    this.users = options.users;
+    this.searchResults = [];
+    this.artResults = [];
+    this.listenTo(this.users, "sync", this.renderResults);
+    this.listenTo(this.arts, "sync", this.renderResults);
   },
-
-  // handleRoute: function (routeName, params) {
-  //   this.$el.find(".active").removeClass("active");
-  //   this.$el.find("." + routeName).addClass("active");
-  // },
-  //
-  // updateCount: function () {
-  //   this.$("#tweets-count").text(this.collection.length);
-  // },
+  renderResults: function(){
+    var $results = this.$('.search-results');
+    $results.empty();
+    var lis = this.searchResults.map(function (result) {
+      var resultLI = $('<li class="list-group-item search-result"></li>');
+      resultLI.html(result.escape('name'));
+      return resultLI;
+    });
+      var lis2 = this.artResults.map(function (result) {
+      var resultLI = $('<li class="list-group-item search-result"></li>');
+      resultLI.html(result.escape('title'));
+      return resultLI;
+    });
+    $results.append(lis);
+    $results.append(lis2);
+  },
 
   render: function () {
     var content = this.template();
     this.$el.html(content);
+    this.renderResults();
     return this;
   },
 
   events: {
-    "click .glyphicon-search": "openSearch",
     "blur .navbar-form": "closeSearch",
     "keydown .form-control": "makeQuery"
   },
@@ -36,28 +47,35 @@ CapstoneProject.Views.NavShow = Backbone.View.extend({
   },
 
   makeQuery: function () {
-    $("input.form-control").keyup(function (event) {
-        if (event.keyCode === 13){
-          event.preventDefault();
-        var $input = $("input.form-control");
-          var artists = new CapstoneProject.Collections.Users();
-          var arts = new CapstoneProject.Collections.Arts();
-          var searchArtists = artists.fetch ({
-            data: {search_string: $input.val() }
-          });
-          this.router.
-          Backbone.history.navigate("searchResults", {trigger: true});
-          // var searchArts = arts.fetch({
-          //   data: {search_string: $input.html() }
-          // });
-        }
-        return false;
-      });
+    var $input = $("input.form-control");
+      var users = this.users;
+      var arts = this.arts;
+      $("input.form-control").keyup(function (event) {
+        if ( $("input.form-control").val() !== "") {
+        event.preventDefault();
+            users.fetch ({
+              data: {search_string: $input.val() }
+            });
+            arts.fetch({
+              data: {search_string: $input.val() }
+            });
+            this.searchResults = this.users;
+            this.artResults = this.arts;
+          }
+        }.bind(this));
     },
 
-  closeSearch: function () {
-    var $searchbar = $(".navbar-form");
-    $searchbar.css("display", "none");
-  }
+    navigateToRequested: function () {
+
+    },
+
+    closeSearch: function () {
+      this.searchResults = [];
+      this.artResults = [];
+      this.renderResults();
+    }
+
+
+
 
 });

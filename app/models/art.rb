@@ -12,7 +12,10 @@ class Art < ActiveRecord::Base
 
   def self.arts_in_search(search_string)
     search_string = "%#{search_string}%"
-    self.where("arts.title ilike ? or arts.description ilike ?", search_string, search_string)
+    self.where("arts.title ilike ?", search_string)
+    # self.where("arts.title ilike ? or arts.categories ilike ?", search_string, search_string)
+
+    # arts.title ilike ? or arts.categories ilike ?
   end
 
 
