@@ -1,1 +1,11 @@
-json.extract! user, :id, :email, :name, :description, :image_url, :profile_picture, :thumbnail_image
+  json.extract! user,
+    :id,
+    :email,
+    :name,
+    :description,
+    :image_url,
+    :profile_picture,
+    :thumbnail_image,
+    :goal,
+    :percent_funded,
+    :amount_funded

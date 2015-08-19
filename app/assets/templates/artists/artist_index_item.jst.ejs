@@ -9,6 +9,13 @@
   <div class="project-description">
     <p>I'm a painter, love painting natural things with bright colors.</p>
   </div>
+
+  <div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="<%=artist.escape("percent_funded")%>"
+  aria-valuemin="0" aria-valuemax="100" style="width: <%=artist.escape("percent_funded")%>%;">
+    <span class="sr-only">60% Complete</span>
+  </div>
+</div>
   <div>
     <button type="" name="button" class="btn btn-primary gallery-button">View Artist Gallery</button>
   </div>

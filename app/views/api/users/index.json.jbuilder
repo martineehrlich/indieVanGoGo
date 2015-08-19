@@ -1,4 +1,4 @@
-json.array! @users do |user|
+json.array! @artists do |user|
 
   json.partial! 'api/users/user', user: user
 

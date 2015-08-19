@@ -40,7 +40,7 @@ CapstoneProject.Views.PatronForm = Backbone.View.extend({
       this.model.set("artist_id", formData.artist_id);
       formData = {};
     }
-    this.model.save({}, {
+    this.model.save(formData, {
       success: function (patron) {
         this.collection.add(patron);
         this.remove();

@@ -39,9 +39,13 @@ class User < ActiveRecord::Base
   def amount_funded
     amount = 0
     patrons.each do |patron|
-      amount + patron.amount
+      amount += patron.amount
     end
     return amount
+  end
+
+  def percent_funded
+    self.amount_funded * 100 / self.goal
   end
 
   def valid_password?(password)

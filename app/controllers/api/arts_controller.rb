@@ -8,7 +8,7 @@ class Api::ArtsController < ApplicationController
       @arts = Art.all
     end
 
-    render json: @arts
+    render :index
   end
 
   def new

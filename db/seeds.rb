@@ -7,12 +7,12 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-user1 = User.create(email: "user@example.com", name: "John", password: "password", image_url: "image/upload/v1439953244/s-PABLO-PICASSO-large640_xgn6t3")
-user2 = User.create(email: "antoher@example.com", name: "Bob", password: "password", image_url: "image/upload/v1439953244/s-PABLO-PICASSO-large640_xgn6t3")
-user3 = User.create(email: "water@example.com", name: "Pablo", password: "password", image_url: "image/upload/v1439953244/s-PABLO-PICASSO-large640_xgn6t3")
-user4 = User.create(email: "yeyey@example.com", name: "Rudy", password: "password", image_url: "image/upload/v1439953244/s-PABLO-PICASSO-large640_xgn6t3")
-user5 = User.create(email: "antohyeyeyer@example.com", name: "Ansel", password: "password", image_url: "image/upload/v1439953244/s-PABLO-PICASSO-large640_xgn6t3")
-user6 = User.create(email: "wawawawater@example.com", name: "Alejandro", password: "password", image_url: "image/upload/v1439953244/s-PABLO-PICASSO-large640_xgn6t3")
+user1 = User.create(email: "user@example.com", name: "John", password: "password", goal: 50, image_url: "image/upload/v1439953244/s-PABLO-PICASSO-large640_xgn6t3")
+user2 = User.create(email: "antoher@example.com", name: "Bob", password: "password", goal: 50, image_url: "image/upload/v1439953244/s-PABLO-PICASSO-large640_xgn6t3")
+user3 = User.create(email: "water@example.com", name: "Pablo", password: "password", goal: 50, image_url: "image/upload/v1439953244/s-PABLO-PICASSO-large640_xgn6t3")
+user4 = User.create(email: "yeyey@example.com", name: "Rudy", password: "password", goal: 50, image_url: "image/upload/v1439953244/s-PABLO-PICASSO-large640_xgn6t3")
+user5 = User.create(email: "antohyeyeyer@example.com", name: "Ansel", password: "password", goal: 50, image_url: "image/upload/v1439953244/s-PABLO-PICASSO-large640_xgn6t3")
+user6 = User.create(email: "wawawawater@example.com", name: "Alejandro", password: "password", goal: 50, image_url: "image/upload/v1439953244/s-PABLO-PICASSO-large640_xgn6t3")
 Art.create(artist_id: user1.id, title: "tree", description: "great", image_file_name: "image/upload/v1439954562/StarryNight2436_yimked")
 Art.create(artist_id: user1.id, title: "tree", description: "great", image_file_name: "image/upload/yapttrdmvfiln9wk8bnx")
 Art.create(artist_id: user1.id, title: "tree", description: "great", image_file_name: "image/upload/yapttrdmvfiln9wk8bnx")

@@ -13,7 +13,7 @@ class Api::UsersController < ApplicationController
     else
       @artists = User.artists
     end
-    render json: @artists
+    render :index
   end
 
 end
