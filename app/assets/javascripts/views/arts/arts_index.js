@@ -1,11 +1,12 @@
 CapstoneProject.Views.ArtsIndex = Backbone.CompositeView.extend({
   template: JST["arts/arts_index"],
 
-  initialize: function (options) {
+  initialize: function () {
     this.listenTo(this.collection, 'add', this.addArtItemView);
     this.listenTo(this.collection, 'remove', this.removeArtItemView);
     this.collection.each(this.addArtItemView.bind(this));
   },
+
 
   render: function () {
     var content = this.template({artist: this.model});
@@ -15,7 +16,7 @@ CapstoneProject.Views.ArtsIndex = Backbone.CompositeView.extend({
   },
 
   addArtItemView: function (art) {
-    var subview = new CapstoneProject.Views.ArtIndexItem({ model: art });
+    var subview = new CapstoneProject.Views.ArtIndexItem({ model: art, collection: this.collection});
     this.addSubview('.arts', subview);
   },
 

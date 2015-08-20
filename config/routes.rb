@@ -8,5 +8,6 @@ Rails.application.routes.draw do
     resources :arts, only: [:show, :new, :create, :index]
     resources :categories, only: [:show, :index]
     resources :patrons, only: [:new, :create]
+    resources :search, only: [:index]
   end
 end

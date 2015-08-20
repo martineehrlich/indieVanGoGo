@@ -15,6 +15,7 @@
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require jquery.serializeJSON
+//= require scroll
 //= require underscore
 //= require backbone.bootstrap-carousel-modal
 //= require backbone

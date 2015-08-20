@@ -26,6 +26,23 @@
  //   top: 50%;
  // }
 
+ .gallery-item-and-description::after {
+ content: "";
+ display: block;
+ clear: both;
+ }
+ .thumbnail-gallery-artist-show{
+    float: left;
+    margin-right: 30px;
+ }
+
+ .description-for-gallery{
+   margin-right: 200px
+ }
+
+
+
+
  .carousel-control{
  }
 
@@ -50,7 +67,7 @@
    width: 30%;
    margin-left: 70%;
    position: absolute;
-   z-index: 2;
+   z-index: 100;
  }
 
  .gallery-button{

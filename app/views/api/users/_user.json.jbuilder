@@ -6,6 +6,7 @@
     :image_url,
     :profile_picture,
     :thumbnail_image,
+    :search_image,
     :goal,
     :percent_funded,
     :amount_funded

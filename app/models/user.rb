@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
     class_name: :Patron,
     foreign_key: :artist_id
   attr_reader :password
+  after_initialize :image_url_set
+
 
   scope :artists, ->{ User.joins(:arts).group('users.id').having("COUNT('arts') > 0") }
 
@@ -45,6 +47,7 @@ class User < ActiveRecord::Base
   end
 
   def percent_funded
+    self.goal ||= 1
     self.amount_funded * 100 / self.goal
   end
 
@@ -58,6 +61,9 @@ class User < ActiveRecord::Base
     self.session_token
   end
 
+  def image_url_set
+    self.image_url ||= "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1439329855/StarryNight2436_yimked.jpg"
+  end
 
   def profile_picture
     profile_picture = image_url.gsub(
@@ -65,7 +71,7 @@ class User < ActiveRecord::Base
       'image/upload/c_fill,h_180,w_150'
     )
 
-    "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/" + profile_picture
+     profile_picture
   end
 
   def thumbnail_image
@@ -74,7 +80,15 @@ class User < ActiveRecord::Base
       'image/upload/c_fill,h_180,w_220'
     )
 
-    "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/" + thumbnail_image
+    thumbnail_image
+  end
+
+  def search_image
+    search_image = image_url.gsub(
+      'image/upload',
+      'image/upload/c_fill,h_30,w_30'
+    )
+    search_image
   end
 
   private
