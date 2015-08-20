@@ -4,16 +4,21 @@ CapstoneProject.Views.ArtExploreItem = Backbone.View.extend({
 
   initialize: function () {
     this.listenTo(this.model, "sync", this.render);
+    this.users = new CapstoneProject.Collections.Users();
+    this.artist = this.users.getOrFetch(this.model.escape("artist_id"));
+    this.listenTo(this.artist, "sync", this.render);
   },
 
   render: function () {
-    var content = this.template({art: this.model});
+    var content = this.template({art: this.model, artist: this.artist});
     this.$el.html(content);
     return this;
   },
 
   events: {
-    "click .art-item": "addArtModal"
+    "click .art-item": "addArtModal",
+    "click .art-explore-button": "navigateToArtist"
+
   },
 
   addArtModal: function () {
@@ -23,6 +28,12 @@ CapstoneProject.Views.ArtExploreItem = Backbone.View.extend({
     modal.$(".m-content").css({ 'margin-left': window.pageXOffset - $(modal.$el).width() / 2, 'left': '50%' });
     $('body').append(modal.$el);
 
+  },
+
+  navigateToArtist: function () {
+    Backbone.history.navigate("#users/" + this.model.escape('artist_id'), {trigger: true});
   }
+
+
 
 });

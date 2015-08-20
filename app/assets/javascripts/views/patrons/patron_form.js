@@ -50,6 +50,6 @@ CapstoneProject.Views.PatronForm = Backbone.View.extend({
 
 
   onRender: function () {
-    $('.amount-field').focus();
+    $('.name-field').focus();
   }
 });

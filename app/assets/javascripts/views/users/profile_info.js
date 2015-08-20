@@ -1,20 +1,11 @@
-CapstoneProject.Views.ArtistShow = Backbone.CompositeView.extend({
-  template: JST["artists/artist_show"],
+CapstoneProject.Views.Profile = Backbone.CompositeView.extend({
+  template: JST["users/profile"],
 
   initialize: function (options) {
-    this.artId = options.artId;
     this.addArtworkIndexView();
     this.addFundingInfoView();
     this.listenTo(this.model, "sync", this.render);
   },
-
-  scrollToAnchor: function (aid){
-      var aTag = $("a[name='"+ aid +"']");
-      if(aTag.offset() !== undefined){
-      $('html,body').animate({scrollTop: aTag.offset().top}, 1500);
-      }
-      Backbone.history.navigate("#users/" + this.model.id);
-    },
 
   events: {
     "click .explore-gallery-button": "addArtworkIndexView",
@@ -26,16 +17,8 @@ CapstoneProject.Views.ArtistShow = Backbone.CompositeView.extend({
     var content = this.template({artist: this.model});
     this.$el.html(content);
     this.attachSubviews();
-    this.onRender();
     return this;
   },
-
-  onRender: function () {
-    if (this.artId !== null ){
-      this.scrollToAnchor(this.artId);
-    }
-  },
-
 
   addArtworkIndexView: function () {
     var viewsToRemove = this.subviews(".artist");
@@ -55,13 +38,6 @@ CapstoneProject.Views.ArtistShow = Backbone.CompositeView.extend({
     this.addSubview('.artist', subview);
   },
 
-  createPatron: function () {
-   var modal = new CapstoneProject.Views.PatronForm({artist: this.model, collection: this.model.patrons(),
-     model: new CapstoneProject.Models.Patron()
-   });
-   $('body').append(modal.$el);
-   modal.render();
- },
 
  addFundingInfoView: function () {
    var viewsToRemove = this.subviews(".funding-info");

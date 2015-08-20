@@ -26,9 +26,9 @@ CapstoneProject.Routers.Router = Backbone.Router.extend({
     this._swapView(exploreView);
   },
 
-  artistShow: function (id, artid) {
+  artistShow: function (id, artId) {
     var artist = this.users.getOrFetch(id);
-    var view = new CapstoneProject.Views.ArtistShow({model: artist, artId: artid});
+    var view = new CapstoneProject.Views.ArtistShow({model: artist, artId: artId});
     this._swapView(view);
   },
 
@@ -51,6 +51,8 @@ CapstoneProject.Routers.Router = Backbone.Router.extend({
   _swapView: function (view) {
     this._currentView && this._currentView.remove();
     this._currentView = view;
-    this.$rootEl.html(view.render().$el);
+    this.$rootEl.html(view.$el);
+    view.render();
+    $(document).scrollTop(0);
   }
 });

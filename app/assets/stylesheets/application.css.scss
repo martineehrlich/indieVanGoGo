@@ -19,12 +19,41 @@
  @import "bootstrap";
  // @import "font-awesome";
 
- // .carousel-control.right{
- //   z-index: 3;
- //   position: absolute;
- //   right: 2%;
- //   top: 50%;
- // }
+ .carousel-control.right{
+   z-index: 3;
+   position: absolute;
+   right: 2%;
+   top: 50%;
+ }
+
+ .project-description-padding{
+   margin-bottom: 30px;
+ }
+
+ .art-explore-button{
+   color:white;
+   border-radius: 0%;
+   margin-left: 24px;
+   padding: 4px;
+ }
+
+ a.art-explore-button{
+   margin-left: 0px;
+ }
+
+ .patron-form-label{
+   margin-right: 10px;
+ }
+
+ .m-content.patron{
+   height: 170px;
+ }
+
+ .become-patron{
+   position: absolute;
+   left: 50%;
+   transform: translateX(-50%);
+ }
 
  .test-footer-toggles-right{
    position: fixed;

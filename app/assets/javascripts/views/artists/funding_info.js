@@ -5,9 +5,7 @@ CapstoneProject.Views.FundingInfo = Backbone.CompositeView.extend({
     this.listenTo(this.collection, "add", this.render);
     this.listenTo(this.model, "sync change", this.render);
     this.listenTo(this.collection, "add", this.updateInfo);
-
   },
-
 
   render: function () {
     var content = this.template({artist: this.model});

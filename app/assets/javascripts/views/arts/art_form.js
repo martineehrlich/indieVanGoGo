@@ -37,7 +37,7 @@ CapstoneProject.Views.ArtForm = Backbone.View.extend({
   onRender: function () {
     var $dropdown = this.$(".dropdown-toggle");
     $dropdown.html("Paint <span class='caret'></span>");
-    $dropdown.attr("data-id", 1);
+    $dropdown.attr("data-id", 2);
     $dropdown.addClass("active-category");
   },
 
@@ -84,7 +84,8 @@ CapstoneProject.Views.ArtForm = Backbone.View.extend({
   upload: function (event) {
     event.preventDefault();
     cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, result){
-      var data = result[0]; 
+      if (error) { return; }
+      var data = result[0];
       this.model.set({image_file_name: data.url, thumbnail_image: data.thumbnail_url});
     }.bind(this));
     }

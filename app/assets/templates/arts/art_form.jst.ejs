@@ -8,6 +8,7 @@
       <button type="button" class="btn btn-default dropdown-toggle override-bootstrap" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       </button>
       <ul class="list-group dropdown-menu">
+        <% categories.shift() %>
         <% categories.forEach(function (category) { %>
           <li class="art-form-category" data-id="<%=category.id%>" category-name="<%=category.escape("name")%>"><%=category.escape("name")%></li>
       <% }) %>
@@ -39,7 +40,9 @@
                 <div class="description-box-label">
                   Upload your artwork:
                 </div>
-              <input type="file" name="image_file_name" class="file-upload upload">
+                <button class="upload">Upload a Photo</button>
+                <img src="<%= this.model.get("url") %>">
+              <!-- <input type="file" name="image_file_name" class="file-upload upload"> -->
               </label>
             </div>
 
