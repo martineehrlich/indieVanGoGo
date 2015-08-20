@@ -8,15 +8,16 @@ class Art < ActiveRecord::Base
 
 
   def self.arts_in_category(category_id)
-    self.joins(:categorizings).where(categorizings: {category_id: category_id.to_i})
+    if category_id == "1"
+      return self.all
+    else
+      self.joins(:categorizings).where(categorizings: {category_id: category_id.to_i})
+    end
   end
 
   def self.arts_in_search(search_string)
     search_string = "%#{search_string}%"
     self.where("arts.title ilike ?", search_string)
-    # self.where("arts.title ilike ? or arts.categories ilike ?", search_string, search_string)
-
-    # arts.title ilike ? or arts.categories ilike ?
   end
 
   def full_image

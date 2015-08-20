@@ -26,6 +26,7 @@ Art.create(artist_id: user5.id, title: "pool", description: "great", image_file_
 Art.create(artist_id: user6.id, title: "water", description: "great", image_file_name: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1439954562/StarryNight2436_yimked")
 Art.create(artist_id: user5.id, title: "dog", description: "great", image_file_name: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1439954562/StarryNight2436_yimked")
 Art.create(artist_id: user3.id, title: "tree", description: "great", image_file_name: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1439954562/StarryNight2436_yimked")
+Category.create(name: "All Categories", image_url: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440087633/streetart_jiw6ev.jpg")
 Category.create(name: "Paint", image_url: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440017987/painting-process_vmrrfz.jpg")
 Category.create(name: "Photography", image_url: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440017987/photographer-33_gxbwjh.jpg")
 Category.create(name: "Mural", image_url: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440017989/mural_mwcfhe.jpg")

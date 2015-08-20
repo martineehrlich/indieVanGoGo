@@ -25,7 +25,11 @@ class User < ActiveRecord::Base
   end
 
   def self.artists_in_category(category_id)
-    artists.joins(:categorizings).where(categorizings: {category_id: category_id.to_i})
+    if category_id == "1"
+      return artists
+    else
+      artists.joins(:categorizings).where(categorizings: {category_id: category_id.to_i})
+    end
   end
 
   def self.artists_in_search(search_string)

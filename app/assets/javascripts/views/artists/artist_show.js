@@ -2,18 +2,18 @@ CapstoneProject.Views.ArtistShow = Backbone.CompositeView.extend({
   template: JST["artists/artist_show"],
 
   initialize: function (options) {
+    this.artId = options.artId;
     this.addArtworkIndexView();
-    if(document.location.hash.slice(-2, -1) === "="){
-    this.artId = document.location.hash.slice(-1);
-    }
+    this.addFundingInfoView();
     this.listenTo(this.model, "sync", this.render);
   },
 
   scrollToAnchor: function (aid){
       var aTag = $("a[name='"+ aid +"']");
       if(aTag.offset() !== undefined){
-      $('html,body').animate({scrollTop: aTag.offset().top},'slow');
+      $('html,body').animate({scrollTop: aTag.offset().top}, 3000);
       }
+      Backbone.history.navigate("#users/" + this.model.id);
     },
 
   events: {
@@ -32,16 +32,17 @@ CapstoneProject.Views.ArtistShow = Backbone.CompositeView.extend({
 
   onRender: function () {
     if (this.artId){
-    this.scrollToAnchor(this.artId);
-  }
+      this.scrollToAnchor(this.artId);
+    }
   },
+
 
   addArtworkIndexView: function () {
     var viewsToRemove = this.subviews(".artist");
     viewsToRemove.forEach(function(view){
       this.removeSubview(".artist", view);
     }.bind(this));
-    var subview = new CapstoneProject.Views.ArtsIndex({artId: this.artId, model: this.model, collection: this.model.arts()});
+    var subview = new CapstoneProject.Views.ArtsIndex({model: this.model, collection: this.model.arts()});
     this.addSubview('.artist', subview);
   },
 
@@ -60,5 +61,15 @@ CapstoneProject.Views.ArtistShow = Backbone.CompositeView.extend({
    });
    $('body').append(modal.$el);
    modal.render();
- }
+ },
+
+ addFundingInfoView: function () {
+   var viewsToRemove = this.subviews(".funding-info");
+   viewsToRemove.forEach(function(view){
+     this.removeSubview(".funding-info", view);
+   }.bind(this));
+   var subview = new CapstoneProject.Views.FundingInfo({model: this.model, collection: this.model.patrons()});
+   this.addSubview('.funding-info', subview);
+ },
+
 });

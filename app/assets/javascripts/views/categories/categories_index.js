@@ -14,7 +14,12 @@ CapstoneProject.Views.CategoriesIndex = Backbone.CompositeView.extend({
     var content = this.template({categories: this.collection});
     this.$el.html(content);
     this.attachSubviews();
+    this.onRender();
     return this;
+  },
+
+  onRender: function () {
+    $(".categories-index div:first-child a:first").addClass("active");
   },
 
   addCategoryView: function (category) {

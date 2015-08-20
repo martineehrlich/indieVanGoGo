@@ -52,7 +52,7 @@ CapstoneProject.Views.NavShow = Backbone.View.extend({
     if($target.hasClass("Art")){
       id = $target.data("artist-id");
       artid = $target.data("id");
-      Backbone.history.navigate("#users/" + id + "?art-id=" + artid, {trigger: true});
+      Backbone.history.navigate("#users/" + id + "/" + artid, {trigger: true});
     } else {
      id = $target.data("id");
      Backbone.history.navigate("#users/" + id, {trigger: true});

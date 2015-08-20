@@ -9,6 +9,7 @@ CapstoneProject.Routers.Router = Backbone.Router.extend({
   routes: {
     "": "explore",
     "users/:id": "artistShow",
+    "users/:id/:artid": "artistShow",
     "create": "artCreate",
     "profile": "userProfile"
   },
@@ -25,9 +26,9 @@ CapstoneProject.Routers.Router = Backbone.Router.extend({
     this._swapView(exploreView);
   },
 
-  artistShow: function (id) {
+  artistShow: function (id, artid) {
     var artist = this.users.getOrFetch(id);
-    var view = new CapstoneProject.Views.ArtistShow({model: artist});
+    var view = new CapstoneProject.Views.ArtistShow({model: artist, artId: artid});
     this._swapView(view);
   },
 

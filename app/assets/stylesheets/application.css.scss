@@ -26,6 +26,30 @@
  //   top: 50%;
  // }
 
+ .test-footer-toggles-right{
+   position: fixed;
+  //  background-color: grey;
+   width: 20%;
+   right: 50px;
+
+ }
+
+ .amount-of-patrons{
+   margin-bottom: 20px;
+ }
+ .patron-funded{
+   font-size: 25px;
+   font-weight: bold;
+ }
+
+ .patron-percentage{
+  margin-bottom: 25px
+ }
+
+ .artist-goal{
+   margin-bottom: 30px;
+ }
+
  .gallery-item-and-description::after {
  content: "";
  display: block;
@@ -37,7 +61,7 @@
  }
 
  .description-for-gallery{
-   margin-right: 200px
+   width: 700px;
  }
 
 
@@ -153,6 +177,7 @@ clear: both;
 
 .test-text{
   vertical-align: top;
+  width: 580px;
 }
 
 .thumbnail-gallery{
@@ -202,13 +227,6 @@ clear: both;
   padding: 50px;
 }
 
-.test-footer-toggles-right{
-  float:right;
-  position: relative;
-  // height: 20px;
-  // width: 100px
-}
-
 .btn.explore-gallery-button{
   color: white;
     background-color: teal;
@@ -218,7 +236,7 @@ clear: both;
 }
 
 .test-footer-content{
-  width: 80%;
+  width: 90%;
   height: 500px;
 }
 
@@ -369,7 +387,9 @@ button.toggle-button.explore-patrons-button{
 }
 
 div.arts{
-  width: 100%;
+  width: 75%;
+  display: inline;
+  float: left;
 }
 
 .art .thumb {
@@ -774,6 +794,15 @@ div.col-md-9{
 a.category-item{
   font-size: 17px;
   color: black;
+}
+
+a.category-item.active{
+  font-size: 17px;
+  color: black;
+  text-decoration: underline;
+}
+a:hover{
+  cursor: default;
 }
 .project-description{
   padding-left: 7px;
