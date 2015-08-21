@@ -1,0 +1,15 @@
+
+  <div class="gallery-item-and-description">
+    <div class="thumbnail-gallery-artist-show">
+        <div class="">
+          <a class="thumbnail" href="#" name="<%=art.id%>">
+                <img class="img-responsive" src="<%=art.escape("thumbnail_image")%>" alt="">
+          </a>
+        </div>
+    </div>
+    <div class="description-for-gallery">
+              <h3><%= art.escape("title") %></h3>
+              <p><%= art.escape("description") %></p>
+              <button class="btn btn-primary delete-art" type="button" name="button">Delete this Piece</button>
+        </div>
+  </div>

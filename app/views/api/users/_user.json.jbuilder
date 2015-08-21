@@ -9,4 +9,5 @@
     :search_image,
     :goal,
     :percent_funded,
-    :amount_funded
+    :amount_funded,
+    :cropped_description

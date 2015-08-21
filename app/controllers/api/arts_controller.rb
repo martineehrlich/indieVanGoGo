@@ -33,6 +33,12 @@ before_action :require_signed_in!
     render :show
   end
 
+  def destroy
+    @art = Art.find(params[:id])
+    @art.destroy
+    render :show
+  end
+
   private
   def art_params
     params.require(:art).permit(:artist_id, :title, :description, :image_file_name)

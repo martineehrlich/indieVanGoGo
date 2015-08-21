@@ -1,0 +1,19 @@
+<div class="patron-funded">
+  $<%=artist.escape("amount_funded") %> USD
+</div>
+<div class="amount-of-patrons">
+  raised by <%=artist.patrons().length %> patrons.
+</div>
+<div class="progress">
+<div class="progress-bar" role="progressbar" aria-valuenow="<%=artist.escape("percent_funded")%>"
+aria-valuemin="0" aria-valuemax="100" style="width: <%=artist.escape("percent_funded")%>%;">
+  <span class="sr-only">60% Complete</span>
+</div>
+</div>
+<div class="patron-percentage">
+  <%=artist.escape("percent_funded") %>% funded
+</div>
+<div class="artist-goal">
+  $<%=artist.escape("goal") %> USD goal
+</div>
+</div>

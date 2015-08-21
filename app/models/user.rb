@@ -95,6 +95,12 @@ class User < ActiveRecord::Base
     search_image
   end
 
+  def cropped_description
+    if self.description
+      self.description[0..110] + "..."
+    end
+  end
+
   private
   def ensure_session_token
     self.session_token ||= SecureRandom.urlsafe_base64(16)

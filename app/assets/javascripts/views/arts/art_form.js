@@ -2,6 +2,9 @@ CapstoneProject.Views.ArtForm = Backbone.View.extend({
   template: JST["arts/art_form"],
 
   initialize: function(options) {
+    $(window).on('load', function(){
+      $(document).scrollTop(0);
+});
     this.categories = options.categories;
     this.listenTo(this.model, 'sync', this.render);
     this.listenTo(this.categories, "sync", this.render);
@@ -86,7 +89,7 @@ CapstoneProject.Views.ArtForm = Backbone.View.extend({
     cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, result){
       if (error) { return; }
       var data = result[0];
-      this.model.set({image_file_name: data.url, thumbnail_image: data.thumbnail_url});
+      this.model.set({image_file_name: data.url});
     }.bind(this));
     }
 

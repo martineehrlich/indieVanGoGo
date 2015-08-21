@@ -44,7 +44,7 @@ CapstoneProject.Routers.Router = Backbone.Router.extend({
 
   userProfile: function () {
     var artist = this.users.getOrFetch(CapstoneProject.CURRENT_USER.id);
-    var view = new CapstoneProject.Views.ArtistShow({model: artist});
+    var view = new CapstoneProject.Views.Profile({model: artist});
     this._swapView(view);
   },
 

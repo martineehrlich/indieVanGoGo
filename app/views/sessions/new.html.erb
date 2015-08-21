@@ -9,12 +9,27 @@
   <form action="<%= session_url %>" method="post">
     <%= auth_token_input %>
   <ul class="sign-in-list">
-    <li><input class="sign-in list-group-item" type="text" name="user[email]" value="" placeholder="Email"></li>
-    <li><input type="password" class="sign-in list-group-item" name="user[password]" value="" placeholder="Password"></li>
+    <li><input class="sign-in email list-group-item" type="text" name="user[email]" value="" placeholder="Email"></li>
+    <li><input type="password" class="sign-in password list-group-item" name="user[password]" value="" placeholder="Password"></li>
   </ul>
 
-  <input class="sign-in-button btn " type="submit" value="Sign in">
-  <input class="sign-in-button guest btn " type="submit" value="Sign in as a Guest">
+  <input class="sign-in-button btn submit" type="submit" value="Sign in">
+
+  <%= link_to "Sign Up", new_user_url %>
+  <button class="sign-in-button guest btn" type="" value="">Sign in as a Guest</button>
   </form>
 </div>
 </div>
+<script type="text/javascript" charset="utf-8">
+  $(".sign-in-button.guest").on("click", function(event) {
+    event.preventDefault();
+    $(".email").val("user@example.com");
+    $(".password").val("password");
+    $(".submit").click();
+  });
+</script>
+<script type="text/javascript" charset="utf-8">
+  $(".sign-in-button.sign-up").on("click", function(event) {
+
+  });
+</script>

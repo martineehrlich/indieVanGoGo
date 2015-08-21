@@ -4,10 +4,6 @@
 
 <script>
 
-$(document).ready(function(){
-  CapstoneProject.initialize();
-});
-
   $(function () {
     CapstoneProject.CURRENT_USER = {
       id: "<%= current_user.id %>",
@@ -17,4 +13,9 @@ $(document).ready(function(){
     };
 
   });
+
+  $(document).ready(function(){
+    CapstoneProject.initialize();
+  });
+
 </script>
