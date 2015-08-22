@@ -5,16 +5,23 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-    if params[:category_id]
-      @artists = User.artists_in_category(params[:category_id]).page(params[:page]).per(6)
+    if params[:explore]
+      if params[:category_id]
+        @artists = User.artists_in_category(params[:category_id])
+      else
+        @artists = User.artists
+      end
+      render :index_normal
     else
-      @artists = User.artists.page(params[:page]).per(6)
+      if params[:category_id]
+        @artists = User.artists_in_category(params[:category_id]).page(params[:page]).per(6)
+      else
+        @artists = User.artists.page(params[:page]).per(6)
+      end
+      @page = params[:page] ? params[:page].to_i : 1
+      @total_pages = @artists.total_pages
+      render :index
     end
-
-    @page = params[:page] ? params[:page].to_i : 1
-    @total_pages = @artists.total_pages
-
-    render :index
   end
 
   def edit

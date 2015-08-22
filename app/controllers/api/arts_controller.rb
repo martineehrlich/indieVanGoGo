@@ -1,16 +1,24 @@
 class Api::ArtsController < ApplicationController
 before_action :require_signed_in!
   def index
-    if params[:category_id]
-      @arts = Art.arts_in_category(params[:category_id]).page(params[:page]).per(6)
+
+    if params[:explore]
+      if params[:category_id]
+        @arts = Art.arts_in_category(params[:category_id])
+      else
+        @arts = Art.page(params[:page])
+      end
+      render :index_normal
     else
-      @arts = Art.page(params[:page]).per(6)
+      if params[:category_id]
+        @arts = Art.arts_in_category(params[:category_id]).page(params[:page]).per(6)
+      else
+        @arts = Art.page(params[:page]).per(6)
+      end
+      @page = params[:page] ? params[:page].to_i : 1
+      @total_pages = @arts.total_pages
+      render :index
     end
-
-     @page = params[:page] ? params[:page].to_i : 1
-    @total_pages = @arts.total_pages
-
-    render :index
   end
 
   def new

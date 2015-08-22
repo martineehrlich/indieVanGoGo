@@ -34,9 +34,8 @@ CapstoneProject.Collections.Users = Backbone.Collection.extend({
     return this._categories;
   },
 
-
-
   parse: function (response) {
+    debugger;
     if (response.arts) {
       this.arts().set(response.arts, { parse: true });
       delete response.arts;
@@ -45,8 +44,12 @@ CapstoneProject.Collections.Users = Backbone.Collection.extend({
       this.categories().set(response.categories, {parse: true});
       delete response.categories;
     }
-    this.page = response.page;
-    this.total_pages = response.total_pages;
-    return response.artists;
+    if(response.page){
+      this.page = response.page;
+      this.total_pages = response.total_pages;
+      return response.artists;
+    } else {
+      return response;
+  }
   }
 });

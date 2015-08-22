@@ -31,7 +31,6 @@ CapstoneProject.Views.Explore = Backbone.CompositeView.extend({
     this.$el.html(content);
     this.attachSubviews();
     this.onRender();
-    // this.listenForScroll();
     return this;
   },
 
@@ -125,12 +124,20 @@ CapstoneProject.Views.Explore = Backbone.CompositeView.extend({
 
  nextPage: function () {
    var view = this;
+   if(this.currentCollection.constructor === CapstoneProject.Collections.Users){
+     this.data = {
+       data: { page: view.currentCollection.page + 1, explore: true},
+       remove: false
+     };
+   } else {
+     this.data = {
+       data: { page: view.currentCollection.page + 1},
+       remove: false
+     };
+   }
    if ($(window).scrollTop() > $(document).height() - $(window).height() - 50) {
      if (view.currentCollection.page < view.currentCollection.total_pages) {
-       view.currentCollection.fetch({
-         data: { page: view.currentCollection.page + 1 },
-         remove: false
-       });
+       view.currentCollection.fetch(view.data);
      }
    }
  }
