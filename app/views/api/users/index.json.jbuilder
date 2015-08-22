@@ -1,3 +1,4 @@
+json.artists do
 json.array! @artists do |user|
 
   json.partial! 'api/users/user', user: user
@@ -14,3 +15,7 @@ json.array! @artists do |user|
     end
   end
 end
+end
+
+json.page(@page)
+json.total_pages(@total_pages)

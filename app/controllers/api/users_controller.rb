@@ -6,10 +6,14 @@ class Api::UsersController < ApplicationController
 
   def index
     if params[:category_id]
-      @artists = User.artists_in_category(params[:category_id])
+      @artists = User.artists_in_category(params[:category_id]).page(params[:page]).per(6)
     else
-      @artists = User.artists
+      @artists = User.artists.page(params[:page]).per(6)
     end
+
+    @page = params[:page] ? params[:page].to_i : 1
+    @total_pages = @artists.total_pages
+
     render :index
   end
 

@@ -2,10 +2,13 @@ class Api::ArtsController < ApplicationController
 before_action :require_signed_in!
   def index
     if params[:category_id]
-      @arts = Art.arts_in_category(params[:category_id])
+      @arts = Art.arts_in_category(params[:category_id]).page(params[:page]).per(6)
     else
-      @arts = Art.all
+      @arts = Art.page(params[:page]).per(6)
     end
+
+     @page = params[:page] ? params[:page].to_i : 1
+    @total_pages = @arts.total_pages
 
     render :index
   end

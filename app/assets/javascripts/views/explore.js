@@ -16,7 +16,8 @@ CapstoneProject.Views.Explore = Backbone.CompositeView.extend({
       this.addCategoryShow();
     }
     this.currentCollection = this.artists;
-
+    this.listenTo(this.currentCollection, "add", this.render);
+    $(window).scroll(this.nextPage.bind(this));
   },
 
   events: {
@@ -29,7 +30,15 @@ CapstoneProject.Views.Explore = Backbone.CompositeView.extend({
     var content = this.template({collection: this.artists});
     this.$el.html(content);
     this.attachSubviews();
+    this.onRender();
+    // this.listenForScroll();
     return this;
+  },
+
+  onRender: function () {
+    this.$(".explore-artists").addClass("active");
+    var listItems = $("a.category-item");
+    listItems.first().addClass("active");
   },
 
   addCategoriesView: function () {
@@ -112,6 +121,18 @@ CapstoneProject.Views.Explore = Backbone.CompositeView.extend({
     });
     var subview = new CapstoneProject.Views.ArtistIndex({ artists: this.currentCollection});
     this.addSubview('.all-artists', subview);
-  }
+  },
+
+ nextPage: function () {
+   var view = this;
+   if ($(window).scrollTop() > $(document).height() - $(window).height() - 50) {
+     if (view.currentCollection.page < view.currentCollection.total_pages) {
+       view.currentCollection.fetch({
+         data: { page: view.currentCollection.page + 1 },
+         remove: false
+       });
+     }
+   }
+ }
 
 });
