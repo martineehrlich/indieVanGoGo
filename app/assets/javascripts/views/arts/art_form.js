@@ -2,9 +2,9 @@ CapstoneProject.Views.ArtForm = Backbone.View.extend({
   template: JST["arts/art_form"],
 
   initialize: function(options) {
-    $(window).on('load', function(){
-      $(document).scrollTop(0);
-});
+//     $(window).on('load', function(){
+//       $(document).scrollTop(0);
+// });
     this.categories = options.categories;
     this.listenTo(this.model, 'sync', this.render);
     this.listenTo(this.categories, "sync", this.render);

@@ -15,10 +15,6 @@ CapstoneProject.Views.ArtistIndexItem = Backbone.CompositeView.extend({
 
   events: {
     "click .gallery-button": "addGalleryIndex",
-    'click .m-background': 'remove',
-    'click .gallery-close': 'removeBtn',
-    'click .right': "nextImageRight",
-    'click .left': "nextImageLeft"
   },
 
   addGalleryIndex: function () {

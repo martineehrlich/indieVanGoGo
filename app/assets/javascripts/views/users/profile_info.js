@@ -38,14 +38,14 @@ CapstoneProject.Views.Profile = Backbone.CompositeView.extend({
 
 
 
-  // addPatronIndexView: function () {
-  //   var viewsToRemove = this.subviews(".artist");
-  //   viewsToRemove.forEach(function(view){
-  //     this.removeSubview(".artist", view);
-  //   }.bind(this));
-  //   var subview = new CapstoneProject.Views.UserPatronsIndex({ model: this.model, collection: this.model.patrons()});
-  //   this.addSubview('.artist', subview);
-  // },
+  addPatronIndexView: function () {
+    var viewsToRemove = this.subviews(".artist");
+    viewsToRemove.forEach(function(view){
+      this.removeSubview(".artist", view);
+    }.bind(this));
+    var subview = new CapstoneProject.Views.UserPatronsIndex({ model: this.model, collection: this.model.patrons()});
+    this.addSubview('.artist', subview);
+  },
 
 
  addFundingInfoView: function () {

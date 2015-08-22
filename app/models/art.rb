@@ -45,4 +45,10 @@ class Art < ActiveRecord::Base
 
   end
 
+  def cropped_description
+    if self.description
+      self.description[0..170] + "..."
+    end
+  end
+
 end

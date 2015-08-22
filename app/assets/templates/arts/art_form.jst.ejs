@@ -8,8 +8,7 @@
       <button type="button" class="btn btn-default dropdown-toggle override-bootstrap" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       </button>
       <ul class="list-group dropdown-menu">
-        <% categories.shift() %>
-        <% categories.forEach(function (category) { %>
+        <% categories.slice(1).forEach(function (category) { %>
           <li class="art-form-category" data-id="<%=category.id%>" category-name="<%=category.escape("name")%>"><%=category.escape("name")%></li>
       <% }) %>
       </ul>

@@ -5,6 +5,7 @@ CapstoneProject.Views.NavShow = Backbone.View.extend({
     this.newSearch = new CapstoneProject.Collections.Searches();
     this.listenTo(this.newSearch, "sync reset", this.renderResults);
   },
+
   renderResults: function(){
     var $results = this.$('.search-results');
     $results.empty();

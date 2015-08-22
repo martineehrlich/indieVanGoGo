@@ -8,7 +8,9 @@ CapstoneProject.Views.GalleryIndex = Backbone.CompositeView.extend({
 
   events: {
     'click .m-background': 'remove',
-    'click button.btn-danger': 'removeBtn'
+    'click button.btn-danger': 'removeBtn',
+    'mouseover .item.active': 'showCaption',
+    'mouseleave .item.active': 'hideCaption'
   },
 
   render: function () {
@@ -28,7 +30,16 @@ CapstoneProject.Views.GalleryIndex = Backbone.CompositeView.extend({
   removeBtn: function (event) {
     event.preventDefault();
     this.remove();
+  },
+
+  showCaption: function () {
+    $(".carousel-caption").removeClass("hidden");
+  },
+
+  hideCaption: function () {
+    $(".carousel-caption").addClass("hidden");
   }
+
 
 
 });

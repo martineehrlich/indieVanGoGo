@@ -12,22 +12,37 @@
  *
  *= require_tree .
  *= require_self
- *= require bootstrap-modal-carousel.min.css
  */
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
  // @import "font-awesome";
 
- .project-description-padding{
-   margin-bottom: 30px;
+ html, body, #main {
+   height: 100%;
  }
+
+ h4{
+   overflow: hidden;
+ }
+
+ h3{
+   overflow: hidden;
+ }
+
+ .artist-description-overflow{
+   overflow: hidden;
+   height: 80px;
+   width: 206px;
+   margin: 0 0 10px;
+}
 
  .art-explore-button{
    color:white;
    border-radius: 0%;
    margin-left: 24px;
    padding: 4px;
+   margin-top: 4px;
  }
 
  a.art-explore-button{
@@ -321,28 +336,6 @@ clear: both;
   background-size:cover
 }
 
-
-
-html,
-body,
-#root{
-  height: 100%;
-}
-
-
-
-
-
-
-
-
-
-
-
-// ul.nav.navbar-nav{
-//   position: absolute;
-//   left: 45%;
-// }
 .explore{
   padding-top: 15px;
 }
@@ -492,10 +485,6 @@ div.outer-artist{
    position: relative;
  }
 
-
- .carousel.carousel-fit{position:relative}.carousel.carousel-fit.slide{overflow:hidden}.carousel.carousel-fit .carousel-inner>.next,.carousel.carousel-fit .carousel-inner>.prev{bottom:0}.carousel.carousel-fit .carousel-inner>.item{text-align:center}.carousel.carousel-fit .carousel-inner>.item>img{display:inline-block}.carousel.carousel-fit .carousel-inner>.item>.carousel-caption{bottom:0;left:0;right:0}.modal.modal-fullscreen .modal-dialog,.modal.modal-fullscreen .modal-content{bottom:0;left:0;position:absolute;right:0;top:0}.modal.modal-fullscreen .modal-dialog{margin:0;width:100%}.modal.modal-fullscreen .modal-content{border:none;-moz-border-radius:0;border-radius:0;-webkit-box-shadow:inherit;-moz-box-shadow:inherit;-o-box-shadow:inherit;box-shadow:inherit}.modal.modal-fullscreen.force-fullscreen .modal-body{padding:0}.modal.modal-fullscreen.force-fullscreen .modal-header,.modal.modal-fullscreen.force-fullscreen .modal-footer{left:0;position:absolute;right:0}.modal.modal-fullscreen.force-fullscreen .modal-header{top:0}.modal.modal-fullscreen.force-fullscreen .modal-footer{bottom:0}
-
-
  .categories{
    margin-right: 30px;
  }
@@ -579,14 +568,6 @@ div.outer-artist{
 
 }
 
-
-// .description-box{
-//   border-radius: 5%;
-//   padding: 10px;
-//   display: inline-block;
-//   // bottom: 60px;
-//   // position: relative;
-//
   .description-box-wrapper {
     padding-top: 30px;
     padding-bottom: 30px;
@@ -718,19 +699,10 @@ div.btn-group.open:active{
   background-color: rgba(0,0,0,0.0);
 }
 
-
-// div{
-//   padding: 0 0 0 0;
-//   margin: 0 0 0 0;
-// }
-
-
 .jumbotron .video{
   padding-right: 0px;
   padding-left: 0px;
 }
-
-
 
 .toggle-buttons{
   min-width: 800px;
@@ -907,13 +879,8 @@ img-responsive {
 
 }
 
-
-
-
 .picture-info{
   text-align: center;
 }
-
-
 
 .textarea:focus {outline:0;}

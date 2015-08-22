@@ -24,7 +24,6 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'newrelic_rpm'
-gem 'pry-rails'
 gem 'backbone-on-rails'
 
 # Use ActiveModel has_secure_password
@@ -37,6 +36,7 @@ gem 'backbone-on-rails'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  gem 'pry-rails'
   gem 'better_errors'
   gem 'binding_of_caller'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

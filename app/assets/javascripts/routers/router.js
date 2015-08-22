@@ -4,21 +4,20 @@ CapstoneProject.Routers.Router = Backbone.Router.extend({
     this.users = new CapstoneProject.Collections.Users();
     this.arts = new CapstoneProject.Collections.Arts();
     this._categories = new CapstoneProject.Collections.Categories();
+    this._categories.fetch();
   },
 
   routes: {
     "": "explore",
-    "users/:id": "artistShow",
     "users/:id/:artid": "artistShow",
+    "users/:id": "artistShow",
     "create": "artCreate",
     "profile": "userProfile"
   },
 
-
   explore: function () {
     this.users.fetch();
     this.arts.fetch();
-    this._categories.fetch();
     var exploreView = new CapstoneProject.Views.Explore({
       artists: this.users,
       arts: this.arts,

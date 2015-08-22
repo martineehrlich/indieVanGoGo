@@ -9,8 +9,14 @@ CapstoneProject.Views.Explore = Backbone.CompositeView.extend({
     this._currentCategoryid = "1";
     this.addCategoriesView();
     this.addArtistExploreView();
-    this.listenTo(this.categories, "sync", this.addCategoryShow);
+
+    if (this.categories.isEmpty()) {
+      this.listenTo(this.categories, "sync", this.addCategoryShow);
+    } else {
+      this.addCategoryShow();
+    }
     this.currentCollection = this.artists;
+
   },
 
   events: {

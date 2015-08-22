@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
     class_name: :Patron,
     foreign_key: :artist_id
   attr_reader :password
-  after_initialize :image_url_set
+  after_initialize :image_url_set, :goal_set
 
 
   scope :artists, ->{ User.joins(:arts).group('users.id').having("COUNT('arts') > 0") }
@@ -51,7 +51,6 @@ class User < ActiveRecord::Base
   end
 
   def percent_funded
-    self.goal ||= 1
     self.amount_funded * 100 / self.goal
   end
 
@@ -66,7 +65,11 @@ class User < ActiveRecord::Base
   end
 
   def image_url_set
-    self.image_url ||= "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1439329855/StarryNight2436_yimked.jpg"
+    self.image_url ||= "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440181681/defaultprofile_ufbaoz.jpg"
+  end
+
+  def goal_set
+    self.goal ||= 100
   end
 
   def profile_picture
