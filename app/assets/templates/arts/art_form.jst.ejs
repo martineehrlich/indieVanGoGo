@@ -5,7 +5,7 @@
   <div class="upper">
       <div class="new-project">
         <h2 class="main-title">I want to create a <div class="btn-group">
-      <button type="button" class="btn btn-default dropdown-toggle override-bootstrap" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <button type="button" class="btn btn-default btn-lg dropdown-toggle override-bootstrap" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       </button>
       <ul class="list-group dropdown-menu">
         <% categories.slice(1).forEach(function (category) { %>
@@ -20,10 +20,10 @@
     </div>
     </div>
     <div class="lower-border">
-  <div class="lower hidden">
-      <form class="art-form" action="index.html" method="post">
-        <div class="description-file-upload-wrapper col-md-6">
-          <div class="description-box">
+  <div class="lower hidden container-fluid">
+      <form class="art-form container-fluid" action="index.html" method="post">
+        <div class="description-file-upload-wrapper  container-fluid">
+          <div class="description-box col-md-4">
             <div class="description-box-wrapper">
               <div class="description-box-label override-something">
                 Description:
@@ -33,23 +33,31 @@
               </label>
             </div>
           </div>
-          <div class="description-box">
+          <div class="description-box col-md-4">
             <div class="description-box-wrapper">
               <label class="upload-label">
                 <div class="description-box-label">
                   Upload your artwork:
                 </div>
-                <button class="upload">Upload a Photo</button>
-                <img src="<%= this.model.get("url") %>">
+                <div class="upload-button center-under">
+                  <input type="file" class="file-upload"/>
+                  <img src="<%= art.escape("image_file_name") %>">
+                </div>
               <!-- <input type="file" name="image_file_name" class="file-upload upload"> -->
               </label>
             </div>
 
           </div>
+          <div class="description-box-wrapper col-md-4 submit-div">
+            <div class="description-box-label">
+                Add your artwork:
+            </div>
+            <div class="submit-artwork-div">
+              <input class="submit-artwork" type="submit" name="name" value="Submit!">
+            </div>
+          </div>
         </div>
-        <div class="col-md-5 submit-div">
-          <input class="submit-artwork" type="submit" name="name" value="Add Artwork!">
-        </div>
+
       </form>
 </div>
 </div>

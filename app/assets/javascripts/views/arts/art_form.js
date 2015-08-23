@@ -11,7 +11,7 @@ CapstoneProject.Views.ArtForm = Backbone.View.extend({
   },
 
   render: function () {
-    var content = this.template({categories: this.categories});
+    var content = this.template({categories: this.categories, art: this.model});
     this.$el.html(content);
     this.onRender();
     return this;
@@ -91,6 +91,7 @@ CapstoneProject.Views.ArtForm = Backbone.View.extend({
       var data = result[0];
       this.model.set({image_file_name: data.url});
     }.bind(this));
+  
     }
 
 });

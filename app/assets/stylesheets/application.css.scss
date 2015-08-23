@@ -17,7 +17,31 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  // @import "font-awesome";
+.project-description.artist-description{
 
+}
+
+.btn.btn-default.dropdown-toggle.navbar-drop{
+  font-size: 14px;
+  letter-spacing: normal;
+}
+
+.become-patron-button{
+  padding: 4px;
+  margin-left: 46px;
+  margin-top: 10px;
+  border-radius: 0%;
+  background-color: #43C6DB;
+  color: white;
+  border-color: #43C6DB;
+}
+
+.become-patron-button:hover{
+  background-color: #43C6DB;
+  color: white;
+  border-color: #43C6DB;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
  a.explore{
    color: black;
  }
@@ -105,10 +129,13 @@ a.foo, a.foo:link, a.foo:visited, a.foo:hover, a.foo:focus, a.foo:active{
 
  .test-footer-toggles-right{
    position: fixed;
-  //  background-color: grey;
+   background-color: white;
    width: 20%;
    right: 50px;
-
+   padding: 20px;
+   border: 1px solid black;
+   height: 250px;
+   width: 250px;
  }
 
  .amount-of-patrons{
@@ -124,7 +151,7 @@ a.foo, a.foo:link, a.foo:visited, a.foo:hover, a.foo:focus, a.foo:active{
  }
 
  .artist-goal{
-   margin-bottom: 30px;
+   margin-bottom: 20px;
  }
 
  .gallery-item-and-description::after {
@@ -139,6 +166,7 @@ a.foo, a.foo:link, a.foo:visited, a.foo:hover, a.foo:focus, a.foo:active{
 
  .description-for-gallery{
    width: 700px;
+   padding-top: 1px;
  }
 
 
@@ -164,11 +192,34 @@ a.foo, a.foo:link, a.foo:visited, a.foo:hover, a.foo:focus, a.foo:active{
    background-color: rgba(0, 0, 0, 0);
  }
  .search-results{
-   margin-top: 60px;
+   top: 48px;
+   padding: 0;
    width: 30%;
-   margin-left: 70%;
    position: absolute;
    z-index: 100;
+   margin-left: 14px;
+ }
+
+ .search-type{
+   float: right;
+   width: 33px;
+   text-align: left;
+ }
+
+ .search-header{
+   float: left;
+ }
+
+ .search-image{
+   float: left;
+   margin-right: 10px;
+ }
+
+ .list-group-item.search-result{
+    color: black;
+    width: 250px;
+    padding: 5px 10px;
+    height: 40px;
  }
 
  .gallery-button{
@@ -300,8 +351,10 @@ clear: both;
 }
 
 .test-footer-navbar{
+  margin-top: 20px;
   width: 75%;
-  height: 50px;
+  height: 42px;
+  border-bottom: 1px solid #eaeaea;
   margin-bottom: 20px;
 }
 
@@ -334,13 +387,6 @@ clear: both;
   padding: 50px;
 }
 
-.btn.explore-gallery-button{
-  color: white;
-    background-color: teal;
-    border-radius: 0px;
-    border: 1px solid teal;
-    width: 120px;
-}
 
 .test-footer-content{
   width: 90%;
@@ -450,17 +496,7 @@ div.artist-show-button{
 
 }
 
-button.toggle-button.explore-gallery-button{
-  width: 256px;
-  float: left;
-  display: inline-block;
-}
 
-button.toggle-button.explore-patrons-button{
-  width: 256px;
-  float: left;
-  display: inline-block;
-}
 .artist-name-and-image{
   display: inline-block;
 }
@@ -585,9 +621,9 @@ div.outer-artist{
  }
 
  .new-project {
-   background-color: rgba(0, 0, 0, 0.2);
+   background-color: rgba(0, 0, 0, 0.1);
 
-   background-image: url("/assets/background-test-3.JPG");
+   background-image: url("/assets/blobby.jpg");
    position: relative;
    z-index: 2;
     margin: 0 auto;
@@ -611,14 +647,15 @@ div.outer-artist{
 
 .lower {
   // font-family: verdana;
-  width: 960px;
   font-size: 30px;
   font-weight: 300px;
-  color: teal;
   background-color: white;
   margin: 0 auto;
 }
 
+input.file-upload{
+  font-size: 18px;
+}
 .explore-center{
   margin: 0 auto;
 }
@@ -636,12 +673,18 @@ div.outer-artist{
   .description-box-wrapper {
     padding-top: 30px;
     padding-bottom: 30px;
+    color: #43C6DB;
   }
 
   .submit-artwork{
-    margin-top: 50px;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    color: white;
+    background-color: #43C6DB;
+    border: 0px;
+    font-size: 20px;
+  }
+
+  .submit-artwork-div{
+    margin-left: 80px;
   }
 
   .textarea {
@@ -649,19 +692,6 @@ div.outer-artist{
     font-weight: normal;
   }
 
-
-.submit-artwork{
-  border-radius: 5%;
-  background: teal;
-  color: white;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.submit-div{
-  margin-left: 60px;
-  margin-top: 40px;
-}
 
 .art-form-category {
   color: white;;
@@ -747,8 +777,30 @@ div.btn-group.open:active{
 }
 
 .open > .btn-default.dropdown-toggle.override-bootstrap {
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.2);
   font-weight: 900;
-  font-size: 28px;
+  font-size: 37px;
+  font-weight: 500;
+  background-color: rgba(0,0,0,0.0);
+  box-shadow: rgba(0,0,0,0.25);
+  color: white;
+}
+
+.btn-default.dropdown-toggle.override-bootstrap.active-category {
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.2);
+  font-weight: 900;
+  font-size: 37px;
+  font-weight: 500;
+  background-color: rgba(0,0,0,0.0);
+  box-shadow: rgba(0,0,0,0.25);
+  color: white;
+}
+
+.btn-default.dropdown-toggle.override-bootstrap {
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.2);
+  font-weight: 900;
+  font-size: 37px;
+  font-weight: 500;
   background-color: rgba(0,0,0,0.0);
   box-shadow: rgba(0,0,0,0.25);
   color: white;
@@ -810,7 +862,20 @@ button.toggle-button.active{
 
 button.toggle-button.active:focus {outline:0;}
 
+button.toggle-button.explore-gallery-button{
+  float: left;
+  display: inline-block;
+  width: 90px;
 
+}
+
+button.toggle-button.explore-patrons-button{
+  float: left;
+  display: inline-block;
+  width: 90px;
+
+
+}
 
 .artists .project-item:nth-child(3n+3){
   margin-right: 0px;

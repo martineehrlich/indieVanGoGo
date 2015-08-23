@@ -1,37 +1,44 @@
-CapstoneProject.Views.NavShow = Backbone.View.extend({
+CapstoneProject.Views.NavShow = Backbone.CompositeView.extend({
   template: JST["nav"],
 
   initialize: function (options) {
     this.newSearch = new CapstoneProject.Collections.Searches();
-    this.listenTo(this.newSearch, "sync reset", this.renderResults);
-  },
-
-  renderResults: function(){
-    var $results = this.$('.search-results');
-    $results.empty();
-    var lis = this.newSearch.map(function (result) {
-      var resultLI = $('<li class="list-group-item search-result"></li>');
-      resultLI.html('<img src=' + result.escape("image") + '>' + result.escape('header') + result.escape('type'));
-      resultLI.attr("data-id", result.id);
-      resultLI.attr("data-artist-id", result.get("artist_id"));
-      resultLI.addClass(result.escape("type"));
-      return resultLI;
-    });
-    $results.append(lis);
+    this.listenTo(this.newSearch, "sync", this.addSearchResultView);
+    this.listenTo(this.newSearch, 'reset remove', this.removeSearchResultView);
+    this.newSearch.each(this.addSearchResultView.bind(this));
   },
 
   render: function () {
     var content = this.template({});
     this.$el.html(content);
-    this.renderResults();
+    this.attachSubviews();
     return this;
+  },
+
+  addSearchResultView: function (result) {
+    var subview = new CapstoneProject.Views.SearchResult({ search_results: result});
+    this.addSubview('.search-results', subview);
+  },
+
+  removeSearchResultView: function () {
+    var viewsToRemove = this.subviews(".search-results");
+     viewsToRemove.forEach(function(view){
+       this.removeSubview(".search-results", view);
+     }.bind(this));
+     var $results = this.$('.search-results');
+     $results.empty();
   },
 
   events: {
     "blur .form-control": "closeSearch",
     "keyup .form-control": "makeQuery",
     "click .list-group-item": "navigateToRequested",
-    "click a": "changeActiveClass"
+    "click a": "changeActiveClass",
+    "submit form": "preventDefault"
+  },
+
+  preventDefault: function (event) {
+    event.preventDefault();
   },
 
   makeQuery: function (event) {
@@ -75,7 +82,26 @@ CapstoneProject.Views.NavShow = Backbone.View.extend({
   closeSearch: function () {
     setTimeout(this.closeSearchHelper.bind(this), 200);
     $("input.form-control").val("");
-  }
+  },
+  // renderResults: function(){
+  //   // var viewsToRemove = this.subviews(".search-results");
+  //   // viewsToRemove.forEach(function(view){
+  //   //   this.removeSubview(".search-results", view);
+  //   // }.bind(this));
+  //   // var $results = this.$('.search-results');
+  //   // $results.empty();
+  //   //
+  //   // var lis = this.newSearch.map(function (result) {
+  //   //   var resultLI = $('<li class="list-group-item search-result"></li>');
+  //   //   resultLI.html('<img src=' + result.escape("image") + '>' + result.escape('header') + result.escape('type'));
+  //   //   resultLI.attr("data-id", result.id);
+  //   //   resultLI.attr("data-artist-id", result.get("artist_id"));
+  //   //   resultLI.addClass(result.escape("type"));
+  //   //   return resultLI;
+  //   // });
+  //   // $results.append(lis);
+  // },
+
 
 
 });

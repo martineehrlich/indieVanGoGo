@@ -1,0 +1,14 @@
+<% results.forEach(function (result){ %>
+<li data-id="<%=result.id%>" data-artist-id="<%=result.escape("artist_id")%>"
+  class="list-group-item search-result <%=result.escape("type")%> ">
+<div class="search-image">
+  <img src="<%=result.escape("image")%>" alt="" />
+</div>
+<div class="search-header">
+  <%= result.escape("header") %>
+</div>
+<div class="search-type">
+  <%= result.escape("type") %>
+</div>
+</li>
+<% }) %>

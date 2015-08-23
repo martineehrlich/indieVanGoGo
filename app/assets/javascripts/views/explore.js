@@ -23,8 +23,7 @@ CapstoneProject.Views.Explore = Backbone.CompositeView.extend({
   events: {
     "click .explore-artists": "addArtistExploreView",
     "click .explore-arts": "addArtExploreView",
-    "click a.category-item": "changeActiveCategory",
-    "click .project-item.artist-item": "goToArtistPage",
+    "click a.category-item": "changeActiveCategory"
   },
 
 
@@ -142,13 +141,5 @@ CapstoneProject.Views.Explore = Backbone.CompositeView.extend({
       }
     }
   },
-
-  goToArtistPage: function (event) {
-    $target = $(event.currentTarget);
-    var id = $target.attr("data-id");
-    Backbone.history.navigate( "#users/" + id  , {trigger: true});
-
-  },
-
 
 });
