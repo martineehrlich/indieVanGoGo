@@ -1,6 +1,6 @@
 CapstoneProject.Views.ArtExploreItem = Backbone.View.extend({
   template: JST["arts/art_explore_item"],
-  className: "project-item col-sm-3 col-lg-3 col-md-3",
+  className: "project-item art-item col-sm-3 col-lg-3 col-md-3",
 
   initialize: function () {
     this.listenTo(this.model, "sync", this.render);
@@ -17,8 +17,9 @@ CapstoneProject.Views.ArtExploreItem = Backbone.View.extend({
 
   events: {
     "click .art-item": "addArtModal",
-    "click .art-explore-button": "navigateToArtist"
-
+    "click .art-explore-button": "navigateToArtist",
+    "click .thumbnail": "addArtModal",
+    "click .project-caption": "addArtModal",
   },
 
   addArtModal: function () {

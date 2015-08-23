@@ -100,7 +100,11 @@ class User < ActiveRecord::Base
 
   def cropped_description
     if self.description
-      self.description[0..110] + "..."
+      if self.description.length < 110
+        self.description
+      else
+        self.description[0..110] + "..."
+      end
     end
   end
 

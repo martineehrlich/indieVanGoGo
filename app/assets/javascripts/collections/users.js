@@ -35,7 +35,6 @@ CapstoneProject.Collections.Users = Backbone.Collection.extend({
   },
 
   parse: function (response) {
-    debugger;
     if (response.arts) {
       this.arts().set(response.arts, { parse: true });
       delete response.arts;

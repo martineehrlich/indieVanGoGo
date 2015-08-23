@@ -1,6 +1,7 @@
 CapstoneProject.Views.ArtistIndexItem = Backbone.CompositeView.extend({
   template: JST["artists/artist_index_item"],
-  className: "project-item col-md-3",
+  className: "project-item artist-item col-md-3",
+
 
   initialize: function () {
     this.model.fetch();
@@ -10,7 +11,13 @@ CapstoneProject.Views.ArtistIndexItem = Backbone.CompositeView.extend({
   render: function () {
     var content = this.template({artist: this.model});
     this.$el.html(content);
+    this.onRender();
     return this;
+  },
+
+  onRender: function () {
+    $artist = $(".project-item");
+    $artist.attr("data-id", this.model.id);
   },
 
   events: {
@@ -25,6 +32,9 @@ CapstoneProject.Views.ArtistIndexItem = Backbone.CompositeView.extend({
     modal.$(".m-content").css({"margin-top":  window.pageYOffset - $(modal.$el).height() / 2, 'top': '50%' });
     modal.$(".m-content").css({ 'margin-left': window.pageXOffset - $(modal.$el).width() / 2, 'left': '50%' });
     $('body').append(modal.$el);
-  }
+  },
+
+
+
 
 });

@@ -10,5 +10,23 @@ CapstoneProject.Collections.Arts = Backbone.Collection.extend({
   }else {
       return response;
     }
-  }
+  },
+
+
+  getOrFetch: function (id) {
+    var art = this.get(id);
+    var arts = this;
+    if (art) {
+      art.fetch();
+    } else {
+      art = new CapstoneProject.Models.Art({id: id});
+      art.fetch({
+        success: function () {
+          arts.add(art);
+        }
+      });
+    }
+    return art;
+  },
+
 });

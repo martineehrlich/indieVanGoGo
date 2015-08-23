@@ -30,7 +30,8 @@ CapstoneProject.Views.NavShow = Backbone.View.extend({
   events: {
     "blur .form-control": "closeSearch",
     "keyup .form-control": "makeQuery",
-    "click .list-group-item": "navigateToRequested"
+    "click .list-group-item": "navigateToRequested",
+    "click a": "changeActiveClass"
   },
 
   makeQuery: function (event) {
@@ -44,6 +45,12 @@ CapstoneProject.Views.NavShow = Backbone.View.extend({
     } else {
       this.newSearch.reset([]);
     }
+  },
+
+  changeActiveClass: function (event) {
+    $target = $(event.currentTarget);
+    this.$("a").removeClass("active");
+    $target.addClass("active");
   },
 
   navigateToRequested: function (event) {

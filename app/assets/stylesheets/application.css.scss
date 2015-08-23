@@ -18,9 +18,55 @@
  @import "bootstrap";
  // @import "font-awesome";
 
- html, body, #main {
+ a.explore{
+   color: black;
+ }
+
+ a.explore:hover{
+   color: black;
+ }
+
+ a.art-item{
+   color: black;
+ }
+
+ a.art-item:hover{
+   color: black;
+ }
+
+ .navbar-default .navbar-nav > li > a {
+    color: white;
+}
+
+// a.category-item.active{
+//   font-size: 17px;
+//   color: black;
+//   text-decoration: underline;
+// }
+
+a.foo, a.foo:link, a.foo:visited, a.foo:hover, a.foo:focus, a.foo:active{
+  color:green;
+}
+
+.navbar-default .navbar-nav > li > a:visited, a:hover, a:focus {
+   color: white;
+   text-decoration: underline;
+}
+
+.navbar-default .navbar-nav > li > a.active {
+   color: white;
+   text-decoration: underline;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+   color: white;
+   text-decoration: underline;
+}
+
+ html, body, #content {
    height: 100%;
  }
+
 
  h4{
    overflow: hidden;
@@ -37,13 +83,7 @@
    margin: 0 0 10px;
 }
 
- .art-explore-button{
-   color:white;
-   border-radius: 0%;
-   margin-left: 24px;
-   padding: 4px;
-   margin-top: 4px;
- }
+
 
  a.art-explore-button{
    margin-left: 0px;
@@ -136,19 +176,49 @@
    margin-left: 46px;
    margin-top: 10px;
    border-radius: 0%;
+   background-color: #43C6DB;
+   color: white;
+   border-color: #43C6DB;
  }
+
+ .gallery-button:hover{
+   background-color: #43C6DB;
+   color: white;
+   border-color: #43C6DB;
+   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+ }
+
+ .art-explore-button{
+   color:white;
+   border-radius: 0%;
+   margin-left: 24px;
+   padding: 4px;
+   margin-top: 4px;
+   background-color: #43C6DB;
+   border-color: #43C6DB;
+ }
+
+ .art-explore-button:hover{
+   background-color: #43C6DB;
+   color: white;
+   border-color: #43C6DB;
+   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+ }
+
+
 
  .progress{
    width: 90%;
    margin: 0 auto;
    background-color: #e4e4e4;
-   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5);
+  //  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5);
    height: 15px;
    border-radius: 0%;
  }
 
  .progress-bar{
-   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5);
+  //  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5);
+   background-color: #43C6DB;
  }
 
  .amount-funded{
@@ -494,6 +564,7 @@ div.outer-artist{
    background-color: white;
    width: 100%;
    font-size: 300px;
+   margin-top: 60px;
  }
 
  // .background-image{
@@ -514,20 +585,21 @@ div.outer-artist{
  }
 
  .new-project {
-   background-image: url("/assets/create-background.jpeg");
+   background-color: rgba(0, 0, 0, 0.2);
+
+   background-image: url("/assets/background-test-3.JPG");
    position: relative;
    z-index: 2;
     margin: 0 auto;
     padding: 100px 0px 20px 0px;
     display: block;
     background-blend-mode: saturation;
-    width: 960px;
     color: white;
     letter-spacing: 5px;
     font-weight: 500;
     text-shadow: 10px white;
     font-size: 48px;
-    height: 400px;
+    height: 395px;
   }
 
 // .dropdown-toggle:hover{
@@ -535,14 +607,7 @@ div.outer-artist{
 //   background-color: rgba(255, 255, 255, 0.3);
 //   background-blend-mode: saturation;
 // }
-.lower-border{
-  border: 1px solid teal;
-  width: 960px;
-  position: relative;
-  margin: 0 auto;
-  height: 400px;
 
-}
 
 .lower {
   // font-family: verdana;
@@ -622,7 +687,11 @@ div.outer-artist{
 }
 
 .navbar-default {
+  background-color: black;
+  color:white;
   margin-bottom: 0px;
+  border-radius: 0%;
+  border: 0px;
 }
 
 .dropdown-toggle {
@@ -711,27 +780,32 @@ div.btn-group.open:active{
 
 button.toggle-button{
   background-color: white;
-  color: teal;
+  color: black;
   border-radius: 0px;
-  border: 1px solid teal;
   font-size: 17px;
-  width: 396px;
+  width: 150px;
+  border: 0px;
   display: inline-block;
   position: relative;
   float: left;
   outline: none;
+}
 
+button.toggle-button:hover{
+  background-color: white;
+  text-decoration: underline;
 }
 button.toggle-button.active{
-  color: white;
-  background-color: teal;
+  color: #43C6DB;
+  border: 0px;
+  background-color: white;
   border-radius: 0px;
-  border: 1px solid teal;
   font-size: 17px;
-  width: 396px;
+  width: 150px;
   display: inline-block;
   position: relative;
   float: left;
+  text-decoration: underline;
 }
 
 button.toggle-button.active:focus {outline:0;}
@@ -754,6 +828,10 @@ button.toggle-button.active:focus {outline:0;}
   margin-bottom: 30px;
 }
 
+.project-item:hover{
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+}
+
 
 div.thumbnail {
   width: 220px;
@@ -762,6 +840,7 @@ div.thumbnail {
   border: none;
   padding: 0 0 0 0;
   margin-bottom: 0px;
+  border-radius: 0px;
 }
 
 div.row.artists{
@@ -792,7 +871,7 @@ a.category-item{
 
 a.category-item.active{
   font-size: 17px;
-  color: black;
+  color: #43C6DB;
   text-decoration: underline;
 }
 a:hover{

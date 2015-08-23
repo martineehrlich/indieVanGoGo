@@ -23,8 +23,10 @@ CapstoneProject.Views.Explore = Backbone.CompositeView.extend({
   events: {
     "click .explore-artists": "addArtistExploreView",
     "click .explore-arts": "addArtExploreView",
-    "click a.category-item": "changeActiveCategory"
+    "click a.category-item": "changeActiveCategory",
+    "click .project-item.artist-item": "goToArtistPage",
   },
+
 
   render: function () {
     var content = this.template({collection: this.artists});
@@ -46,16 +48,15 @@ CapstoneProject.Views.Explore = Backbone.CompositeView.extend({
   },
 
   addCategoryShow: function () {
-      if (this.categories.first()) {
-        var category = this.categories.first();
-        var subview = new CapstoneProject.Views.CategoryShow({model: category});
-        var listItems = $(".category-item");
-        listItems.first().addClass("active");
-        this.addSubview(".category-show", subview);
-        this.$(".explore-artists").addClass("active");
+    if (this.categories.first()) {
+      var category = this.categories.first();
+      var subview = new CapstoneProject.Views.CategoryShow({model: category});
+      var listItems = $(".category-item");
+      listItems.first().addClass("active");
+      this.addSubview(".category-show", subview);
+      this.$(".explore-artists").addClass("active");
     }
   },
-
 
   changeActiveCategory: function (event) {
     this.$(".category-item.active").removeClass("active");
@@ -122,24 +123,32 @@ CapstoneProject.Views.Explore = Backbone.CompositeView.extend({
     this.addSubview('.all-artists', subview);
   },
 
- nextPage: function () {
-   var view = this;
-   if(this.currentCollection.constructor === CapstoneProject.Collections.Users){
-     this.data = {
-       data: { page: view.currentCollection.page + 1, explore: true},
-       remove: false
-     };
-   } else {
-     this.data = {
-       data: { page: view.currentCollection.page + 1},
-       remove: false
-     };
-   }
-   if ($(window).scrollTop() > $(document).height() - $(window).height() - 50) {
-     if (view.currentCollection.page < view.currentCollection.total_pages) {
-       view.currentCollection.fetch(view.data);
-     }
-   }
- }
+  nextPage: function () {
+    var view = this;
+    if(this.currentCollection.constructor === CapstoneProject.Collections.Users){
+      this.data = {
+        data: { page: view.currentCollection.page + 1, explore: true},
+        remove: false
+      };
+    } else {
+      this.data = {
+        data: { page: view.currentCollection.page + 1},
+        remove: false
+      };
+    }
+    if ($(window).scrollTop() > $(document).height() - $(window).height() - 50) {
+      if (view.currentCollection.page < view.currentCollection.total_pages) {
+        view.currentCollection.fetch(view.data);
+      }
+    }
+  },
+
+  goToArtistPage: function (event) {
+    $target = $(event.currentTarget);
+    var id = $target.attr("data-id");
+    Backbone.history.navigate( "#users/" + id  , {trigger: true});
+
+  },
+
 
 });
