@@ -44,20 +44,17 @@ CapstoneProject.Views.PatronForm = Backbone.View.extend({
     this.model.save(formData, {
       success: function (patron) {
         this.collection.add(patron);
-        this.remove();
+        var $success = this.$(".alert-success");
+        $success.removeClass("hidden");
+        setTimeout(function(){
+          this.remove();}.bind(this), 3000);
       }.bind(this),
       error: function (model, response) {
         var $errorsDiv = this.$(".errors-div");
         $errorsDiv.removeClass("hidden");
         this.$(".errors-list").append("Please include your name and the amount you wish to donate.");
-        // var errors = _(response.responseJSON);
-        // errors.each(function (error){
-        //   this.$(".errors-list").append(error);
-      // }.bind(this));
     }.bind(this)
   });
-    // Backbone.history.navigate("#users/" + this.model.escape("artist_id"), {trigger: true});
-    // location.reload(true);
   },
 
 

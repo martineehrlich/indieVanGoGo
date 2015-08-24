@@ -131,14 +131,9 @@ input:focus{
    height: 100%;
  }
 
-
- h4{
-   overflow: hidden;
- }
-
- h3{
-   overflow: hidden;
- }
+.patron-popup-form{
+    width: 480px;
+  }
 
  .artist-description-overflow{
    overflow: hidden;
@@ -157,14 +152,39 @@ input:focus{
  }
 
  .m-content.patron{
-   height: 170px;
+   height: 280px;
  }
+
 
  .become-patron{
    position: absolute;
    left: 50%;
    transform: translateX(-50%);
+   padding: 4px;
+   margin-top: 10px;
+   border-radius: 0%;
+   background-color: #43C6DB;
+   color: white;
+   border-color: #43C6DB;
  }
+
+ .become-patron-button:hover, .become-patron-button:focus, .become-patron-button:active{
+   background-color: #43C6DB;
+   color: white;
+   border-color: #43C6DB;
+   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+   outline: none;
+ }
+
+
+ .become-patron:hover, .become-patron:focus, .become-patron:active{
+   background-color: #43C6DB;
+   color: white;
+   border-color: #43C6DB;
+   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+   outline: none;
+ }
+
 
  .test-footer-toggles-right{
    position: fixed;
@@ -289,7 +309,9 @@ input:focus{
    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
  }
 
-
+ .project-description.art-description{
+   height: 130px;
+ }
 
  .progress{
    width: 90%;

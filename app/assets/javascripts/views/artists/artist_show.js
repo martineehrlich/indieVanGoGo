@@ -17,7 +17,7 @@ CapstoneProject.Views.ArtistShow = Backbone.CompositeView.extend({
       if(aTag.offset() !== undefined){
       $('html,body').animate({scrollTop: aTag.offset().top}, 1500);
       }
-      Backbone.history.navigate("#users/" + this.model.id);
+      Backbone.history.navigate("#users/" + this.model.id, {trigger: true});
     },
 
   events: {

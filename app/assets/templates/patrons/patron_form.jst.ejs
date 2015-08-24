@@ -1,9 +1,10 @@
 <div class="m-background"></div>
 
 <div class="m-content patron">
-  <form>
+  <form class="patron-popup-form">
     <button class="close">&times;</button>
-
+    <div class="alert alert-success hidden" role="alert">
+    Thank you for your donation.</div>
     <input type="hidden" name="artist_id" value="<%=artist.id%>">
     <div class="errors-div hidden">
       <div class="alert alert-danger" role="alert">
@@ -17,10 +18,10 @@
   </div>
     <label patron-form-label>Name
     <input class="form-control name-field" type="text" name="name" value="">
-    </label>
+    </label><br>
     <label>Amount
     <input class="amount-field form-control" type="text" name="amount">
-  </label>
+  </label><br>
   <div class="">
     Do you want your donation to <%=artist.escape("name")%> to be anonymous?</h4><br>
       <input type="radio" name="anonymous" value="true" id="anonymous_true">

@@ -45,6 +45,17 @@ class Art < ActiveRecord::Base
 
   end
 
+  def cropped_title
+    if self.title
+      if self.title.length < 24
+        self.title
+      else
+        self.title[0..24] + "..."
+      end
+    end
+  end
+
+
   def cropped_description
     if self.description
       if self.description.length < 170
