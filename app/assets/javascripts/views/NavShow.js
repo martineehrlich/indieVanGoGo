@@ -33,7 +33,6 @@ CapstoneProject.Views.NavShow = Backbone.CompositeView.extend({
     "blur .form-control": "closeSearch",
     "keyup .form-control": "makeQuery",
     "click .list-group-item": "navigateToRequested",
-    "click a": "changeActiveClass",
     "submit form": "preventDefault"
   },
 
@@ -52,12 +51,6 @@ CapstoneProject.Views.NavShow = Backbone.CompositeView.extend({
     } else {
       this.newSearch.reset([]);
     }
-  },
-
-  changeActiveClass: function (event) {
-    $target = $(event.currentTarget);
-    this.$("a").removeClass("active");
-    $target.addClass("active");
   },
 
   navigateToRequested: function (event) {

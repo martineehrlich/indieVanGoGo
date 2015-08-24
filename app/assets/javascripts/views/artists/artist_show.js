@@ -23,7 +23,8 @@ CapstoneProject.Views.ArtistShow = Backbone.CompositeView.extend({
   events: {
     "click .explore-gallery-button": "addArtworkIndexView",
     "click .explore-patrons-button": "addPatronIndexView",
-    'click .btn-compose': "createPatron"
+    'click .btn-compose': "createPatron",
+
 },
 
   render: function () {
@@ -42,6 +43,8 @@ CapstoneProject.Views.ArtistShow = Backbone.CompositeView.extend({
 
 
   addArtworkIndexView: function () {
+    this.$(".explore-patrons-button").removeClass("active");
+    this.$(".explore-gallery-button").addClass("active");
     var viewsToRemove = this.subviews(".artist");
     viewsToRemove.forEach(function(view){
       this.removeSubview(".artist", view);
@@ -51,6 +54,8 @@ CapstoneProject.Views.ArtistShow = Backbone.CompositeView.extend({
   },
 
   addPatronIndexView: function () {
+    this.$(".explore-gallery-button").removeClass("active");
+    this.$(".explore-patrons-button").addClass("active");
     var viewsToRemove = this.subviews(".artist");
     viewsToRemove.forEach(function(view){
       this.removeSubview(".artist", view);

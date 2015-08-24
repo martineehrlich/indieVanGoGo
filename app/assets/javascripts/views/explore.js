@@ -14,9 +14,10 @@ CapstoneProject.Views.Explore = Backbone.CompositeView.extend({
       this.listenTo(this.categories, "sync", this.addCategoryShow);
     } else {
       this.addCategoryShow();
+      var listItems = $("a.category-item");
+      listItems.first().addClass("active");
     }
     this.currentCollection = this.artists;
-    this.listenTo(this.currentCollection, "add", this.render);
     $(window).scroll(this.nextPage.bind(this));
   },
 

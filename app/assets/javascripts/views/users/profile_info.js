@@ -12,6 +12,8 @@ CapstoneProject.Views.Profile = Backbone.CompositeView.extend({
     "click .explore-patrons-button": "addPatronIndexView",
     'click .btn-compose': "createPatron",
     'click .edit-profile': "popModal",
+    'mouseover .test-header': "showEditButton",
+    'mouseleave .test-header': "hideEditButton"
 },
 
   render: function () {
@@ -20,6 +22,15 @@ CapstoneProject.Views.Profile = Backbone.CompositeView.extend({
     this.attachSubviews();
     return this;
   },
+
+  showEditButton: function () {
+    this.$(".edit-profile").removeClass("hidden");
+  },
+
+  hideEditButton: function () {
+    this.$(".edit-profile").addClass("hidden");
+  },
+
 
   addArtworkIndexView: function () {
     var viewsToRemove = this.subviews(".artist");
@@ -31,6 +42,7 @@ CapstoneProject.Views.Profile = Backbone.CompositeView.extend({
   },
 
   popModal: function () {
+    this.$(".edit-profile").addClass("hidden");
     var modal = new CapstoneProject.Views.UpdateForm({user: this.model});
     $('body').append(modal.$el);
     modal.render();

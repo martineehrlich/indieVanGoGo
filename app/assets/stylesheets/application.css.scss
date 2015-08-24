@@ -17,10 +17,64 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  // @import "font-awesome";
-.project-description.artist-description{
 
+// #dropdownMenu1{
+//   margin-top: 10px
+// }
+
+input:focus, select:focus, textarea:focus, form:focus, button:focus {outline:0;}
+
+div.dropdown.navbar-right:focus{
+  outline:0;
+}
+.nav.navbar-nav.col-md-offset-2{
+  margin-top: 3px;
+  margin-left: 40px;
 }
 
+input:active{
+  outline:none;
+}
+
+input:focus{
+  outline: none;
+}
+
+.search.form-control{
+  margin-top: 3px;
+}
+.navbar-drop{
+  margin-top: 12px
+}
+
+.navbar-drop:active{
+  color:white;
+  background-color: black;
+}
+
+.navbar-drop:active, .navbar-drop:active{
+  outline: 0px;
+}
+
+.navbar-drop.dropdown-toggle{
+  color:white;
+  background-color: black;
+}
+
+
+.open > .btn-default.dropdown-toggle.navbar-drop {
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.2);
+  font-size: 37px;
+  background-color: rgba(0,0,0,0.0);
+  box-shadow: rgba(0,0,0,0.25);
+  color: white;
+  outline: 0;
+}
+
+.dropdown.navbar-right.open{
+  color:white;
+  background-color: black;
+}
 .btn.btn-default.dropdown-toggle.navbar-drop{
   font-size: 14px;
   letter-spacing: normal;
@@ -62,19 +116,9 @@
     color: white;
 }
 
-// a.category-item.active{
-//   font-size: 17px;
-//   color: black;
-//   text-decoration: underline;
-// }
-
-a.foo, a.foo:link, a.foo:visited, a.foo:hover, a.foo:focus, a.foo:active{
-  color:green;
-}
-
 .navbar-default .navbar-nav > li > a:visited, a:hover, a:focus {
    color: white;
-   text-decoration: underline;
+   font-weight: bold;
 }
 
 .navbar-default .navbar-nav > li > a.active {
@@ -82,10 +126,6 @@ a.foo, a.foo:link, a.foo:visited, a.foo:hover, a.foo:focus, a.foo:active{
    text-decoration: underline;
 }
 
-.navbar-default .navbar-nav > li > a:hover {
-   color: white;
-   text-decoration: underline;
-}
 
  html, body, #content {
    height: 100%;
@@ -106,7 +146,6 @@ a.foo, a.foo:link, a.foo:visited, a.foo:hover, a.foo:focus, a.foo:active{
    width: 206px;
    margin: 0 0 10px;
 }
-
 
 
  a.art-explore-button{
@@ -167,12 +206,6 @@ a.foo, a.foo:link, a.foo:visited, a.foo:hover, a.foo:focus, a.foo:active{
  .description-for-gallery{
    width: 700px;
    padding-top: 1px;
- }
-
-
-
-
- .carousel-control{
  }
 
  button.close{
@@ -638,15 +671,7 @@ div.outer-artist{
     height: 395px;
   }
 
-// .dropdown-toggle:hover{
-//   // background-color: none;
-//   background-color: rgba(255, 255, 255, 0.3);
-//   background-blend-mode: saturation;
-// }
-
-
 .lower {
-  // font-family: verdana;
   font-size: 30px;
   font-weight: 300px;
   background-color: white;
@@ -725,7 +750,6 @@ input.file-upload{
 }
 
 .dropdown-toggle {
-  // background-color: rgba(255, 255, 255, 0.3);
   background-blend-mode: saturation;
   border: none;
   box-shadow: rgba(0,0,0,0.25);
@@ -733,10 +757,8 @@ input.file-upload{
   letter-spacing: 5px;
   font-weight: 800px;
   font-size: 28px;
-  // background-blend-mode: darken;
   color: white;
   background-color: rgba(0,0,0,0.1);
-
 }
 
 label.upload-label{
@@ -757,6 +779,13 @@ input.file-upload{
   background-blend-mode: darken;
   color: white;
   background-color: rgba(0,0,0,0.0);
+}
+
+.navbar-menu{
+  letter-spacing: normal;
+  font-size: 15px;
+  background-color: white;
+  border: 1px solid black;
 }
 
 .art-title::-webkit-input-placeholder  {
@@ -826,9 +855,15 @@ div.btn-group.open:active{
 }
 
 .toggle-buttons{
-  min-width: 800px;
-  margin-left: 15px;
+  margin-left: 14px;
 }
+
+hr{
+  margin-top: 21px;
+  margin-left: 14px;
+  width: 792px;
+}
+
 
 button.toggle-button{
   background-color: white;
@@ -866,15 +901,30 @@ button.toggle-button.explore-gallery-button{
   float: left;
   display: inline-block;
   width: 90px;
-
 }
 
 button.toggle-button.explore-patrons-button{
   float: left;
   display: inline-block;
   width: 90px;
+}
 
+button.toggle-button.profile.explore-patrons-button{
+  width: 130px;
+}
 
+button.toggle-button.profile.explore-gallery-button{
+  width: 130px;
+}
+
+.edit-profile{
+  z-index: 4;
+  position: absolute;
+}
+
+.delete-art{
+  margin-left: 0px;
+  margin-top: 0px;
 }
 
 .artists .project-item:nth-child(3n+3){
