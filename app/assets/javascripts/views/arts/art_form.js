@@ -2,9 +2,6 @@ CapstoneProject.Views.ArtForm = Backbone.View.extend({
   template: JST["arts/art_form"],
 
   initialize: function(options) {
-//     $(window).on('load', function(){
-//       $(document).scrollTop(0);
-// });
     this.categories = options.categories;
     this.listenTo(this.model, 'sync', this.render);
     this.listenTo(this.categories, "sync", this.render);
@@ -67,10 +64,15 @@ CapstoneProject.Views.ArtForm = Backbone.View.extend({
     this.model.save(attrs, {
       success: function () {
         that.collection.add(that.model);
-        Backbone.history.navigate("", {trigger: true});
-      }
-    });
-  },
+        Backbone.history.navigate("#profile", {trigger: true});
+      },
+      error: function (model, response) {
+        var $errorsDiv = this.$(".errors-div");
+        $errorsDiv.removeClass("hidden");
+          this.$(".errors-list").append("Unable to add your artwork. Please try again and make sure an image is attached.");
+    }
+  });
+},
 
   openForm: function () {
     this.$('.lower').removeClass('hidden');
@@ -91,7 +93,7 @@ CapstoneProject.Views.ArtForm = Backbone.View.extend({
       var data = result[0];
       this.model.set({image_file_name: data.url});
     }.bind(this));
-  
+
     }
 
 });

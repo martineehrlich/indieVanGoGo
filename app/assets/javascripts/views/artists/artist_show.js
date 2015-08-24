@@ -68,8 +68,11 @@ CapstoneProject.Views.ArtistShow = Backbone.CompositeView.extend({
    var modal = new CapstoneProject.Views.PatronForm({artist: this.model, collection: this.model.patrons(),
      model: new CapstoneProject.Models.Patron()
    });
-   $('body').append(modal.$el);
    modal.render();
+   modal.$(".m-content").css({"margin-top":  window.pageYOffset - $(modal.$el).height() / 2, 'top': '50%' });
+   modal.$(".m-content").css({ 'margin-left': window.pageXOffset - $(modal.$el).width() / 2, 'left': '50%' });
+   $('body').append(modal.$el);
+
  },
 
  addFundingInfoView: function () {

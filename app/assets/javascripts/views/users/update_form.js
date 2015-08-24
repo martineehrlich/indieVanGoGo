@@ -31,8 +31,18 @@ CapstoneProject.Views.UpdateForm = Backbone.CompositeView.extend({
         success: function () {
           Backbone.history.navigate("#profile", {trigger: true});
           this.model.fetch();
-        }.bind(this)
+          this.remove();
+        }.bind(this),
+        error: function (model, response) {
+          var $errorsDiv = this.$(".errors-div");
+          $errorsDiv.removeClass("hidden");
+          var errors = _(response.responseJSON);
+          errors.each(function (error){
+            this.$(".errors-list").append(error);
+          }.bind(this));
+      }
       });
+
     },
 
     upload: function (event) {

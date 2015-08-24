@@ -19,28 +19,39 @@
       </div>
     </div>
     </div>
+    <div class="errors-div hidden">
+      <div class="alert alert-danger" role="alert">
+        <div class="errors-glyph">
+          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+          <span class="sr-only">Error:</span>
+        </div>
+        <div class="errors-list">
+        </div>
+    </div>
+</div>
+
     <div class="lower-border">
   <div class="lower hidden container-fluid">
       <form class="art-form container-fluid" action="index.html" method="post">
         <div class="description-file-upload-wrapper  container-fluid">
-          <div class="description-box col-md-4">
+          <div class="description-box col-md-6">
             <div class="description-box-wrapper">
               <div class="description-box-label override-something">
-                Description:
+                Description
               </div>
               <label>
-              <textarea name="description" class="textarea" rows="3" cols="30" placeholder="Add a description of your art work."></textarea>
+              <textarea name="description" class="textarea form-control" rows="6" cols="60" placeholder="Add a description of your art work."></textarea>
               </label>
             </div>
           </div>
-          <div class="description-box col-md-4">
+          <div class="description-box file-upload col-md-5">
             <div class="description-box-wrapper">
               <label class="upload-label">
                 <div class="description-box-label">
-                  Upload your artwork:
+                  Upload your artwork
                 </div>
                 <div class="upload-button center-under">
-                  <input type="file" class="file-upload"/>
+                  <input type="file" class="upload"/>
                   <img src="<%= art.escape("image_file_name") %>">
                 </div>
               <!-- <input type="file" name="image_file_name" class="file-upload upload"> -->
@@ -48,12 +59,11 @@
             </div>
 
           </div>
-          <div class="description-box-wrapper col-md-4 submit-div">
+          <div class="description-box-wrapper col-md-offset-2 submit-div">
             <div class="description-box-label">
-                Add your artwork:
             </div>
             <div class="submit-artwork-div">
-              <input class="submit-artwork" type="submit" name="name" value="Submit!">
+              <input class="submit-artwork btn btn-default" type="submit" name="name" value="Submit">
             </div>
           </div>
         </div>

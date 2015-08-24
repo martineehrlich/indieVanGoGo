@@ -5,8 +5,7 @@ class Api::PatronsController < ApplicationController
     if @patron.save
       render json: @patron
     else
-      flash.now[:errors] = @patron.errors.full_messages
-      render json: @patron
+      render json: @patron.errors.full_messages, status: 422
     end
   end
 

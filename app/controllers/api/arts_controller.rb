@@ -34,8 +34,7 @@ before_action :require_signed_in!
       Categorizing.create(category_id: params[:category_id], categorizable_id: @art.artist_id, categorizable_type: "User")
       render :show
     else
-      flash.now[:errors] = @art.errors.full_messages
-      render :show
+      render json: @art.errors.full_messages, status: 422
     end
   end
 

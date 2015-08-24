@@ -3,7 +3,16 @@
 <div class="m-content">
   <form>
     <button class="close">&times;</button>
-
+    <div class="errors-div hidden">
+      <div class="alert alert-danger" role="alert">
+        <div class="errors-glyph">
+          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+          <span class="sr-only">Error:</span>
+        </div>
+        <div class="errors-list">
+        </div>
+    </div>
+  </div>
     <label patron-form-label>Name
     <input class="form-control name-field" type="text" name="name" value="<%= user.escape("name")%>">
     </label>
@@ -12,7 +21,6 @@
   </label>
     <label>Profile Picture
       <input type="file" name="image_url" class="upload" value="">
-      <img src="<%=user.escape("profile_picture") %>" alt="" />
     </label>
     <label>Goal
       <input class="amount-field form-control" type="text" name="goal" value="<%= user.escape("goal")%>">

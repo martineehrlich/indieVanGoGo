@@ -633,14 +633,8 @@ div.outer-artist{
    background-color: white;
    width: 100%;
    font-size: 300px;
-   margin-top: 60px;
  }
 
- // .background-image{
- //   vertical-align: 0px;
- //   position: relative;
- //   z-index: 0;
- // }
 
  h2.main-title{
    font-size: 37px;
@@ -698,22 +692,48 @@ input.file-upload{
   .description-box-wrapper {
     padding-top: 30px;
     padding-bottom: 30px;
-    color: #43C6DB;
+  }
+
+  .description-box-wrapper.description{
+    margin-right: 60px;
+  }
+
+  .errors-list{
+    float: left;
+  }
+
+  .errors-glyph{
+    float: left;
+    margin-right: 3px;
+  }
+
+  .errors-div{
+    height: 50px;
+  }
+
+  .alert.alert-danger{
+    height: 50px;
+  }
+
+  .description-box.file-upload{
+    padding: 0px;
+  }
+  .description-file-upload-wrapper{
+    width: 90%;
   }
 
   .submit-artwork{
-    color: white;
-    background-color: #43C6DB;
-    border: 0px;
-    font-size: 20px;
+    padding: 10px 20px;
+    font-size: 22px;
+    border: 1px solid black;
   }
 
   .submit-artwork-div{
-    margin-left: 80px;
+    margin-left: 55px;
   }
 
   .textarea {
-    font-size: 20px;
+    font-size: 14px;
     font-weight: normal;
   }
 
@@ -767,7 +787,7 @@ label.upload-label{
 
 input.file-upload{
   padding-top: 10px;
-  font-size: 20px;
+  font-size: 14px;
 }
 
 .dropdown-menu {
@@ -881,6 +901,7 @@ button.toggle-button{
 button.toggle-button:hover{
   background-color: white;
   text-decoration: underline;
+  font-weight: bold;
 }
 button.toggle-button.active{
   color: #43C6DB;

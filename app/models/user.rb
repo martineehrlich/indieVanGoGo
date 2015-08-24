@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  validates :email, :password_digest, :session_token, presence: true
+  validates :email, :password_digest, :session_token, :name, :goal, presence: true
   validates :email, :session_token, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
   has_many :categories, through: :categorizings, source: :category
