@@ -10,7 +10,7 @@ Category.create(name: "All Categories", image_url: "http://res.cloudinary.com/#{
 Category.create(name: "Paint", image_url: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440017987/painting-process_vmrrfz.jpg")
 Category.create(name: "Photography", image_url: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440017987/photographer-33_gxbwjh.jpg")
 Category.create(name: "Mural", image_url: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440017989/mural_mwcfhe.jpg")
-Category.create(name: "Fashion", image_url: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440017988/fashion_dkdofq.jpg")
+# Category.create(name: "Fashion", image_url: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440017988/fashion_dkdofq.jpg")
 
 vangogh_description = "I am a post-impressionist painter from Groot-Zundert, Netherlands. My work is notable for its beauty, emotion and color. I have been inspired by my friends and french contemporaries such as Monet and Pissarro. My paintings are oil on canvas. I like to paint figures, landscapes, cityscapes, and scenery. I hope you enjoy looking through my work."
 vangogh = User.create(email: "vincent@vangogh.com", name: "Vincent Van Gogh", description: vangogh_description, password: "password", goal: 1000, image_url: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440387868/fr9wywlwfjfaueywhrlm.jpg")
@@ -149,3 +149,5 @@ Categorizing.create(category_id: 3, categorizable_type: "Art", categorizable_id:
 Categorizing.create(category_id: 3, categorizable_type: "Art", categorizable_id: 33)
 Categorizing.create(category_id: 3, categorizable_type: "Art", categorizable_id: 34)
 Categorizing.create(category_id: 3, categorizable_type: "Art", categorizable_id: 35)
+
+# muralists
