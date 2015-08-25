@@ -1,11 +1,14 @@
 # The Starving Artist
 
-[Heroku link][heroku]
+[Link to Site][site]
 
-[heroku]: http://the-starving-artist.herokuapp.com
+[site]: http://www.indievangogo.com/
+
+This is an application modeled after indiegogo, but for artists to post their work and get funded by other users. Users can post artwork that gets added to their galleries. Users can search for artists and artwork by name and also by category. Users can view artists galleries on the main explore page and on each artists site.
+
 
 ## Minimum Viable Product
-The Starving Artist is a clone of indiegogo built on Rails and Backbone. Users can:
+IndieVanGoGo is a clone of indiegogo built on Rails and Backbone. Users can:
 
 <!-- This is a Markdown checklist. Use it to keep track of your progress! -->
 
