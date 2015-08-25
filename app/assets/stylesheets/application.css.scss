@@ -461,6 +461,14 @@ clear: both;
    border: 1px solid black;
  }
 
+ .sign-in-button:hover{
+   color: white;
+   background-color: rgba(0,0,0, 0.8);
+ }
+
+ .sign:hover{
+   background-color: rgba(0,0,0, 0.8);
+ }
  .sign-up-header{
    color: white;
    font-size: 36px;
@@ -469,10 +477,44 @@ clear: both;
    text-align: left;
  }
 
+ a.sign{
+   color: white;
+   position: relative;
+   top: 4px;
+ }
+
+ a.sign:hover{
+   color: white;
+   text-decoration: none;
+   font-weight: normal;
+ }
+
+ div.sign{
+   width: 100%;
+   color: white;
+   background-color: rgba(0, 0, 0, 0.5);
+   border: 1px solid black;
+   height: 33px;
+   border-radius: 5px;
+ }
+
+ .login-text{
+   position: absolute;
+   left: 5px;
+   bottom: 50px;
+   font-size: 30px;
+   color: white;
+ }
+
  .sign-in-button.guest{
    color: white;
    background-color: rgba(0, 0, 0, 0.5);
  }
+
+ .sign-in-button.guest:hover{
+   background-color: rgba(0,0,0, 0.8);
+ }
+ 
  .sign-in-form{
    position: absolute;
    top: 30%;
