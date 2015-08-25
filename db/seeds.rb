@@ -13,7 +13,7 @@ Category.create(name: "Mural", image_url: "http://res.cloudinary.com/#{ENV['CLOU
 # Category.create(name: "Fashion", image_url: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440017988/fashion_dkdofq.jpg")
 
 vangogh_description = "I am a post-impressionist painter from Groot-Zundert, Netherlands. My work is notable for its beauty, emotion and color. I have been inspired by my friends and french contemporaries such as Monet and Pissarro. My paintings are oil on canvas. I like to paint figures, landscapes, cityscapes, and scenery. I hope you enjoy looking through my work."
-vangogh = User.create(email: "vincent@vangogh.com", name: "Vincent Van Gogh", description: vangogh_description, password: "password", goal: 1000, image_url: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440387868/fr9wywlwfjfaueywhrlm.jpg")
+vangogh = User.create(email: "vincent@vangogh.com", name: "Vincent Van Gogh", description: vangogh_description, password: "password", goal: 1000, image_url: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440516930/vangogh_r6gso8.jpg")
 starry_night = "This is an oil on canvas painting. It depicts the view from the east-facing window of my asylum room just before sunrise, with the addition of an idealized village below."
 irises = "This is an oil on canvas painting I created during my time at an asylum. It is greatly influenced by Japanese ukiyo-e woodblock prints."
 cafe = "This is a coloured oil piece I painted in Arles, France. Here you have a night painting without black, with nothing but beautiful blue and violet and green and in this surrounding the illuminated area colors itself sulfur pale yellow and citron green."
@@ -111,7 +111,7 @@ Art.create(artist_id: ansel.id, title: "Church in Taos Pueblo", description: chu
 Art.create(artist_id: ansel.id, title: "Aspen Grove", description: aspen, image_file_name:"http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440453151/aspen_dskege.jpg")
 Art.create(artist_id: ansel.id, title: "Rose and Driftwood", description: rose, image_file_name:"http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440453148/rose_w3fqkt.jpg")
 newman_description = "I am a photographer originally from New York City. I am a pioneer of the environmental portrait, but am also known for my still life and abstract photography. I have photographed some of the most famous people in the world, as you will see below. Enjoy my work."
-newman = User.create(email: "arnold@newman.com", name: "Arnold Newman", description: newman_description, password: "password", goal: 100000, image_url: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440455991/Arnold_Newman_clvntq.jpg")
+newman = User.create(email: "arnold@newman.com", name: "Arnold Newman", description: newman_description, password: "password", goal: 1000, image_url: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440455991/Arnold_Newman_clvntq.jpg")
 
 monroe = "Portrait of Marylin Monroe taken in 1962."
 capote = "Portrait of Truman Capote taken in 1977."
@@ -148,11 +148,11 @@ Categorizing.create(category_id: 3, categorizable_type: "Art", categorizable_id:
 Categorizing.create(category_id: 3, categorizable_type: "Art", categorizable_id: 32)
 Categorizing.create(category_id: 3, categorizable_type: "Art", categorizable_id: 33)
 Categorizing.create(category_id: 3, categorizable_type: "Art", categorizable_id: 34)
-Categorizing.create(category_id: 3, categorizable_type: "Art", categorizable_id: 35)
+# Categorizing.create(category_id: 3, categorizable_type: "Art", categorizable_id: 35)
 
 # muralists
 diego_description = "I am a painter from Mexico. I am most well known for my frescoes and controversial murals."
-diego = User.create(email: "diego@rivera.com", name: "Diego Rivera", description: diego_description, password: "password", goal: 1000, image_url: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440455991/Arnold_Newman_clvntq.jpg")
+diego = User.create(email: "diego@rivera.com", name: "Diego Rivera", description: diego_description, password: "password", goal: 1000, image_url: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440516867/diego-rivera_u8ojrn.jpg")
 
 first = "This is a mural I painted in 1931. In the early 1930s, an era of widespread labor unrest, images of the violent repression of strikes would have resonated with both U.S. and Latin American audiences. The battle here stands as a potent symbol of universal class struggle."
 second = "This mural is one in my Detroit Industry Murals series which consists of twenty-seven panels depicting industry at the Ford Motor Company. Together they surround the Rivera Court in the Detroit Institute of Arts. The murals depict the workers at the Ford River Rouge Complex in Dearborn Michigan. During the time Detroit was an advanced industrial complex, and was home to the largest manufacturing industry of the world."
@@ -166,11 +166,11 @@ Art.create(artist_id: diego.id, title: "Pan American Unity", description: fifth,
 Art.create(artist_id: diego.id, title: "Man, Controller of the Universe", description: third, image_file_name:"http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440479149/diego-river-controller_r6caof.jpg")
 
 Categorizing.create(category_id: 4, categorizable_type: "User", categorizable_id: 8)
+Categorizing.create(category_id: 4, categorizable_type: "Art", categorizable_id: 35)
 Categorizing.create(category_id: 4, categorizable_type: "Art", categorizable_id: 36)
 Categorizing.create(category_id: 4, categorizable_type: "Art", categorizable_id: 37)
 Categorizing.create(category_id: 4, categorizable_type: "Art", categorizable_id: 38)
 Categorizing.create(category_id: 4, categorizable_type: "Art", categorizable_id: 39)
-Categorizing.create(category_id: 4, categorizable_type: "Art", categorizable_id: 40)
 
 Patron.create(name: "Gertrude Stein", artist_id: 1, amount: 500)
 Patron.create(name: "Gertrude Stein", artist_id: 2, amount: 50)
