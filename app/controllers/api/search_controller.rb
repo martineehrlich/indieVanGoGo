@@ -4,7 +4,6 @@ class Api::SearchController < ApplicationController
     @arts = Art.arts_in_search(params[:search_string])
     @results = @artists + @arts
     @results.shuffle!
-    # @results.sort_by { |result| }
     render :search
   end
 

@@ -108,6 +108,14 @@ class User < ActiveRecord::Base
     end
   end
 
+  def search_header
+    if self.name.length < 17
+      self.name
+    else
+      self.name[0..16] + "..."
+    end
+  end
+
   private
   def ensure_session_token
     self.session_token ||= SecureRandom.urlsafe_base64(16)

@@ -132,7 +132,7 @@ CapstoneProject.Views.Explore = Backbone.CompositeView.extend({
       };
     } else {
       this.data = {
-        data: { page: view.currentCollection.page + 1},
+        data: { page: view.currentCollection.page + 1, category_id: this._currentCategoryid},
         remove: false
       };
     }

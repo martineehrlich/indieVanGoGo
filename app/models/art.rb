@@ -23,10 +23,8 @@ class Art < ActiveRecord::Base
   def full_image
     image_file_name.gsub(
       'image/upload',
-      'image/upload/c_fill,h_400,w_600'
+      'image/upload/c_scale,w_500'
     )
-
-
   end
 
   def thumbnail_image
@@ -47,10 +45,10 @@ class Art < ActiveRecord::Base
 
   def cropped_title
     if self.title
-      if self.title.length < 24
+      if self.title.length <= 20
         self.title
       else
-        self.title[0..24] + "..."
+        self.title[0..19] + "..."
       end
     end
   end
@@ -58,12 +56,19 @@ class Art < ActiveRecord::Base
 
   def cropped_description
     if self.description
-      if self.description.length < 170
+      if self.description.length < 150
         self.description
       else
-        self.description[0..170] + "..."
+        self.description[0..150] + "..."
       end
     end
   end
 
+  def search_header
+    if self.title.length < 17
+      self.title
+    else
+      self.title[0..16] + "..."
+    end
+  end
 end
