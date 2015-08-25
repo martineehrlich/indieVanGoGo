@@ -50,6 +50,7 @@ CapstoneProject.Views.UpdateForm = Backbone.CompositeView.extend({
       cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, result){
         if (error) { return; }
         var data = result[0];
+        this.$(".file-name-div").html(data.original_filename + "." + data.format);
         this.model.set({image_url: data.url});
       }.bind(this));
       }

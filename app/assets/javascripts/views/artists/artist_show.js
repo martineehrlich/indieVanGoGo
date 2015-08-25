@@ -12,13 +12,13 @@ CapstoneProject.Views.ArtistShow = Backbone.CompositeView.extend({
     this.listenTo(this.model, "sync", this.render);
   },
 
-  // scrollToAnchor: function (aid){
-  //     var aTag = $("a[name='"+ aid +"']");
-  //     if(aTag.offset() !== undefined){
-  //     $('html,body').animate({scrollTop: aTag.offset().top}, 1500);
-  //     }
-  //     Backbone.history.navigate("#users/" + this.model.id, {trigger: true});
-  //   },
+  scrollToAnchor: function (aid){
+      var aTag = $("a[name='"+ aid +"']");
+      if(aTag.offset() !== undefined){
+      $('html,body').animate({scrollTop: aTag.offset().top}, 1000);
+      }
+      Backbone.history.navigate("#users/" + this.model.id);
+    },
 
   events: {
     "click .explore-gallery-button": "addArtworkIndexView",
@@ -31,15 +31,15 @@ CapstoneProject.Views.ArtistShow = Backbone.CompositeView.extend({
     var content = this.template({artist: this.model});
     this.$el.html(content);
     this.attachSubviews();
-    // this.onRender();
+    this.onRender();
     return this;
   },
 
-  // onRender: function () {
-  //   if (this.artId !== null ){
-  //     this.scrollToAnchor(this.artId);
-  //   }
-  // },
+  onRender: function () {
+    if (this.artId !== null ){
+      this.scrollToAnchor(this.artId);
+    }
+  },
 
 
   addArtworkIndexView: function () {

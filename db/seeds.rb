@@ -5,27 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-# description = "I'm a painter, love painting natural things with bright colors. I'm a painter, love painting natural things with bright colors. I'm a painter, love painting natural things with bright colors. I'm a painter, love painting natural things with bright colors."
-#
-# user1 = User.create(email: "user@example.com", name: "John", description: description, password: "password", goal: 50, image_url: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1439953344/s-PABLO-PICASSO-large640_xgn6t3.jpg")
-# user2 = User.create(email: "antoher@example.com", name: "Bob", description: description, password: "password", goal: 50, image_url: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1439953244/s-PABLO-PICASSO-large640_xgn6t3.jpg")
-# user3 = User.create(email: "water@example.com", name: "Pablo", description: description, password: "password", goal: 50, image_url: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1439953244/s-PABLO-PICASSO-large640_xgn6t3.jpg")
-# user4 = User.create(email: "yeyey@example.com", name: "Rudy", description: description, password: "password", goal: 50, image_url: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1439953244/s-PABLO-PICASSO-large640_xgn6t3.jpg")
-# user5 = User.create(email: "antohyeyeyer@example.com", name: "Ansel", description: description, password: "password", goal: 50, image_url: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1439953244/s-PABLO-PICASSO-large640_xgn6t3.jpg")
-# user6 = User.create(email: "wawawawater@example.com", name: "Alejandro", description: description, password: "password", goal: 50, image_url: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1439953244/s-PABLO-PICASSO-large640_xgn6t3.jpg")
-# Art.create(artist_id: user1.id, title: "Tree", description: description, image_file_name: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1439954562/StarryNight2436_yimked.jpg")
-# Art.create(artist_id: user1.id, title: "Star", description: description, image_file_name: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/yapttrdmvfiln9wk8bnx")
-# Art.create(artist_id: user1.id, title: "Cat", description: description, image_file_name: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/yapttrdmvfiln9wk8bnx")
-# Art.create(artist_id: user1.id, title: "Cat", description: description, image_file_name: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1439954562/StarryNight2436_yimked")
-# Art.create(artist_id: user2.id, title: "Cat", description: description, image_file_name: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1439954562/StarryNight2436_yimked")
-# Art.create(artist_id: user2.id, title: "yay", description: description, image_file_name: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1439954562/StarryNight2436_yimked")
-# Art.create(artist_id: user3.id, title: "man", description: description, image_file_name: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1439954562/StarryNight2436_yimked")
-# Art.create(artist_id: user1.id, title: "no", description: description, image_file_name: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1439954562/StarryNight2436_yimked")
-# Art.create(artist_id: user4.id, title: "quick", description: description, image_file_name: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1439954562/StarryNight2436_yimked")
-# Art.create(artist_id: user5.id, title: "pool", description: description, image_file_name: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1439954562/StarryNight2436_yimked")
-# Art.create(artist_id: user6.id, title: "water", description: description, image_file_name: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1439954562/StarryNight2436_yimked")
-# Art.create(artist_id: user5.id, title: "dog", description: description, image_file_name: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1439954562/StarryNight2436_yimked")
-# Art.create(artist_id: user3.id, title: "tree", description: description, image_file_name: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1439954562/StarryNight2436_yimked")
+
 Category.create(name: "All Categories", image_url: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440087633/streetart_jiw6ev.jpg")
 Category.create(name: "Paint", image_url: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440017987/painting-process_vmrrfz.jpg")
 Category.create(name: "Photography", image_url: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440017987/photographer-33_gxbwjh.jpg")
@@ -33,7 +13,7 @@ Category.create(name: "Mural", image_url: "http://res.cloudinary.com/#{ENV['CLOU
 Category.create(name: "Fashion", image_url: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440017988/fashion_dkdofq.jpg")
 
 vangogh_description = "I am a post-impressionist painter from Groot-Zundert, Netherlands. My work is notable for its beauty, emotion and color. I have been inspired by my friends and french contemporaries such as Monet and Pissarro. My paintings are oil on canvas. I like to paint figures, landscapes, cityscapes, and scenery. I hope you enjoy looking through my work."
-vangogh = User.create(email: "vincent@vangogh.com", name: "Vincent Van Gogh", description: vangogh, password: "password", goal: 1000, image_url: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440387868/fr9wywlwfjfaueywhrlm.jpg")
+vangogh = User.create(email: "vincent@vangogh.com", name: "Vincent Van Gogh", description: vangogh_description, password: "password", goal: 1000, image_url: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440387868/fr9wywlwfjfaueywhrlm.jpg")
 starry_night = "This is an oil on canvas painting. It depicts the view from the east-facing window of my asylum room just before sunrise, with the addition of an idealized village below."
 irises = "This is an oil on canvas painting I created during my time at an asylum. It is greatly influenced by Japanese ukiyo-e woodblock prints."
 cafe = "This is a coloured oil piece I painted in Arles, France. Here you have a night painting without black, with nothing but beautiful blue and violet and green and in this surrounding the illuminated area colors itself sulfur pale yellow and citron green."
@@ -42,7 +22,7 @@ Art.create(artist_id: vangogh.id, title: "Irises", description: irises, image_fi
 Art.create(artist_id: vangogh.id, title: "Café Terrace at Night", description: cafe, image_file_name:"http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440447720/cafe-terrance_bsdqbe.jpg")
 
 picasso_description = "I am a Spanish expatriate painter, sculptor, printmaker, ceramicist and stage designer. Throughout my artistic life I have gone through many different periods and explored many different styles as you can see in my work below. I am the co-creator of Cubism which you can see in a couple of my pieces below. Enjoy my work."
-picasso = User.create(email: "pablo@picasso.com", name: "Pablo Picasso", description: description, password: "password", goal: 1400, image_url: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1439953244/s-PABLO-PICASSO-large640_xgn6t3.jpg")
+picasso = User.create(email: "pablo@picasso.com", name: "Pablo Picasso", description: picasso_description, password: "password", goal: 1400, image_url: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1439953244/s-PABLO-PICASSO-large640_xgn6t3.jpg")
 weeping_woman = "This painting is an oil on canvas and is one of many paintings in the Weeping Woman series. The model for this image, and for the entire series, is my friend Dora Maar."
 three_musicians = "This is an oil on canvas piece I painted in Fontainebleau, France. It exemplifies the Synthetic Cubist style."
 the_old_guitarist = "This is a painting I made right as the Expressionism movement was beginning.  This piece was made during my Blue Period, where my work was greatly influenced by El Greco and the poor standard of living."
@@ -52,8 +32,8 @@ Art.create(artist_id: picasso.id, title: "Three Musicians", description: three_m
 Art.create(artist_id: picasso.id, title: "The Old Guitarist", description: the_old_guitarist, image_file_name:"http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440447686/the-old-guitarist_l5pywv.jpg")
 Art.create(artist_id: picasso.id, title: "Girl Before a Mirror", description: girl_mirror, image_file_name:"http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440447674/girl-before-a-mirror_kuinne.jpg")
 
-monet_description = 
-monet = User.create(email: "claude@monet.com", name: "Claude Monet", description: description, password: "password", goal: 200, image_url: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440448466/Claude_Monet_1899_Nadar_crop_luob70.jpg")
+monet_description = "I am a French painter. I love capturing light and natural forms, which is how I got into impressionism. Eugène Boudin, an artist from my town, encouraged me to become a landscape painter. My paintings often depict the landscape and leisure activities of Paris and its environs as well as the Normandy coast. Enjoy my work."
+monet = User.create(email: "claude@monet.com", name: "Claude Monet", description: monet_description, password: "password", goal: 200, image_url: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440448466/Claude_Monet_1899_Nadar_crop_luob70.jpg")
 impression = "This painting is attributed to giving rise to the name of the Impressionist movement. Impression, Sunrise depicts the port of Le Havre (the harbor) in my hometown."
 parasol = "This is an oil-on-canvas painting I made in 1875. It is an impressionist piece depicting my wife Camille Monet and our son Jean Monet while we were living in Argenteuil, capturing a moment on a stroll on a windy summer's day."
 waterlilies = "This is an oil-on-canvas piece I painted during my series called Water Lilies. The painting depicts a scene in a French pond showing light reflecting off the water with Water Lilies on the surface."
@@ -61,7 +41,8 @@ Art.create(artist_id: monet.id, title: "Impression, Sunrise", description: impre
 Art.create(artist_id: monet.id, title: "Woman with a Parasol", description: parasol, image_file_name:"http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440447666/Claude_Monet_-_Woman_with_a_Parasol_-_Madame_Monet_and_Her_Son_-_Google_Art_Project_sjneqp.jpg")
 Art.create(artist_id: monet.id, title: "Water Lilies", description: waterlilies, image_file_name:"http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440447699/water-liles-monet_i1wgay.jpg")
 
-rothko = User.create(email: "mark@rothko.com", name: "Mark Rothko", description: description, password: "password", goal: 50000, image_url: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440449202/markrothko_d3pkhy.png")
+rothko_description = "I am a painter from Russia but moved to the United States when I was young. I am an Abstract Expressionist. Most of my works are large-scale paintings of luminous colored rectangles. My work is simple but is known to evoke emotional responses. Enjoy."
+rothko = User.create(email: "mark@rothko.com", name: "Mark Rothko", description: rothko_description, password: "password", goal: 50000, image_url: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440449202/markrothko_d3pkhy.png")
 
 rust = "I made this expressionist painting in 1953. In common with my other works from this period, No. 61 consists of large expanses of colour delineated by uneven, hazy shades."
 untitled = "This painting is similar to my others in that it has two distinctly separated elements. This painting along with the other black and grey ones in the series are meant to represent death."
@@ -72,8 +53,8 @@ Art.create(artist_id: rothko.id, title: "Untitled (Black on Grey)", description:
 Art.create(artist_id: rothko.id, title: "Four Darks in Red", description: red, image_file_name:"http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440447650/RothkoFourDarksRed_frbfhq.jpg")
 Art.create(artist_id: rothko.id, title: "No 1 (Royal Red and Blue)", description: royal, image_file_name:"http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440447648/No_1__Royal_Red_and_Blue__by_Mark_Rothko__1954_zmh5ec.jpg")
 
-
-georgia = User.create(email: "georgia@okeeffe.com", name: "Georgia O'Keeffe", description: description, password: "password", goal: 5000, image_url: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440449199/georgia_qlofbu.jpg")
+georgia_description = "I am an American modernist seeking to capture the emotion and power of objects through abstractingthe natural world. My subjects are flowers, barren landscapes, and close-up still lifes that have become a part of the mythology and iconography of the American artistic landscape."
+georgia = User.create(email: "georgia@okeeffe.com", name: "Georgia O'Keeffe", description: georgia_description, password: "password", goal: 5000, image_url: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440449199/georgia_qlofbu.jpg")
 
 ram = "I painted this piece shortly after moving to New Mexico. I was inspired by the isolation and beauty of the natural environment surrounding me."
 canna = "In this piece I vastly enlarge the fragment of the blossom to fill the thirty-six-inch canvas."
@@ -114,8 +95,8 @@ Categorizing.create(category_id: 2, categorizable_type: "Art", categorizable_id:
 
 
 # Photography
-
-ansel = User.create(email: "ansel@adams.com", name: "Ansel Adams", description: description, password: "password", goal: 100000, image_url: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440453185/anseladams_yt6by6.jpg")
+ansel_description = "I am a musician turned photographer. My black-and-white images are not “realistic” documents of nature. Instead, they seek an intensification and purification of the psychological experience of natural beauty. I create a sense of the sublime magnificence of nature that infuses the viewer with the emotional equivalent of wilderness, often more powerful than the actual thing."
+ansel = User.create(email: "ansel@adams.com", name: "Ansel Adams", description: ansel_description, password: "password", goal: 100000, image_url: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440453185/anseladams_yt6by6.jpg")
 
 tetons = "The photo was taken in 1942 in northwest Wyoming's Grand Teton National Park, the photograph shows a mesmerizing combination of the turning Snake River in the background of Teton mountain range."
 halfdome = "I took this photo in Yosemite. The slight perspective distortion of the extreme oblique view compressed the Dome into a vertical tower, emphasized by the line of shadow in the center."
@@ -129,8 +110,8 @@ Art.create(artist_id: ansel.id, title: "Canyon de Chelly", description: canyon, 
 Art.create(artist_id: ansel.id, title: "Church in Taos Pueblo", description: church, image_file_name:"http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440453351/church_qem64g.jpg")
 Art.create(artist_id: ansel.id, title: "Aspen Grove", description: aspen, image_file_name:"http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440453151/aspen_dskege.jpg")
 Art.create(artist_id: ansel.id, title: "Rose and Driftwood", description: rose, image_file_name:"http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440453148/rose_w3fqkt.jpg")
-
-newman = User.create(email: "arnold@newman.com", name: "Arnold Newman", description: description, password: "password", goal: 100000, image_url: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440455991/Arnold_Newman_clvntq.jpg")
+newman_description = "I am a photographer originally from New York City. I am a pioneer of the environmental portrait, but am also known for my still life and abstract photography. I have photographed some of the most famous people in the world, as you will see below. Enjoy my work."
+newman = User.create(email: "arnold@newman.com", name: "Arnold Newman", description: newman_description, password: "password", goal: 100000, image_url: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440455991/Arnold_Newman_clvntq.jpg")
 
 monroe = "Portrait of Marylin Monroe taken in 1962."
 capote = "Portrait of Truman Capote taken in 1977."

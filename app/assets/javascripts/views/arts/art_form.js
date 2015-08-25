@@ -92,6 +92,7 @@ CapstoneProject.Views.ArtForm = Backbone.View.extend({
       if (error) { return; }
       var data = result[0];
       this.model.set({image_file_name: data.url});
+      this.$(".file-name-div").html(data.original_filename + "." + data.format);
     }.bind(this));
 
     }

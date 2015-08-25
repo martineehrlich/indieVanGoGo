@@ -391,6 +391,7 @@ clear: both;
 .test-text{
   vertical-align: top;
   width: 580px;
+  font-size: 15px;
 }
 
 .thumbnail-gallery{
@@ -747,13 +748,25 @@ input.file-upload{
   .submit-artwork{
     padding: 10px 20px;
     font-size: 22px;
-    border: 1px solid black;
+    background-color: skyblue;
+    color: white;
+    margin-top: 10px;
+    border: skyblue;
+    border-radius: 5px;
   }
 
   .submit-artwork-div{
     margin-left: 55px;
   }
 
+  .update-info-form{
+    width: 400px;
+    height: 400px;
+  }
+
+  .update-info-field{
+    margin-bottom: 10px;
+  }
   .textarea {
     font-size: 14px;
     font-weight: normal;
@@ -974,6 +987,21 @@ button.toggle-button.profile.explore-gallery-button{
   margin-right: 0px;
 }
 
+.upload{
+  float: left;
+  font-size: 15px;
+}
+
+.file-name-div{
+  float: left;
+  font-size: 14px;
+  margin-left: 6px;
+  margin-top: 2px;
+}
+
+.upload-button.center-under{
+  margin-top: 10px;
+}
 .project-item{
   display: inline-block;
   float: left;
@@ -987,6 +1015,10 @@ button.toggle-button.profile.explore-gallery-button{
 }
 
 .project-item:hover{
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+a.thumbnail:hover{
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
 }
 

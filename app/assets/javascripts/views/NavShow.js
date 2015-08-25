@@ -33,11 +33,16 @@ CapstoneProject.Views.NavShow = Backbone.CompositeView.extend({
     "blur .form-control": "closeSearch",
     "keyup .form-control": "makeQuery",
     "click .list-group-item": "navigateToRequested",
-    "submit form": "preventDefault"
+    "submit form": "preventDefault",
+    "click .navbar-header": "navigateToExplore"
   },
 
   preventDefault: function (event) {
     event.preventDefault();
+  },
+
+  navigateToExplore: function () {
+    Backbone.history.navigate("", {trigger: true});
   },
 
   makeQuery: function (event) {

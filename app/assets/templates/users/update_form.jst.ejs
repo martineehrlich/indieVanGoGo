@@ -1,7 +1,7 @@
 <div class="m-background"></div>
 
 <div class="m-content">
-  <form>
+  <form class="form-group update-info-form">
     <button class="close">&times;</button>
     <div class="errors-div hidden">
       <div class="alert alert-danger" role="alert">
@@ -13,19 +13,32 @@
         </div>
     </div>
   </div>
+  <div class="update-info-field">
     <label patron-form-label>Name
     <input class="form-control name-field" type="text" name="name" value="<%= user.escape("name")%>">
     </label>
+  </div>
+  <div class="update-info-field">
     <label>Description
-    <input class="amount-field form-control" type="text" name="description" value="<%= user.escape("description")%>">
+      <textarea class="amount-field form-control" name="description" rows="3" cols="30"><%= user.escape("description")%></textarea>
   </label>
+  </div>
+  <div class="update-info-field">
     <label>Profile Picture
-      <input type="file" name="image_url" class="upload" value="">
+      <div class="update-info-field">
+        <button type="button" name="image_url" class="upload">Choose File</button>
+        <div class="file-name-div">
+          </div>
+      </div>
     </label>
-    <label>Goal
-      <input class="amount-field form-control" type="text" name="goal" value="<%= user.escape("goal")%>">
-    </label>
-
-    <input type="submit" class="" value="Update Info">
+  </div>
+    <div class="update-info-field">
+      <label>Goal
+        <input class="amount-field form-control" type="text" name="goal" value="<%= user.escape("goal")%>">
+      </label>
+    </div>
+    <div class="">
+      <input type="submit" class="" value="Update Info">
+    </div>
   </form>
 </div>
