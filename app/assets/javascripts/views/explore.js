@@ -6,10 +6,10 @@ CapstoneProject.Views.Explore = Backbone.CompositeView.extend({
     this.artists = options.artists;
     this.arts = options.arts;
     this.categories = options.categories;
-    this._currentCategoryid = "1";
     this.addCategoriesView();
+    this._currentCategoryid = "1";
+    this.currentCollection = this.artists;
     this.addArtistExploreView();
-
     if (this.categories.isEmpty()) {
       this.listenTo(this.categories, "sync", this.addCategoryShow);
     } else {
@@ -17,8 +17,14 @@ CapstoneProject.Views.Explore = Backbone.CompositeView.extend({
       var listItems = $("a.category-item");
       listItems.first().addClass("active");
     }
-    this.currentCollection = this.artists;
-    $(window).scroll(this.nextPage.bind(this));
+    this.boundNextPage = this.nextPage.bind(this);
+    $(window).on("scroll", this.boundNextPage);
+
+  },
+
+  remove: function(){
+    $(window).off("scroll", this.boundNextPage);
+    Backbone.CompositeView.prototype.remove.call(this);
   },
 
   events: {
@@ -27,8 +33,9 @@ CapstoneProject.Views.Explore = Backbone.CompositeView.extend({
     "click a.category-item": "changeActiveCategory"
   },
 
-
   render: function () {
+
+    console.log('rendering explore view');
     var content = this.template({collection: this.artists});
     this.$el.html(content);
     this.attachSubviews();
@@ -37,17 +44,20 @@ CapstoneProject.Views.Explore = Backbone.CompositeView.extend({
   },
 
   onRender: function () {
+
     this.$(".explore-artists").addClass("active");
     var listItems = $("a.category-item");
     listItems.first().addClass("active");
   },
 
   addCategoriesView: function () {
+
     var subview = new CapstoneProject.Views.CategoriesIndex({ categories: this.categories});
     this.addSubview('.categories', subview);
   },
 
   addCategoryShow: function () {
+
     if (this.categories.first()) {
       var category = this.categories.first();
       var subview = new CapstoneProject.Views.CategoryShow({model: category});
@@ -69,27 +79,15 @@ CapstoneProject.Views.Explore = Backbone.CompositeView.extend({
     var id = $target.attr("data-id");
     var category = this.categories.get(id);
     this._currentCategoryid = category.id;
+    console.log("current category is now: " + this._currentCategoryid);
     var subview = new CapstoneProject.Views.CategoryShow({model: category});
     this.addSubview(".category-show", subview);
-    this.addActiveCollectionView();
-  },
 
-  addActiveCollectionView: function () {
-    var viewsToRemove = this.subviews(".all-artists");
-    viewsToRemove.forEach(function(view){
-      this.removeSubview(".all-artists", view);
-    }.bind(this));
-    this.currentCollection.fetch({
-      data: { category_id: this._currentCategoryid }
-    });
-    var subview;
-    if(this.currentCollection.constructor === CapstoneProject.Collections.Users ){
-      subview = new CapstoneProject.Views.ArtistIndex({artists: this.currentCollection});
-      this.addSubview('.all-artists', subview);
-    } else {
-      subview = new CapstoneProject.Views.ArtExploreIndex({collection: this.currentCollection});
-      this.addSubview('.all-artists', subview);
-    }
+    if (this.currentCollection.constructor === CapstoneProject.Collections.Users ){
+      this.addArtistExploreView();
+    }  else {
+        this.addArtExploreView();
+      }
   },
 
   addArtExploreView: function () {
@@ -123,22 +121,23 @@ CapstoneProject.Views.Explore = Backbone.CompositeView.extend({
     this.addSubview('.all-artists', subview);
   },
 
-  nextPage: function () {
-    var view = this;
+  nextPage: function (event) {
+
     if(this.currentCollection.constructor === CapstoneProject.Collections.Users){
       this.data = {
-        data: { page: view.currentCollection.page + 1, explore: true},
+        data: { page: this.currentCollection.page + 1, explore: true},
         remove: false
       };
     } else {
       this.data = {
-        data: { page: view.currentCollection.page + 1, category_id: this._currentCategoryid},
+        data: { page: this.currentCollection.page + 1, category_id: this._currentCategoryid},
         remove: false
       };
     }
+
     if ($(window).scrollTop() > $(document).height() - $(window).height() - 50) {
-      if (view.currentCollection.page < view.currentCollection.total_pages) {
-        view.currentCollection.fetch(view.data);
+      if (this.currentCollection.page < this.currentCollection.total_pages) {
+        this.currentCollection.fetch(this.data);
       }
     }
   },

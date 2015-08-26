@@ -1,10 +1,13 @@
 CapstoneProject.Views.ArtistShow = Backbone.CompositeView.extend({
   template: JST["artists/artist_show"],
 
+  className: 'artist-show-view',
+
+
   initialize: function (options) {
     $(window).on('load', function(){
       $(document).scrollTop(0);
-});
+    });
 
     this.artId = options.artId;
     this.addArtworkIndexView();
