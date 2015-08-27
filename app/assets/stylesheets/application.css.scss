@@ -64,7 +64,7 @@ img.carousel-img{
 width: 100%;
 }
 .navbar-header:hover{
-  cursor: default;
+  cursor: pointer;
 }
 .nav.navbar-nav.col-md-offset-2{
   margin-top: 3px;
@@ -101,7 +101,7 @@ input:focus{
 }
 
 .navbar-drop.dropdown-toggle:hover{
-  cursor: default;
+  cursor: pointer;
 }
 
 .open > .btn-default.dropdown-toggle.navbar-drop {
@@ -182,6 +182,10 @@ input:focus{
    height: 80px;
    width: 206px;
    margin: 0 0 10px;
+}
+
+.artist-description-overflow:hover{
+  cursor: pointer;
 }
 
 
@@ -312,7 +316,7 @@ input:focus{
     height: 40px;
  }
  .list-group-item.search-result:hover{
-   cursor: default;
+   cursor: pointer;
    background-color: #eaeaea;
  }
 
@@ -1101,6 +1105,7 @@ button.toggle-button.profile.explore-gallery-button{
 
 a.thumbnail:hover{
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
 }
 
 
@@ -1114,6 +1119,10 @@ div.thumbnail {
   border-radius: 0px;
 }
 
+div.thumbnail:hover{
+  cursor: pointer;
+}
+
 div.row.artists{
   min-width: 800px;
 }
@@ -1123,7 +1132,7 @@ div.col-md-9{
 }
 
 .project-content{
-  height: 200px;
+  height: 178px;
   width: 220px;
 }
 
@@ -1146,7 +1155,7 @@ a.category-item.active{
   text-decoration: underline;
 }
 a:hover{
-  cursor: default;
+  cursor: pointer;
 }
 .project-description{
   padding-left: 7px;

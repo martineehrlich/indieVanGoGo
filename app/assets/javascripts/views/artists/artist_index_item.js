@@ -15,14 +15,10 @@ CapstoneProject.Views.ArtistIndexItem = Backbone.CompositeView.extend({
     return this;
   },
 
-  onRender: function () {
-    $artist = $(".project-item");
-    $artist.attr("data-id", this.model.id);
-  },
-
   events: {
     "click .gallery-button": "addGalleryIndex",
-    "click .thumbnail": "navigate"
+    "click .thumbnail": "navigatetoArtist",
+    "click .project-content": "navigatetoArtist"
   },
   addGalleryIndex: function () {
     var modal = new CapstoneProject.Views.GalleryIndex({arts: this.model.arts()});
@@ -34,7 +30,7 @@ CapstoneProject.Views.ArtistIndexItem = Backbone.CompositeView.extend({
     $('body').append(modal.$el);
   },
 
-  navigate: function () {
-    Backbone.history.navigate("#users" + this.model.id, {trigger: true});
+  navigatetoArtist: function () {
+    Backbone.history.navigate("#users/" + this.model.id, {trigger: true});
   }
 });
