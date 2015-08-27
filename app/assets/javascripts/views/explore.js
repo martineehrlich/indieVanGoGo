@@ -3,23 +3,26 @@ CapstoneProject.Views.Explore = Backbone.CompositeView.extend({
 
 
   initialize: function (options) {
+
     this.artists = options.artists;
     this.arts = options.arts;
     this.categories = options.categories;
     this.addCategoriesView();
-    this._currentCategoryid = "1";
-    this.currentCollection = this.artists;
+    // this._currentCategoryid = "1";
+    // this.currentCollection = this.artists;
     this.addArtistExploreView();
     if (this.categories.isEmpty()) {
       this.listenTo(this.categories, "sync", this.addCategoryShow);
+      this._currentCategoryid = "1";
+      this.currentCollection = this.artists;
     } else {
       this.addCategoryShow();
       var listItems = $("a.category-item");
       listItems.first().addClass("active");
     }
+
     this.boundNextPage = this.nextPage.bind(this);
     $(window).on("scroll", this.boundNextPage);
-
   },
 
   remove: function(){
@@ -42,18 +45,23 @@ CapstoneProject.Views.Explore = Backbone.CompositeView.extend({
   },
 
   onRender: function () {
+
     this.$(".explore-artists").addClass("active");
     var listItems = $("a.category-item");
     listItems.first().addClass("active");
   },
 
   addCategoriesView: function () {
+
     var subview = new CapstoneProject.Views.CategoriesIndex({ categories: this.categories});
     this.addSubview('.categories', subview);
   },
 
   addCategoryShow: function () {
+
     if (this.categories.first()) {
+      this._currentCategoryid = "1";
+      this.currentCollection = this.artists;
       var category = this.categories.first();
       var subview = new CapstoneProject.Views.CategoryShow({model: category});
       var listItems = $(".category-item");
@@ -71,7 +79,8 @@ CapstoneProject.Views.Explore = Backbone.CompositeView.extend({
     }.bind(this));
     $target = $(event.currentTarget);
     $target.addClass("active");
-    var category = this.categories.get($target.attr("data-id"));
+    var id = $target.attr("data-id");
+    var category = this.categories.get(id);
     this._currentCategoryid = category.id;
     var subview = new CapstoneProject.Views.CategoryShow({model: category});
     this.addSubview(".category-show", subview);
@@ -106,7 +115,6 @@ CapstoneProject.Views.Explore = Backbone.CompositeView.extend({
     viewsToRemove.forEach(function(view){
       this.removeSubview(".all-artists", view);
     }.bind(this));
-
     this.currentCollection = this.artists;
     this.currentCollection.fetch({
       data: { category_id: this._currentCategoryid }
@@ -127,6 +135,7 @@ CapstoneProject.Views.Explore = Backbone.CompositeView.extend({
         remove: false
       };
     }
+
     if ($(window).scrollTop() > $(document).height() - $(window).height() - 50) {
       if (this.currentCollection.page < this.currentCollection.total_pages) {
         this.currentCollection.fetch(this.data);

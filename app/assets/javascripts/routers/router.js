@@ -5,8 +5,6 @@ CapstoneProject.Routers.Router = Backbone.Router.extend({
     this.arts = new CapstoneProject.Collections.Arts();
     this._categories = new CapstoneProject.Collections.Categories();
     this._categories.fetch();
-    this.users.fetch();
-    this.arts.fetch();
   },
 
   routes: {
@@ -60,6 +58,8 @@ CapstoneProject.Routers.Router = Backbone.Router.extend({
     this._currentView = view;
     this.$rootEl.html(view.$el);
     view.render();
-    $(document).scrollTop(0);
+    setTimeout(function(){
+      $(document).scrollTop(0);
+    }, 10);
   }
 });

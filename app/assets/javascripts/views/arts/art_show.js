@@ -1,3 +1,4 @@
+var ESCAPE_KEY_CODE = 27;
 CapstoneProject.Views.ArtShow = Backbone.View.extend({
   template: JST['arts/art_show'],
 
@@ -7,8 +8,9 @@ CapstoneProject.Views.ArtShow = Backbone.View.extend({
   },
 
   initialize: function () {
-
-    $(document).on('keyup', this.handleKey.bind(this));
+    //WE MUST REMOVE THIS EVENT WHEN WE LEAVE THIS PAGE
+    this.boundHandler = this.handleKey.bind(this);
+    $(document).on('keyup', this.boundHandler);
   },
 
   render: function () {
@@ -17,11 +19,14 @@ CapstoneProject.Views.ArtShow = Backbone.View.extend({
   },
 
   handleKey: function (event) {
-    if (event.keyCode === 27) {
+    if (event.keyCode === ESCAPE_KEY_CODE) {
       this.remove();
     }
   },
-
+  remove: function(){
+    $(document).off('keyup', this.boundHandler);
+    Backbone.View.prototype.remove.call(this);
+  },
   removeBtn: function (event) {
     event.preventDefault();
     this.remove();

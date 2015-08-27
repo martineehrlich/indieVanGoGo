@@ -25,3 +25,7 @@
 //= require_tree ./views
 //= require_tree ./routers
 //= require_tree .
+
+$(window).on('beforeunload', function() {
+    $(window).scrollTop(0);
+});
