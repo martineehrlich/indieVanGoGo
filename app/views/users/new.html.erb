@@ -12,15 +12,16 @@
     <%= auth_token_input %>
     <ul class="sign-in-list">
       <li><input class="sign-in list-group-item" type="text" name="user[email]" value="" placeholder="Email"></li>
-      <li><input class="sign-in list-group-item" type="password" name="user[password]" value=""placeholder="Password"></li>
       <li><input class="sign-in list-group-item" type="text" name="user[name]" value=""placeholder="Name"></li><br>
+      <li><input class="sign-in list-group-item" type="password" name="user[password]" value=""placeholder="Password"></li>
+
 
     </ul>
 
 
-    <input class="sign-in-button btn " type="submit" value="Sign up">
+    <input class="sign-in-button btn" type="submit" value="Sign up">
     <div class="sign">
-      <a class="sign" href="<%= new_user_url%>">Sign in</a>
+      <a class="sign" href="<%= new_session_url%>">Sign in</a>
     </div>
   </form>
   </div>

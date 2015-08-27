@@ -9,8 +9,8 @@ CapstoneProject.Views.GalleryIndex = Backbone.CompositeView.extend({
   events: {
     'click .m-background': 'remove',
     'click button.btn-danger': 'removeBtn',
-    'mouseover .item.active': 'showCaption',
-    'mouseleave .item.active': 'hideCaption'
+    // 'mouseover .item.active': 'showCaption',
+    // 'mouseleave .item.active': 'hideCaption'
   },
 
   render: function () {

@@ -5,6 +5,9 @@ CapstoneProject.Views.ArtistShow = Backbone.CompositeView.extend({
 
 
   initialize: function (options) {
+    $(window).on('load', function(){
+     $(document).scrollTop(0);
+});
     this.artId = options.artId;
     this.addArtworkIndexView();
     this.addFundingInfoView();
@@ -37,6 +40,9 @@ CapstoneProject.Views.ArtistShow = Backbone.CompositeView.extend({
   onRender: function () {
     if (this.artId !== null ){
       this.scrollToAnchor(this.artId);
+    }
+    if (this.model.escape('name')) {
+      this.artId = null;
     }
   },
 

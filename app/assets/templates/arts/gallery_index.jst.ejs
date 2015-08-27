@@ -7,18 +7,12 @@
     <div class="carousel-inner" role="listbox">
     <% arts.forEach(function (art){ %>
       <% if(art === arts.first()){ %>
-        <div class="item active">
-          <img src="<%= art.escape("full_image") %>" alt="">
-          <div class="carousel-caption hidden">
-            <%= art.escape("title") %>
-          </div>
+        <div class="item active carousel-item">
+          <img class="carousel-img" src="<%= art.escape("full_image") %>" alt="">
         </div>
     <%   } else {%>
-    <div class="item">
-      <img src="<%= art.escape("full_image") %>" alt="">
-      <div class="carousel-caption hidden">
-        <%= art.escape("title") %>
-      </div>
+    <div class="item carousel-item">
+      <img class="carousel-img" src="<%= art.escape("full_image") %>" alt="">
     </div>
       <% } %>
     <%  }) %>
