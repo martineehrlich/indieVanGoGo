@@ -47,7 +47,7 @@ CapstoneProject.Views.PatronForm = Backbone.View.extend({
         var $success = this.$(".alert-success");
         $success.removeClass("hidden");
         setTimeout(function(){
-          this.remove();}.bind(this), 0);
+          this.remove();}.bind(this), 1000);
       }.bind(this),
       error: function (model, response) {
         var $errorsDiv = this.$(".errors-div");

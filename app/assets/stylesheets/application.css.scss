@@ -520,8 +520,13 @@ clear: both;
    padding-left: 40px;
    padding-top: 30px;
    text-align: left;
+   text-shadow: 2px 2px grey;
  }
 
+ .alert-success{
+   padding: 13px;
+   margin-bottom: 0px;
+ }
  a.sign{
    color: white;
    position: relative;
@@ -545,7 +550,8 @@ clear: both;
 
  .login-text{
    position: absolute;
-   left: 5px;
+   left: 30px;
+   text-shadow: 2px 2px grey;
    bottom: 50px;
    font-size: 30px;
    color: white;
@@ -1160,6 +1166,10 @@ a:hover{
 .project-description{
   padding-left: 7px;
   padding-right: 7px;
+}
+
+.project-description-padding:hover{
+  cursor: pointer;
 }
 
 

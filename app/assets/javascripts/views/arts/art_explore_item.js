@@ -18,6 +18,8 @@ CapstoneProject.Views.ArtExploreItem = Backbone.View.extend({
   events: {
     "click .art-item": "addArtModal",
     "click .art-explore-button": "navigateToArtist",
+    "click .img-responsive": "addArtModal",
+    "click .project-content": "addArtModal"
   },
 
   addArtModal: function () {

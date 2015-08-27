@@ -9,22 +9,14 @@ CapstoneProject.Views.ArtistIndex = Backbone.CompositeView.extend({
     this.collection.each(this.addArtistItemView.bind(this));
   },
 
-  // events: {
-  //   "click .thumbnail": "navigate"
-  // },
+
   render: function () {
     var content = this.template({artists: this.collection});
     this.$el.html(content);
     this.attachSubviews();
     return this;
   },
-
-  // navigate: function (event) {
-  //   var $target = $(event.currentTarget);
-  //   var id = $target.data("id");
-  //   Backbone.history.navigate("#users/" + id, {trigger: true});
-  // },
-
+  
   addArtistItemView: function (artist) {
     var subview = new CapstoneProject.Views.ArtistIndexItem({ model: artist });
     this.addSubview('.artists', subview);
