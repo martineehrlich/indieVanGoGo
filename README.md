@@ -1,32 +1,45 @@
-# The Starving Artist
+# IndieVanGogo
 
-[Link to Site][site]
+[Check it out here.][site]
 
 [site]: http://www.indievangogo.com/
 
-This is an application modeled after indiegogo, but for artists to post their work and get funded by other users. Users can post artwork that gets added to their galleries. Users can search for artists and artwork by name and also by category. Users can view artists galleries on the main explore page and on each artists site.
+IndieVanGogo is a web application built with Ruby on Rails, PostgreSQL, Backbone.js, Twitter Bootstrap and jQuery, and is modeled on IndieGogo's feel and functionality.
 
+## Main Functionality
+* Dynamically search for artists and artwork by name and title
+* Filter artists and artwork by category of work
+* Upload artwork using Cloudinary API
+* View artists galleries through a carousel modal
+* Fund artists and view and artists funders
+
+## Additional Features
+* Server-side infinite scroll
+* Backbone Search collection comprised of multiple rails models using jbuilder
+* Backbone.js communicating with a RESTful json API
+* Search implements jQuery's animate event to scroll to a particular item on a page
+* Hand-rolled authentication via Rails
+* Polymorphic 'Categorizable' associations
 
 ## Minimum Viable Product
-IndieVanGoGo is a clone of indiegogo built on Rails and Backbone. Users can:
+IndieVanGoGo is a clone of IndieGogo built on Rails and Backbone. Users can:
 
 <!-- This is a Markdown checklist. Use it to keep track of your progress! -->
 
-- [ ] Create accounts
-- [ ] Create sessions (log in)
-- [ ] Create profiles
-- [ ] Create artworks
-- [ ] Support artists
-- [ ] View artist profiles/galleries
-- [ ] Search for artists by category
-- [ ] Search for artists by name
-- [ ] Search for artists by popularity
+- [x] Create accounts
+- [x] Create sessions (log in)
+- [x] Create profiles
+- [x] Create artworks
+- [x] Support artists
+- [x] View artist profiles/galleries
+- [x] Search for artists by category
+- [x] Search for artists by name
+- [x] Search for artwork by category
+- [x] Search for artwork by title
 
 ## Design Docs
-* [View Wireframes][views]
 * [DB schema][schema]
 
-[views]: ./docs/views.md
 [schema]: ./docs/schema.md
 
 ## Implementation Timeline
@@ -75,10 +88,10 @@ will fetch from the new `search` routes.
 [Details][phase-five]
 
 ### Bonus Features (TBD)
-- [ ] Users can explore artwork as well as artists
+- [x] Users can explore artwork as well as artists
 - [ ] Users can comment on artists profiles
 - [ ] Users can comment on individual artworks
-- [ ] Infinite scroll on actors index page
+- [x] Infinite scroll on artists/artworks explore page
 - [ ] Add additional categories that involve video (acting/singing)
 - [ ] Multiple sessions/session management
 
