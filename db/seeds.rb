@@ -155,9 +155,9 @@ diego_description = "I am a painter from Mexico. I am most well known for my fre
 diego = User.create(email: "diego@rivera.com", name: "Diego Rivera", description: diego_description, password: "password", goal: 1000, image_url: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440516867/diego-rivera_u8ojrn.jpg")
 
 first = "This is a mural I painted in 1931. In the early 1930s, an era of widespread labor unrest, images of the violent repression of strikes would have resonated with both U.S. and Latin American audiences. The battle here stands as a potent symbol of universal class struggle."
-second = "This mural is one in my Detroit Industry Murals series which consists of twenty-seven panels depicting industry at the Ford Motor Company. Together they surround the Rivera Court in the Detroit Institute of Arts. The murals depict the workers at the Ford River Rouge Complex in Dearborn Michigan. During the time Detroit was an advanced industrial complex, and was home to the largest manufacturing industry of the world."
-third = "This mural was controversial because it included an image of Lenin and a Soviet Russian May Day parade. Despite protests from artists, Nelson Rockefeller ordered its destruction before it was completed. I repainted the composition in Mexico under the variant title Man, Controller of the Universe."
-fourth = "After idealizing various pre-Hispanic cultures in the preceding panels and generally eliminating any negative elements (their wars, human sacrifices, and subjugation of fellow indians), I depict in dramatic fashion the violence and exploitation of the Spanish conquerors. Natives hanging in the background, the branding of the native in the foreground, and the reduction of the indians to slaves and pack horses show the cruelty and savagery of the Conquest. The scene above left depicts the first religious service held on the coast of Veracruz."
+second = "This mural is one in my Detroit Industry Murals series which consists of twenty-seven panels depicting industry at the Ford Motor Company. Together they surround the Rivera Court in the Detroit Institute of Arts. The murals depict the workers at the Ford River Rouge Complex in Dearborn Michigan."
+third = "This mural was controversial because it included an image of Lenin and a Soviet Russian May Day parade. Despite protests from artists, Nelson Rockefeller ordered its destruction before it was completed."
+fourth = "After idealizing various pre-Hispanic cultures in the preceding panels and generally eliminating any negative elements (their wars, human sacrifices, and subjugation of fellow indians), I depict in dramatic fashion the violence and exploitation of the Spanish conquerors."
 fifth = "This painting is about art, religion, history, politics, and technology of the Americas. I painted it in 1940 as part of the Golden Gate International Exposition on Treasure Island in the San Francisco Bay."
 Art.create(artist_id: diego.id, title: "The Jewel of Detroit", description: second, image_file_name:"http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440479159/thejewelofdetroit_bjjrzx.jpg")
 Art.create(artist_id: diego.id, title: "The Uprising", description: first, image_file_name:"http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440479154/theuprisingdiegorivera_pzmirl.jpg")
@@ -165,12 +165,29 @@ Art.create(artist_id: diego.id, title: "The arrival of Cortes", description: fou
 Art.create(artist_id: diego.id, title: "Pan American Unity", description: fifth, image_file_name:"http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440479150/diegorivera2_ubesja.jpg")
 Art.create(artist_id: diego.id, title: "Man, Controller of the Universe", description: third, image_file_name:"http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440479149/diego-river-controller_r6caof.jpg")
 
+banksy_description "I am a British graffiti artist, political activist, film director, and painter.
+My satirical street art and subversive epigrams combine dark humour with graffiti executed in a distinctive stencilling technique. My works of political and social commentary have been featured on streets, walls, and bridges of cities throughout the world. My work grew out of the Bristol underground scene, which involved collaborations between artists and musicians."
+banksy = User.create(email: "banksy@banksy.com", name: "Banksy", description: banksy_description, password: "password", goal: 1100, image_url: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1441918813/banksy_war8sv.jpg")
+banksy_art = "My artwork is mysterious just like me. Take from it what you will."
+Art.create(artist_id: banksy.id, title: "Untitled", description: banksy_art, image_file_name:"http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440479149/boycrayons_w8pekc.jpg")
+Art.create(artist_id: banksy.id, title: "Untitled", description: banksy_art, image_file_name:"http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440479147/girlwithballoon_ynpjel.jpg")
+Art.create(artist_id: banksy.id, title: "Untitled", description: banksy_art, image_file_name:"http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440479147/banksyflowers_kzpyod.jpg")
+Art.create(artist_id: banksy.id, title: "Untitled", description: banksy_art, image_file_name:"http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440479147/15-banksyqueens.w529.h352.2x_nuk1mh.jpg")
+Art.create(artist_id: banksy.id, title: "Untitled", description: banksy_art, image_file_name:"http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440479150/banksy-follow-dreams_afvnig.jpg")
+
+
 Categorizing.create(category_id: 4, categorizable_type: "User", categorizable_id: 8)
 Categorizing.create(category_id: 4, categorizable_type: "Art", categorizable_id: 35)
 Categorizing.create(category_id: 4, categorizable_type: "Art", categorizable_id: 36)
 Categorizing.create(category_id: 4, categorizable_type: "Art", categorizable_id: 37)
 Categorizing.create(category_id: 4, categorizable_type: "Art", categorizable_id: 38)
 Categorizing.create(category_id: 4, categorizable_type: "Art", categorizable_id: 39)
+Categorizing.create(category_id: 4, categorizable_type: "User", categorizable_id: 9)
+Categorizing.create(category_id: 4, categorizable_type: "Art", categorizable_id: 40)
+Categorizing.create(category_id: 4, categorizable_type: "Art", categorizable_id: 41)
+Categorizing.create(category_id: 4, categorizable_type: "Art", categorizable_id: 42)
+Categorizing.create(category_id: 4, categorizable_type: "Art", categorizable_id: 43)
+Categorizing.create(category_id: 4, categorizable_type: "Art", categorizable_id: 44)
 
 Patron.create(name: "Gertrude Stein", artist_id: 1, amount: 500)
 Patron.create(name: "Gertrude Stein", artist_id: 2, amount: 50)
@@ -193,10 +210,12 @@ Patron.create(name: "Lauren Chernak", artist_id: 4, amount: 40)
 Patron.create(name: "Paul Tan", artist_id: 2, amount: 10)
 Patron.create(name: "Cindy Salt", artist_id: 6, amount: 100, anonymous: true)
 Patron.create(name: "Frank Goldman", artist_id: 7, amount: 50, anonymous: true)
-Patron.create(name: "Lauren Chernak", artist_id: 1, amount: 500)
+Patron.create(name: "Lauren Chernak", artist_id: 1, amount: 20)
 Patron.create(name: "William Hastings", artist_id: 2, amount: 50)
 Patron.create(name: "Cindy Salt", artist_id: 3, amount: 10)
 Patron.create(name: "Lauren Chernak", artist_id: 4, amount: 40)
 Patron.create(name: "Paul Tan", artist_id: 8, amount: 10)
 Patron.create(name: "Cindy Salt", artist_id: 8, amount: 100, anonymous: true)
 Patron.create(name: "Frank Goldman", artist_id: 8, amount: 500, anonymous: true)
+Patron.create(name: "Cindy Salt", artist_id: 9, amount: 100, anonymous: true)
+Patron.create(name: "Frank Goldman", artist_id: 9, amount: 500, anonymous: true)

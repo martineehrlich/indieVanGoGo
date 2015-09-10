@@ -28,7 +28,7 @@
 <script type="text/javascript" charset="utf-8">
   $(".sign-in-button.guest").on("click", function(event) {
     event.preventDefault();
-    $(".email").val("vincent@vangogh.com");
+    $(".email").val( "<%= @user.email %>");
     $(".password").val("password");
     $(".submit").click();
   });

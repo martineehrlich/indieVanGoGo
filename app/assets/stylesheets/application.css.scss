@@ -18,15 +18,13 @@
  @import "bootstrap";
  // @import "font-awesome";
 
-// #dropdownMenu1{
-//   margin-top: 10px
-// }
 
 input:focus, select:focus, textarea:focus, form:focus, button:focus {outline:0;}
 
 div.dropdown.navbar-right:focus{
   outline:0;
 }
+
 
 img.carousel-img{
   position: absolute;
@@ -537,8 +535,12 @@ clear: both;
    color: white;
    text-decoration: none;
    font-weight: normal;
+   background-color: rgba(0, 0, 0, 0.0)
  }
 
+.btn-default.dropdown-toggle.override-bootstrap.active-category{
+  border: 1px solid white;
+}
  div.sign{
    width: 100%;
    color: white;
@@ -546,6 +548,10 @@ clear: both;
    border: 1px solid black;
    height: 33px;
    border-radius: 5px;
+ }
+
+ div.sign:focus{
+   outline: none;
  }
 
  .login-text{
@@ -564,6 +570,15 @@ clear: both;
 
  .sign-in-button.guest:hover{
    background-color: rgba(0,0,0, 0.8);
+ }
+ .sign-in-button.guest:focus{
+   background-color: rgba(0,0,0, 0.8);
+   outline: none;
+ }
+ .sign-in-button:focus{
+   background-color: rgba(0,0,0, 0.8);
+   outline: none;
+   color: white;
  }
 
  .sign-in-form{

@@ -13,7 +13,17 @@ CapstoneProject.Views.UserArtIndexItem = Backbone.View.extend({
   },
 
   events: {
-    "click .delete-art": "deleteArt"
+    "click .delete-art": "deleteArt",
+    "click .img-responsive": "popModal"
+  },
+
+  popModal: function () {
+    event.preventDefault();
+      var modal = new CapstoneProject.Views.ArtShow({model: this.model});
+      modal.render();
+      modal.$(".m-content").css({"margin-top":  window.pageYOffset - $(modal.$el).height() / 2, 'top': '50%' });
+      modal.$(".m-content").css({ 'margin-left': window.pageXOffset - $(modal.$el).width() / 2, 'left': '50%' });
+      $('body').append(modal.$el);
   },
 
   deleteArt: function () {
