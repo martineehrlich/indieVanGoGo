@@ -165,7 +165,7 @@ Art.create(artist_id: diego.id, title: "The arrival of Cortes", description: fou
 Art.create(artist_id: diego.id, title: "Pan American Unity", description: fifth, image_file_name:"http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440479150/diegorivera2_ubesja.jpg")
 Art.create(artist_id: diego.id, title: "Man, Controller of the Universe", description: third, image_file_name:"http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1440479149/diego-river-controller_r6caof.jpg")
 
-banksy_description "I am a British graffiti artist, political activist, film director, and painter.
+banksy_description = "I am a British graffiti artist, political activist, film director, and painter.
 My satirical street art and subversive epigrams combine dark humour with graffiti executed in a distinctive stencilling technique. My works of political and social commentary have been featured on streets, walls, and bridges of cities throughout the world. My work grew out of the Bristol underground scene, which involved collaborations between artists and musicians."
 banksy = User.create(email: "banksy@banksy.com", name: "Banksy", description: banksy_description, password: "password", goal: 1100, image_url: "http://res.cloudinary.com/#{ENV['CLOUD_NAME']}/image/upload/v1441918813/banksy_war8sv.jpg")
 banksy_art = "My artwork is mysterious just like me. Take from it what you will."
