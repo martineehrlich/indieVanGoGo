@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   def new
-    @user = User.all.shuffle.first
+    @user = User.last
   end
 
   def create
